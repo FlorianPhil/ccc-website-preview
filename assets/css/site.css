@@ -204,8 +204,8 @@
   .site-header.is-condensed { transform: translateY(calc(var(--header-h-condensed) - var(--header-h))); }
   .site-header.is-condensed .site-header__inner { transform: translateY(calc((var(--header-h) - var(--header-h-condensed)) / 2)); }
   .brand-link { display: block; flex: none; padding-block: 8px; }
-  .brand-link img { width: 172px; height: auto; }
-  @media (max-width: 767px) { .brand-link img { width: 132px; } }
+  .brand-link img, .brand-link svg { display: block; width: 172px; height: auto; }
+  @media (max-width: 767px) { .brand-link img, .brand-link svg { width: 132px; } }
   .nav-main { margin-left: auto; }
   .nav-main ul { display: flex; gap: 28px; list-style: none; padding: 0; margin: 0; }
   .nav-link {

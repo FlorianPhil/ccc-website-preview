@@ -1630,3 +1630,97 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   window.addEventListener("hashchange", openHash);
   openHash();
 })();
+// Animated mark in the site header. The lockup is inlined so the Three-C mark can
+// play the brand loop: every 30 s the lines draw into the brass dot while the mark
+// turns counterclockwise, the dot bounces once with a glint, and the lines draw
+// straight back out. It always rests on the locked lockup. Reduced motion keeps the image.
+(function () {
+  "use strict";
+  var img = document.querySelector(".site-header .brand-link img");
+  if (!img || !window.fetch || !window.DOMParser) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var NS = "http://www.w3.org/2000/svg";
+  var W = 95.49, A = 250, R = 202.255, DUR = 1.8, EVERY = 30000, FIRST = 3000;
+  var COLORS = ["#2D432B", "#2A5D5B", "#D06E53"];
+  function el(tag, attrs, parent) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function pt(deg) { var a = deg * Math.PI / 180; return (500 + R * Math.cos(a)).toFixed(2) + " " + (291.7 + R * Math.sin(a)).toFixed(2); }
+  // One circle around the forest C's arc center, starting inside the dot clearance.
+  // pathLength 360 makes dash units degrees; the locked C runs from 0 to 250.
+  var RING = "M " + pt(95) + " A " + R + " " + R + " 0 1 1 " + pt(275) + " A " + R + " " + R + " 0 1 1 " + pt(95);
+  function clamp(p) { return p < 0 ? 0 : p > 1 ? 1 : p; }
+  function seg(t, start, dur) { return clamp((t - start) / dur); }
+  function cin(p) { return p * p * p; }
+  function cout(p) { return 1 - Math.pow(1 - p, 3); }
+  function cinout(p) { return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; }
+  function backOut(p) { var s = 2.6; p -= 1; return 1 + (s + 1) * p * p * p + s * p * p; }
+
+  fetch(img.src).then(function (r) { return r.text(); }).then(function (text) {
+    var svg = new DOMParser().parseFromString(text, "image/svg+xml").documentElement;
+    if (svg.nodeName !== "svg") return;
+    // The first four shapes are the mark (three Cs and the dot); the rest is the wordmark.
+    var shapes = svg.querySelectorAll("path");
+    for (var i = 0; i < 4; i++) shapes[i].parentNode.removeChild(shapes[i]);
+    svg = document.importNode(svg, true);
+    svg.setAttribute("aria-hidden", "true");
+    svg.setAttribute("focusable", "false");
+    svg.setAttribute("width", img.getAttribute("width"));
+    svg.setAttribute("height", img.getAttribute("height"));
+    var defs = el("defs", {}), first = svg.firstChild;
+    svg.insertBefore(defs, first);
+    var mask = el("mask", { id: "hm-clr", maskUnits: "userSpaceOnUse", x: -1000, y: -1000, width: 3000, height: 3000 }, defs);
+    el("rect", { x: -1000, y: -1000, width: 3000, height: 3000, fill: "#fff" }, mask);
+    el("circle", { cx: 500, cy: 500, r: 88, fill: "#000" }, mask);
+    var shine = el("linearGradient", { id: "hm-shine" }, defs);
+    [[0, 0], [0.5, 0.85], [1, 0]].forEach(function (s) { el("stop", { offset: s[0], "stop-color": "#FFF6DF", "stop-opacity": s[1] }, shine); });
+    var clipDot = el("circle", { cx: 500, cy: 500, r: 61 }, el("clipPath", { id: "hm-face" }, defs));
+    var root = el("g", {});
+    svg.insertBefore(root, first);
+    var cs = el("g", { mask: "url(#hm-clr)" }, root);
+    var arcs = COLORS.map(function (c, i) {
+      return el("path", { d: RING, pathLength: 360, fill: "none", stroke: c, "stroke-width": W, transform: "rotate(" + i * 120 + " 500 500)" }, cs);
+    });
+    var dot = el("circle", { cx: 500, cy: 500, r: 61, fill: "#9C7C46" }, root);
+    var glint = el("rect", { x: -26, y: -120, width: 52, height: 240, fill: "url(#hm-shine)" });
+    svg.insertBefore(el("g", { "clip-path": "url(#hm-face)" }), first).appendChild(glint);
+
+    // The whole loop as a function of time; t = DUR is the locked lockup.
+    function render(t) {
+      var rot = t < 0.74 ? -200 * cin(seg(t, 0, 0.7)) : 0;
+      var d = t < 0.86 ? 1 + 0.14 * cout(seg(t, 0.7, 0.16)) : 1.14 - 0.14 * backOut(seg(t, 0.86, 0.45));
+      var g = t < 0.9 || t > 1.4 ? 0 : cinout(seg(t, 0.9, 0.5));
+      var r = (61 * d).toFixed(3);
+      root.setAttribute("transform", "rotate(" + rot.toFixed(3) + " 500 500)");
+      dot.setAttribute("r", r);
+      clipDot.setAttribute("r", r);
+      glint.setAttribute("transform", "translate(" + (500 + (g * 2 - 1) * r * 1.6).toFixed(2) + " 500) rotate(28)");
+      glint.style.visibility = g > 0 && g < 1 ? "visible" : "hidden";
+      arcs.forEach(function (p, i) {
+        var len = t < 0.8 ? A * (1 - cin(seg(t, 0.03 + 0.05 * i, 0.6))) : A * cout(seg(t, 0.8, 0.5));
+        len = Math.max(0, Math.min(360, len));
+        p.style.visibility = len > 0.01 ? "visible" : "hidden";
+        p.setAttribute("stroke-dasharray", len.toFixed(3) + " " + (360 - len).toFixed(3));
+      });
+    }
+    render(DUR);
+    img.parentNode.replaceChild(svg, img);
+
+    var running = false;
+    function play() {
+      if (running || document.hidden) return;
+      running = true;
+      var t0 = null;
+      window.requestAnimationFrame(function step(now) {
+        if (t0 === null) t0 = now;
+        var t = (now - t0) / 1000;
+        render(Math.min(t, DUR));
+        if (t < DUR) window.requestAnimationFrame(step); else running = false;
+      });
+    }
+    window.setTimeout(function () { play(); window.setInterval(play, EVERY); }, FIRST);
+  }).catch(function () {});
+})();
