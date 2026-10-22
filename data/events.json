@@ -1,0 +1,641 @@
+{
+ "events": [
+  {
+   "slug": "atlantic-city-chamber-mixer-mj-unpacked-2026",
+   "title": "Chamber Mixer @ MJ Unpacked",
+   "start": "2026-05-06T17:00:00-04:00",
+   "end": "2026-05-06T19:00:00-04:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 7:00 PM ET · Hard Rock Hotel & Casino Atlantic City",
+   "tags": [
+    "Atlantic City, NJ"
+   ]
+  },
+  {
+   "slug": "berlin-coffee-networking-mixer-icbc-2026",
+   "title": "Coffee Networking Mixer @ ICBC",
+   "start": "2026-04-14T10:30:00+02:00",
+   "end": "2026-04-14T11:30:00+02:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "10:30 to 11:30 AM CEST · Estrel Hotel Berlin",
+   "tags": [
+    "Berlin, Berlin"
+   ]
+  },
+  {
+   "slug": "berlin-icbc-mixer-presented-by-linnaeus-partners-2026",
+   "title": "ICBC Mixer presented by Linnaeus Partners",
+   "start": "2026-04-12T16:00:00+02:00",
+   "end": "2026-04-12T22:00:00+02:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:00 to 10:00 PM CEST · Cannabis Future Hub, Berlin",
+   "tags": [
+    "Berlin, Berlin"
+   ]
+  },
+  {
+   "slug": "berlin-mjbiz-networking-mixer-icbc-2026",
+   "title": "MJBiz Networking Mixer @ ICBC",
+   "start": "2026-04-15T17:30:00+02:00",
+   "end": "2026-04-15T19:30:00+02:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:30 to 7:30 PM CEST · Estrel Hotel Berlin",
+   "tags": [
+    "Berlin, Berlin"
+   ]
+  },
+  {
+   "slug": "berlin-vip-extension-mixer-icbc-2026",
+   "title": "VIP Extension Mixer @ ICBC",
+   "start": "2026-04-13T21:00:00+02:00",
+   "end": "2026-04-13T23:00:00+02:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "9:00 to 11:00 PM CEST · Estrel Hotel Berlin",
+   "tags": [
+    "Berlin, Berlin"
+   ]
+  },
+  {
+   "slug": "chicago-august-mixer-2026",
+   "title": "August Mixer",
+   "start": "2026-08-27T17:00:00-05:00",
+   "end": "2026-08-27T20:00:00-05:00",
+   "chapter": "illinois",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 8:00 PM CT · ERIS Brewery and Cider House, Chicago",
+   "tags": [
+    "Illinois"
+   ]
+  },
+  {
+   "slug": "chicago-igniteit-mixer-2026",
+   "title": "IgniteIt Mixer",
+   "start": "2026-06-15T17:00:00-05:00",
+   "end": "2026-06-15T18:30:00-05:00",
+   "chapter": "illinois",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 6:30 PM CT · Chicago Marriott Downtown Magnificent Mile",
+   "tags": [
+    "Illinois"
+   ]
+  },
+  {
+   "slug": "d-c-april-mixer-dmv-2026",
+   "title": "April Mixer DMV",
+   "start": "2026-04-09T18:00:00-04:00",
+   "end": "2026-04-09T21:00:00-04:00",
+   "chapter": "dmv",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 9:00 PM ET · Pubkey, Washington",
+   "tags": [
+    "DC, Maryland & Virginia"
+   ]
+  },
+  {
+   "slug": "denver-april-networking-mixer-2026",
+   "title": "April Networking Mixer",
+   "start": "2026-04-29T16:20:00-06:00",
+   "end": "2026-04-29T18:30:00-06:00",
+   "chapter": "colorado",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:20 to 6:30 PM MT · One Shot Back, Denver",
+   "tags": [
+    "Colorado"
+   ]
+  },
+  {
+   "slug": "denver-mcba-happy-hour-2026",
+   "title": "MCBA Happy Hour",
+   "start": "2026-07-14T16:20:00-06:00",
+   "end": "2026-07-14T18:00:00-06:00",
+   "chapter": "colorado",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:20 to 6:00 PM MT · Highland Tavern, Denver",
+   "tags": [
+    "Colorado"
+   ]
+  },
+  {
+   "slug": "denver-vc-ceo-mixer-at-igniteit-colorado-2026",
+   "title": "VC & CEO Mixer at IgniteIt Colorado",
+   "start": "2026-09-17T17:30:00-06:00",
+   "end": "2026-09-17T20:00:00-06:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:30 to 8:00 PM MT · Denver",
+   "tags": [
+    "Denver, CO"
+   ]
+  },
+  {
+   "slug": "huntington-beach-april-mixer-oc-2026",
+   "title": "April Mixer OC",
+   "start": "2026-04-09T17:00:00-07:00",
+   "end": "2026-04-09T20:00:00-07:00",
+   "chapter": "orange-county",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 8:00 PM PT · Flecha Cantina, Huntington Beach",
+   "tags": [
+    "Orange County"
+   ]
+  },
+  {
+   "slug": "inland-empire-cannabis-networking-mixer-2026",
+   "title": "Cannabis Networking Mixer",
+   "start": "2026-10-15T18:00:00-07:00",
+   "end": "2026-10-15T20:00:00-07:00",
+   "chapter": "riverside-san-bernardino",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 8:00 PM PT · Cigar Exchange International, Upland",
+   "tags": [
+    "Riverside & San Bernardino"
+   ]
+  },
+  {
+   "slug": "kampala-uganda-chapter-founding-mixer-2026",
+   "title": "Uganda Chapter Founding Mixer",
+   "start": "2026-10-15T18:00:00+03:00",
+   "end": "2026-10-15T22:00:00+03:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 10:00 PM EAT · Mediterraneo Restaurant, Kampala",
+   "tags": [
+    "Kampala, Central Region"
+   ]
+  },
+  {
+   "slug": "la-igniteit-after-party-2026",
+   "title": "IgniteIt After-Party",
+   "start": "2026-10-07T19:00:00-07:00",
+   "end": "2026-10-07T21:00:00-07:00",
+   "chapter": "los-angeles",
+   "online": false,
+   "format": "mixer",
+   "meta": "7:00 to 9:00 PM PT · The Woods WeHo, West Hollywood",
+   "tags": [
+    "Los Angeles"
+   ]
+  },
+  {
+   "slug": "las-vegas-elevated-minds-social-hour-mjbiz-2026",
+   "title": "Elevated Minds Social Hour @ MJBIZ",
+   "start": "2026-12-02T16:00:00-08:00",
+   "end": "2026-12-02T20:00:00-08:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:00 to 8:00 PM PT · Planet 13 Las Vegas",
+   "tags": [
+    "Las Vegas, NV"
+   ]
+  },
+  {
+   "slug": "los-angeles-april-mixer-2026",
+   "title": "April Mixer",
+   "start": "2026-04-28T17:00:00-07:00",
+   "end": "2026-04-28T21:00:00-07:00",
+   "chapter": "los-angeles",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 9:00 PM PT · Sunset Social Club, West Hollywood",
+   "tags": [
+    "Los Angeles"
+   ]
+  },
+  {
+   "slug": "maryland-dmv-chapter-august-mixer-2026",
+   "title": "DMV Chapter August Mixer",
+   "start": "2026-08-06T18:00:00-04:00",
+   "end": "2026-08-06T21:00:00-04:00",
+   "chapter": "dmv",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 9:00 PM ET · Hilb Group, Hunt Valley",
+   "tags": [
+    "DC, Maryland & Virginia"
+   ]
+  },
+  {
+   "slug": "miami-florida-chapter-founding-mixer-2026",
+   "title": "Florida Chapter Founding Mixer",
+   "start": "2026-08-27T16:00:00-04:00",
+   "end": "2026-08-27T18:00:00-04:00",
+   "chapter": "florida",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:00 to 6:00 PM ET · The Citadel, Miami",
+   "tags": [
+    "Florida"
+   ]
+  },
+  {
+   "slug": "miami-florida-chapter-september-mixer-2026",
+   "title": "Florida Chapter September Mixer",
+   "start": "2026-09-24T17:30:00-04:00",
+   "end": "2026-09-24T20:00:00-04:00",
+   "chapter": "florida",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:30 to 8:00 PM ET · The Citadel, Miami",
+   "tags": [
+    "Florida"
+   ]
+  },
+  {
+   "slug": "nyc-northeast-september-mixer-third-thursday-2026",
+   "title": "Northeast September Mixer @ Third Thursday",
+   "start": "2026-09-17T18:00:00-04:00",
+   "end": "2026-09-17T21:00:00-04:00",
+   "chapter": "northeastern-us",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 9:00 PM ET · The Delancy Rooftop, New York",
+   "tags": [
+    "Northeastern US"
+   ]
+  },
+  {
+   "slug": "oakland-bay-area-oct-mixer-2026",
+   "title": "Bay Area Oct Mixer",
+   "start": "2026-10-01T17:00:00-07:00",
+   "end": "2026-10-01T20:00:00-07:00",
+   "chapter": "bay-area",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 8:00 PM PT · Urbana Weed Dispensary Oakland",
+   "tags": [
+    "Bay Area"
+   ]
+  },
+  {
+   "slug": "oakland-oaksterdam-blazers-ballgame-mixer-2026",
+   "title": "Oaksterdam Blazers Ballgame Mixer",
+   "start": "2026-07-31T13:00:00-07:00",
+   "end": "2026-07-31T23:30:00-07:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "1:00 to 11:30 PM PT · Raimondi Park, Oakland",
+   "tags": [
+    "Oakland, CA"
+   ]
+  },
+  {
+   "slug": "portland-allay-cannabis-chamber-of-commerce-and-salal-happy-hour-2026",
+   "title": "Allay, Cannabis Chamber of Commerce, and Salal Happy Hour!",
+   "start": "2026-09-15T16:00:00-07:00",
+   "end": "2026-09-15T20:00:00-07:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:00 to 8:00 PM PT · Rontoms, Portland",
+   "tags": [
+    "Portland, OR"
+   ]
+  },
+  {
+   "slug": "sacramento-april-mixer-2026",
+   "title": "April Mixer",
+   "start": "2026-04-29T18:00:00-07:00",
+   "end": "2026-04-29T20:00:00-07:00",
+   "chapter": "sacramento",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 8:00 PM PT · ROC&SOL Diner, Sacramento",
+   "tags": [
+    "Sacramento"
+   ]
+  },
+  {
+   "slug": "sacramento-cannabis-chamber-takeover-at-the-ca-state-fair-2026",
+   "title": "Cannabis Chamber Takeover at the CA State Fair",
+   "start": "2026-07-17T18:00:00-07:00",
+   "end": "2026-07-17T21:00:00-07:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 9:00 PM PT · California State Fair, Sacramento",
+   "tags": [
+    "Sacramento, CA"
+   ]
+  },
+  {
+   "slug": "sacramento-june-mixer-2026",
+   "title": "June Mixer",
+   "start": "2026-06-24T18:00:00-07:00",
+   "end": "2026-06-24T20:00:00-07:00",
+   "chapter": "sacramento",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 8:00 PM PT · Mango Tech Store, Sacramento",
+   "tags": [
+    "Sacramento"
+   ]
+  },
+  {
+   "slug": "sacramento-may-mixer-2026",
+   "title": "May Mixer",
+   "start": "2026-05-20T18:00:00-07:00",
+   "end": "2026-05-20T20:00:00-07:00",
+   "chapter": "sacramento",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 8:00 PM PT · Canon, Sacramento",
+   "tags": [
+    "Sacramento"
+   ]
+  },
+  {
+   "slug": "sacramento-sept-mixer-2026",
+   "title": "Sept. Mixer",
+   "start": "2026-09-02T18:00:00-07:00",
+   "end": "2026-09-02T20:00:00-07:00",
+   "chapter": "sacramento",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 8:00 PM PT · Twisted Track Station, Sacramento",
+   "tags": [
+    "Sacramento"
+   ]
+  },
+  {
+   "slug": "san-diego-april-lunch-mixer-2026",
+   "title": "April Lunch Mixer",
+   "start": "2026-04-18T13:30:00-07:00",
+   "end": "2026-04-18T15:00:00-07:00",
+   "chapter": "san-diego",
+   "online": false,
+   "format": "mixer",
+   "meta": "1:30 to 3:00 PM PT · Maggie's Café, San Diego",
+   "tags": [
+    "San Diego"
+   ]
+  },
+  {
+   "slug": "san-diego-budtender-appreciation-august-mixer-2026",
+   "title": "Budtender Appreciation & August Mixer",
+   "start": "2026-08-20T17:00:00-07:00",
+   "end": "2026-08-20T20:00:00-07:00",
+   "chapter": "san-diego",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 8:00 PM PT · Break Point, San Diego",
+   "tags": [
+    "San Diego"
+   ]
+  },
+  {
+   "slug": "san-diego-may-mixer-nectarball-screening-2026",
+   "title": "May Mixer & Nectarball Screening",
+   "start": "2026-05-26T17:30:00-07:00",
+   "end": "2026-05-26T20:30:00-07:00",
+   "chapter": "san-diego",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:30 to 8:30 PM PT · Sessions by the Bay Cannabis Dispensary, National City",
+   "tags": [
+    "San Diego"
+   ]
+  },
+  {
+   "slug": "san-francisco-bay-area-may-mixer-2026",
+   "title": "Bay Area May Mixer",
+   "start": "2026-05-19T16:00:00-07:00",
+   "end": "2026-05-19T20:00:00-07:00",
+   "chapter": "bay-area",
+   "online": false,
+   "format": "mixer",
+   "meta": "4:00 to 8:00 PM PT · Meadow HQ, San Francisco",
+   "tags": [
+    "Bay Area"
+   ]
+  },
+  {
+   "slug": "san-francisco-sf-hash-week-industry-hiring-mixer-2026",
+   "title": "SF Hash Week Industry Hiring Mixer",
+   "start": "2026-07-13T16:30:00-07:00",
+   "end": "2026-07-13T20:30:00-07:00",
+   "chapter": "",
+   "online": false,
+   "format": "job-fair",
+   "meta": "4:30 to 8:30 PM PT · Hotel Emblem San Francisco",
+   "tags": [
+    "San Francisco, CA"
+   ]
+  },
+  {
+   "slug": "upland-ie-july-mixer-2026",
+   "title": "IE July Mixer",
+   "start": "2026-07-23T18:00:00-07:00",
+   "end": "2026-07-23T21:00:00-07:00",
+   "chapter": "riverside-san-bernardino",
+   "online": false,
+   "format": "mixer",
+   "meta": "6:00 to 9:00 PM PT · Cigar Exchange International, Upland",
+   "tags": [
+    "Riverside & San Bernardino"
+   ]
+  },
+  {
+   "slug": "uxbridge-teehc-open-2026",
+   "title": "TeeHC Open",
+   "start": "2026-10-01T07:00:00-04:00",
+   "end": "2026-10-01T19:00:00-04:00",
+   "chapter": "",
+   "online": false,
+   "format": "other",
+   "meta": "7:00 AM to 7:00 PM ET · Blissful Meadows Golf Club, Uxbridge",
+   "tags": [
+    "Uxbridge, MA"
+   ]
+  },
+  {
+   "slug": "virtual-call-ia-ne-june-networking-call-2026",
+   "title": "IA & NE June Networking Call",
+   "start": "2026-06-17T18:00:00-05:00",
+   "end": "2026-06-17T19:00:00-05:00",
+   "chapter": "iowa-nebraska",
+   "online": true,
+   "format": "virtual-forum",
+   "meta": "6:00 to 7:00 PM CT · Online",
+   "tags": [
+    "Iowa & Nebraska"
+   ]
+  },
+  {
+   "slug": "virtual-call-iowa-nebraska-april-regional-call-2026",
+   "title": "Iowa & Nebraska April Regional Call",
+   "start": "2026-04-15T18:00:00-05:00",
+   "end": "2026-04-15T19:00:00-05:00",
+   "chapter": "iowa-nebraska",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "6:00 to 7:00 PM CT · Online",
+   "tags": [
+    "Iowa & Nebraska"
+   ]
+  },
+  {
+   "slug": "virtual-call-midwest-july-networking-call-2026",
+   "title": "Midwest July Networking Call",
+   "start": "2026-07-09T15:00:00-06:00",
+   "end": "2026-07-09T16:00:00-06:00",
+   "chapter": "",
+   "online": true,
+   "format": "virtual-forum",
+   "meta": "3:00 to 4:00 PM MT · Online",
+   "tags": [
+    "Online"
+   ]
+  },
+  {
+   "slug": "virtual-call-midwest-september-networking-call-2026",
+   "title": "Midwest September Networking Call",
+   "start": "2026-09-10T15:00:00-06:00",
+   "end": "2026-09-10T16:00:00-06:00",
+   "chapter": "",
+   "online": true,
+   "format": "virtual-forum",
+   "meta": "3:00 to 4:00 PM MT · Online",
+   "tags": [
+    "Online"
+   ]
+  },
+  {
+   "slug": "virtual-greater-europe-chapter-call-2026-09-02",
+   "title": "Greater Europe Chapter Call",
+   "start": "2026-09-02T16:00:00+01:00",
+   "end": "2026-09-02T17:00:00+01:00",
+   "chapter": "greater-europe",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "4:00 to 5:00 PM CET · Online",
+   "tags": [
+    "Greater Europe"
+   ]
+  },
+  {
+   "slug": "virtual-greater-europe-chapter-call-2026-10-07",
+   "title": "Greater Europe Chapter Call",
+   "start": "2026-10-07T16:00:00+01:00",
+   "end": "2026-10-07T17:00:00+01:00",
+   "chapter": "greater-europe",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "4:00 to 5:00 PM CET · Online",
+   "tags": [
+    "Greater Europe"
+   ]
+  },
+  {
+   "slug": "virtual-latam-caribbean-chapter-call-2026",
+   "title": "LATAM & Caribbean Chapter Call",
+   "start": "2026-08-27T14:00:00-05:00",
+   "end": "2026-08-27T15:00:00-05:00",
+   "chapter": "latin-america",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "2:00 to 3:00 PM COT · Online",
+   "tags": [
+    "Latin America"
+   ]
+  },
+  {
+   "slug": "virtual-midwest-may-networking-group-2026",
+   "title": "Midwest May Networking Group",
+   "start": "2026-05-14T15:00:00-06:00",
+   "end": "2026-05-14T16:00:00-06:00",
+   "chapter": "",
+   "online": true,
+   "format": "virtual-forum",
+   "meta": "3:00 to 4:00 PM MT · Online",
+   "tags": [
+    "Online"
+   ]
+  },
+  {
+   "slug": "virtual-northeast-august-general-membership-call-2026",
+   "title": "Northeast August General Membership Call",
+   "start": "2026-08-18T12:00:00-04:00",
+   "end": "2026-08-18T13:00:00-04:00",
+   "chapter": "northeastern-us",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "12:00 to 1:00 PM ET · Online",
+   "tags": [
+    "Northeastern US"
+   ]
+  },
+  {
+   "slug": "virtual-northeast-general-membership-call-2026",
+   "title": "Northeast General Membership Call",
+   "start": "2026-04-21T12:00:00-04:00",
+   "end": "2026-04-21T16:00:00-04:00",
+   "chapter": "northeastern-us",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "12:00 to 4:00 PM ET · Online",
+   "tags": [
+    "Northeastern US"
+   ]
+  },
+  {
+   "slug": "virtual-northeast-june-general-membership-call-2026",
+   "title": "Northeast June General Membership Call",
+   "start": "2026-06-23T12:00:00-04:00",
+   "end": "2026-06-23T13:00:00-04:00",
+   "chapter": "northeastern-us",
+   "online": true,
+   "format": "chapter-meeting",
+   "meta": "12:00 to 1:00 PM ET · Online",
+   "tags": [
+    "Northeastern US"
+   ]
+  },
+  {
+   "slug": "virtual-the-next-cannabis-consumer-education-trust-responsible-access-2026",
+   "title": "THE NEXT CANNABIS CONSUMER: Education, Trust & Responsible Access",
+   "start": "2026-09-02T12:30:00-07:00",
+   "end": "2026-09-02T13:30:00-07:00",
+   "chapter": "",
+   "online": true,
+   "format": "virtual-forum",
+   "meta": "12:30 to 1:30 PM PT · Online",
+   "tags": [
+    "Online"
+   ]
+  },
+  {
+   "slug": "washington-d-c-pbc-conference-after-party-2026",
+   "title": "PBC Conference After-Party",
+   "start": "2026-09-09T17:00:00-04:00",
+   "end": "2026-09-09T21:00:00-04:00",
+   "chapter": "",
+   "online": false,
+   "format": "mixer",
+   "meta": "5:00 to 9:00 PM ET · 2000 Pennsylvania Ave NW 10th floor, Washington",
+   "tags": [
+    "Washington, DC"
+   ]
+  }
+ ]
+}

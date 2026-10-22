@@ -1,0 +1,1241 @@
+{
+ "regions": [
+  {
+   "key": "north-america",
+   "label": "North America",
+   "anchor": "north-america",
+   "continent": "north-america"
+  },
+  {
+   "key": "latin-america-caribbean",
+   "label": "Latin America and Caribbean",
+   "anchor": "latin-america",
+   "continent": "latin-america-caribbean"
+  },
+  {
+   "key": "europe",
+   "label": "Europe",
+   "anchor": "europe",
+   "continent": "europe"
+  },
+  {
+   "key": "asia",
+   "label": "Asia",
+   "anchor": "asia",
+   "continent": "asia"
+  },
+  {
+   "key": "oceania",
+   "label": "Australia and Pacific",
+   "anchor": "australia",
+   "continent": "oceania"
+  },
+  {
+   "key": "africa",
+   "label": "Africa",
+   "anchor": "africa",
+   "continent": "africa"
+  }
+ ],
+ "chapters": [
+  {
+   "slug": "los-angeles",
+   "name": "Los Angeles",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Los Angeles",
+   "state": "CA",
+   "status": "active",
+   "lat": 34.05,
+   "lon": -118.24,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Ian Rassman",
+     "role": "Regional Chair",
+     "company": "Chair of Financial Services, Payments & Banking, Executive Director of Los Angeles NORML",
+     "photo": "assets/img/people/ian-rassman.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Liz Rodrigo",
+     "role": "Chapter Leader",
+     "company": "Co-Founder & CEO, CaliLily",
+     "photo": "assets/img/people/liz-rodrigo.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Maha",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO, Cannaclub",
+     "photo": "assets/img/people/maha-headshot.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Karo Martirosyan",
+     "role": "Chapter Leader",
+     "company": "Partner at GreenRush CPAs",
+     "photo": "assets/img/people/karo-martirosyan.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Rachel Wright",
+     "role": "Chapter Leader",
+     "company": "Founder of Verdant Strategies",
+     "photo": "assets/img/people/rachel-wright-los-angeles.webp",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "san-diego",
+   "name": "San Diego",
+   "region": "north-america",
+   "country": "United States",
+   "city": "San Diego",
+   "state": "CA",
+   "status": "active",
+   "lat": 32.72,
+   "lon": -117.16,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Vanessa Fleur",
+     "role": "Regional Chair",
+     "company": "Principal & Founder at The Fleur Group",
+     "photo": "assets/img/people/vanessa-fleur.webp",
+     "linkedin": "https://www.linkedin.com/in/vanessafleur/",
+     "website": ""
+    },
+    {
+     "name": "Dina Nagib",
+     "role": "Chapter Leader",
+     "company": "Founder and Principal Consultant",
+     "photo": "assets/img/people/dina-nagib.webp",
+     "linkedin": "https://www.linkedin.com/in/dinanagib/",
+     "website": ""
+    },
+    {
+     "name": "JM Balbuena",
+     "role": "Chapter Leader",
+     "company": "Executive Director, Ryan’s Law Foundation",
+     "photo": "assets/img/people/jm-balbuena.webp",
+     "linkedin": "https://www.linkedin.com/in/johannbalbuena/",
+     "website": ""
+    },
+    {
+     "name": "Roger Tower",
+     "role": "Chapter Leader",
+     "company": "Managing Owner and Digital Marketing Consultant at Tower Agency",
+     "photo": "assets/img/people/roger-tower.webp",
+     "linkedin": "https://www.linkedin.com/in/rogertower/",
+     "website": ""
+    },
+    {
+     "name": "Luke Barbara",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Christina Cassidy",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "orange-county",
+   "name": "Orange County",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Santa Ana",
+   "state": "CA",
+   "status": "active",
+   "lat": 33.75,
+   "lon": -117.87,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Bryce Shank",
+     "role": "Regional Chair",
+     "company": "Insurance & Risk Management Advisor at Swarts Manning",
+     "photo": "assets/img/people/bryce-shank-orange-county.webp",
+     "linkedin": "https://www.linkedin.com/in/bryce-shank-518982bb/",
+     "website": ""
+    },
+    {
+     "name": "Keiko Beatie",
+     "role": "Chapter Leader",
+     "company": "Director of Education, Coral Cove Resort",
+     "photo": "assets/img/people/keiko-beatie.webp",
+     "linkedin": "https://www.linkedin.com/in/keikobeatie/",
+     "website": ""
+    },
+    {
+     "name": "Kandice Hawes",
+     "role": "Chapter Leader",
+     "company": "Community Outreach Manager at Glass House Brands",
+     "photo": "assets/img/people/kandice-hawes.webp",
+     "linkedin": "https://www.linkedin.com/in/kandice-hawes-2581a9a1/",
+     "website": ""
+    },
+    {
+     "name": "Dr. Neal H. Patel",
+     "role": "Chapter Leader",
+     "company": "Board-Certified Family Medicine Physician, Founder, Phantom Medical Inc.",
+     "photo": "assets/img/people/dr-neal-h-patel.webp",
+     "linkedin": "https://www.linkedin.com/in/drnealhpatel/",
+     "website": ""
+    },
+    {
+     "name": "Erica Tetsworth",
+     "role": "Chapter Leader",
+     "company": "Brand Development & Sales Consulting",
+     "photo": "assets/img/people/erica-tetsworth.webp",
+     "linkedin": "https://www.linkedin.com/in/erica-tetsworth-1152b274/",
+     "website": ""
+    },
+    {
+     "name": "Jamison Remmers",
+     "role": "Chapter Leader",
+     "company": "B2B & B2C Sales & Marketing Leader, Technology Specialist",
+     "photo": "assets/img/people/jamison-remmers.webp",
+     "linkedin": "https://www.linkedin.com/in/jamison-remmers-a825471bb/",
+     "website": ""
+    },
+    {
+     "name": "Jakki Hernandez",
+     "role": "Chapter Leader",
+     "company": "Principal Veda Consulting",
+     "photo": "assets/img/people/jakki-hernandez.webp",
+     "linkedin": "https://www.linkedin.com/in/jakki-hernandez/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "bay-area",
+   "name": "Bay Area",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Oakland",
+   "state": "CA",
+   "status": "active",
+   "lat": 37.8,
+   "lon": -122.27,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Nate Landau",
+     "role": "Regional Chair",
+     "company": "Co-founder and COO of Snowtill Inc",
+     "photo": "assets/img/people/nate-landau-bay-area.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Luna Stower",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO",
+     "photo": "assets/img/people/luna-stower.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Chris Eggers",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO at Protected Security",
+     "photo": "assets/img/people/chris-eggers.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Leah Cerri",
+     "role": "Chapter Leader",
+     "company": "Territory Marketing Manager, North America, Storz & Bickel GmbH",
+     "photo": "assets/img/people/leah-cerri.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Dale Sky Jones",
+     "role": "Chapter Leader",
+     "company": "Executive Chancellor at Oaksterdam University",
+     "photo": "assets/img/people/dale-sky-jones.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "David Downs",
+     "role": "Chapter Leader",
+     "company": "Owner, David Downs Presents",
+     "photo": "assets/img/people/david-downs.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Sara Payan",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "sacramento",
+   "name": "Sacramento",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Sacramento",
+   "state": "CA",
+   "status": "active",
+   "lat": 38.58,
+   "lon": -121.49,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Jeff Levers",
+     "role": "Regional Chair",
+     "company": "Co-founder/Co-owner, Beard Bros Pharms & Beard Bros Media",
+     "photo": "assets/img/people/jeff-levers-sacramento.webp",
+     "linkedin": "https://www.linkedin.com/in/jeff-levers-713bb0191/",
+     "website": ""
+    },
+    {
+     "name": "Scheri Mathaya",
+     "role": "Chapter Leader",
+     "company": "Marketing Manager, VERDANT Strategies",
+     "photo": "assets/img/people/scheri-mathaya.webp",
+     "linkedin": "https://www.linkedin.com/in/scheri-mathaya/",
+     "website": ""
+    },
+    {
+     "name": "Monica Aritzobal",
+     "role": "Chapter Leader",
+     "company": "Beard Bros",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Ariana Van Alstine",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "riverside-san-bernardino",
+   "name": "Riverside & San Bernardino",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Riverside",
+   "state": "CA",
+   "status": "active",
+   "lat": 33.95,
+   "lon": -117.4,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Florian Philippe",
+     "role": "Regional Chair",
+     "company": "CMO at Verdant Strategies",
+     "photo": "assets/img/people/florian-philippe.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "KC Santana",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO, Chiefah Entertainment",
+     "photo": "assets/img/people/kc-santana.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Joshua Naggar",
+     "role": "Chapter Leader",
+     "company": "Cannabis Attorney at Law",
+     "photo": "assets/img/people/joshua-naggar.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Steve Riparip",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO at Tact Firm marketing",
+     "photo": "assets/img/people/steve-riparip.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Lauren Marshall",
+     "role": "Chapter Leader",
+     "company": "Regional Sales Manager at Claybourne Co",
+     "photo": "assets/img/people/lauren-marshall.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Chris Isley",
+     "role": "Chapter Leader",
+     "company": "Vice President of Sales at Temeka Group",
+     "photo": "assets/img/people/chris-isley.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "John Ayers",
+     "role": "Chapter Leader",
+     "company": "General Manager, PH Solutions Lab",
+     "photo": "assets/img/people/john-ayers.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Steve Ramos",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "oregon",
+   "name": "Oregon",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Portland",
+   "state": "OR",
+   "status": "forming",
+   "lat": 45.52,
+   "lon": -122.68,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": []
+  },
+  {
+   "slug": "colorado",
+   "name": "Colorado",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Denver",
+   "state": "CO",
+   "status": "active",
+   "lat": 39.74,
+   "lon": -104.99,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Tyler Works",
+     "role": "Regional Chair",
+     "company": "Chief Growth Officer",
+     "photo": "assets/img/people/tyler-works-colorado.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Rachel Johnson",
+     "role": "Executive Vice Chair and Colorado Regional Chair",
+     "company": "VP of Marketing & Business Development",
+     "photo": "assets/img/people/rachel-johnson.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Xavier Jaillet",
+     "role": "Legislative Chair",
+     "company": "Attorney, Executive Compensation",
+     "photo": "assets/img/people/xavier-jaillet.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Jenny Germano",
+     "role": "Chapter Leader",
+     "company": "President/ Founder",
+     "photo": "assets/img/people/jenny-germano.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Greg King",
+     "role": "Chapter Leader",
+     "company": "Vice President, Property & Casualty",
+     "photo": "assets/img/people/greg-king.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Lawrence Cagigal",
+     "role": "Chapter Leader",
+     "company": "Key Accounts and New Market Expansion",
+     "photo": "assets/img/people/lawrence-cagigal.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Ted Menadier",
+     "role": "Chapter Leader",
+     "company": "Cannabis Consultant and Expert Witness",
+     "photo": "assets/img/people/ted-menadier.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Halston Puchek",
+     "role": "Chapter Leader",
+     "company": "Business Development Manager, Clark Hill",
+     "photo": "assets/img/people/halston-puchek.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Sandra Bergman",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Nick Renfro",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Craig Small",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "illinois",
+   "name": "Illinois",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Chicago",
+   "state": "IL",
+   "status": "active",
+   "lat": 41.88,
+   "lon": -87.63,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Bill Goldberg",
+     "role": "Regional Chair",
+     "company": "Attorney, Levin Ginsburg",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Corrie Wolosin",
+     "role": "Chapter Leader",
+     "company": "Senior Account Manager, Extract Consultants",
+     "photo": "assets/img/people/corrie-wolosin.webp",
+     "linkedin": "https://www.linkedin.com/in/corriewolosin/",
+     "website": ""
+    },
+    {
+     "name": "Ryan Thoma",
+     "role": "Chapter Leader",
+     "company": "Sr. Business Development Manager, QUESTCO",
+     "photo": "assets/img/people/ryan-thoma.webp",
+     "linkedin": "https://www.linkedin.com/in/ryan-thoma-a296aa148/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "minnesota",
+   "name": "Minnesota",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Minneapolis",
+   "state": "MN",
+   "status": "forming",
+   "lat": 44.98,
+   "lon": -93.27,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": []
+  },
+  {
+   "slug": "ohio",
+   "name": "Ohio",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Columbus",
+   "state": "OH",
+   "status": "forming",
+   "lat": 39.96,
+   "lon": -83.0,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": []
+  },
+  {
+   "slug": "michigan",
+   "name": "Michigan",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Detroit",
+   "state": "MI",
+   "status": "active",
+   "lat": 42.33,
+   "lon": -83.05,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Nicole Kennebeck",
+     "role": "Chapter Leader",
+     "company": "Director of Marketing at Lion Labs",
+     "photo": "assets/img/people/nicole-kennebeck.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Adam Blitchok",
+     "role": "Chapter Leader",
+     "company": "VP Client Executive",
+     "photo": "assets/img/people/adam-blitchok.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Ida Pearl Lee",
+     "role": "Chapter Leader",
+     "company": "Assistant Property Manager at Premier Property Management",
+     "photo": "assets/img/people/ida-pearl-lee.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Erin Moran",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO, High Supply Marketing, LLC",
+     "photo": "assets/img/people/erin-moran.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Nick Schrock",
+     "role": "Chapter Leader",
+     "company": "Owner at Schrock & Associates, LLC",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "iowa-nebraska",
+   "name": "Iowa & Nebraska",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Omaha",
+   "state": "NE",
+   "status": "active",
+   "lat": 41.26,
+   "lon": -95.93,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Shannon Allen",
+     "role": "Regional Chair",
+     "company": "Owner of HighSight Strategies",
+     "photo": "assets/img/people/shannon-allen-iowa-nebraska.webp",
+     "linkedin": "",
+     "website": "https://www.highsightstrategies.com/"
+    },
+    {
+     "name": "Rick Wagaman",
+     "role": "Chapter Leader",
+     "company": "Herbal-IQ Education & Consulting",
+     "photo": "assets/img/people/rick-wagaman.webp",
+     "linkedin": "https://www.linkedin.com/in/rick-wagaman-6a2bb8322/",
+     "website": ""
+    },
+    {
+     "name": "Crista Eggers",
+     "role": "Chapter Leader",
+     "company": "Nebraska Medical Cannabis Advocate & Ballot Initiative Campaign Manager, Nebraskans for Medical Marijuana",
+     "photo": "assets/img/people/crista-eggers.webp",
+     "linkedin": "https://www.linkedin.com/in/crista-eggers-142547221/",
+     "website": ""
+    },
+    {
+     "name": "Paige Harris",
+     "role": "Chapter Leader",
+     "company": "Sales Executive, Sweed",
+     "photo": "assets/img/people/paige-harris.webp",
+     "linkedin": "http://www.linkedin.com/in/paigeharris123113",
+     "website": ""
+    },
+    {
+     "name": "Kayla Weier",
+     "role": "Chapter Leader",
+     "company": "Iowa Sales Manager, Fable Libations",
+     "photo": "assets/img/people/kayla-weier.webp",
+     "linkedin": "https://www.linkedin.com/in/kayla-bertsch-7b5643324/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "tennessee",
+   "name": "Tennessee",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Nashville",
+   "state": "TN",
+   "status": "active",
+   "lat": 36.16,
+   "lon": -86.78,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Ariel Omarzu",
+     "role": "Regional Chair",
+     "company": "Sales Managing Director, Snapdragon Cannabis Co.",
+     "photo": "assets/img/people/ariel-omarzu.webp",
+     "linkedin": "",
+     "website": "http://www.SDCCTN.com"
+    }
+   ]
+  },
+  {
+   "slug": "florida",
+   "name": "Florida",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Miami",
+   "state": "FL",
+   "status": "active",
+   "lat": 25.76,
+   "lon": -80.19,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Shawn Credle",
+     "role": "Regional Chair",
+     "company": "Intl. Strategic Advisor, Marine Corps Veteran, C2G Advisory, a New Holland Group affiliate",
+     "photo": "assets/img/people/shawn-credle.webp",
+     "linkedin": "https://www.linkedin.com/in/shawncredle/",
+     "website": ""
+    },
+    {
+     "name": "Jennifer Makris",
+     "role": "Regional Vice Chair",
+     "company": "Cannabis Cash Queen, Cannabis Cash Consultants",
+     "photo": "assets/img/people/jennifer-makris.webp",
+     "linkedin": "https://www.linkedin.com/in/jennifersmakris/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "texas",
+   "name": "Texas",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Austin",
+   "state": "TX",
+   "status": "active",
+   "lat": 30.27,
+   "lon": -97.74,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Tom Zuber",
+     "role": "Regional Chair",
+     "company": "Managing Partner at Zuber Lawler cannabis law firm",
+     "photo": "assets/img/people/tom-zuber.webp",
+     "linkedin": "https://www.linkedin.com/in/tomzuber/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "oklahoma",
+   "name": "Oklahoma",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Oklahoma City",
+   "state": "OK",
+   "status": "active",
+   "lat": 35.47,
+   "lon": -97.52,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Lawrence Cagigal",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "assets/img/people/lawrence-cagigal.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Joanna Hamrick",
+     "role": "Chapter Leader",
+     "company": "General Manager, Primal Cannabis",
+     "photo": "assets/img/people/joanna-hamrick.webp",
+     "linkedin": "https://www.linkedin.com/in/joanna-hamrick-809953157/",
+     "website": ""
+    },
+    {
+     "name": "Chelsea Landow",
+     "role": "Chapter Leader",
+     "company": "CEO, Agape Co-op LLC",
+     "photo": "assets/img/people/chelsea-landow.webp",
+     "linkedin": "https://www.linkedin.com/in/chelsea-landow-7b6b0b2b/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "northeastern-us",
+   "name": "Northeastern US",
+   "region": "north-america",
+   "country": "United States",
+   "city": "New York",
+   "state": "NY",
+   "status": "active",
+   "lat": 40.71,
+   "lon": -74.0,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Joshua Bauchner",
+     "role": "Regional Chair",
+     "company": "Cannabis & Psychedelics and Commercial Litigation Partner at Mandelbaum Barrett PC",
+     "photo": "assets/img/people/joshua-bauchner-northeastern-us.webp",
+     "linkedin": "https://www.linkedin.com/in/joshuabauchner/",
+     "website": ""
+    },
+    {
+     "name": "Zach Levy",
+     "role": "Chapter Leader",
+     "company": "Partner The Anderson Firm, P.C.",
+     "photo": "assets/img/people/zach-levy.webp",
+     "linkedin": "https://www.linkedin.com/in/zachary-j-levy-2713b971/",
+     "website": ""
+    },
+    {
+     "name": "Dan Serard",
+     "role": "Chapter Leader",
+     "company": "Chief Revenue Officer, Cannabis Creative Group & CHAMP Digital",
+     "photo": "assets/img/people/dan-serard.webp",
+     "linkedin": "https://www.linkedin.com/in/dserard/",
+     "website": ""
+    },
+    {
+     "name": "Katie Motta",
+     "role": "Chapter Leader",
+     "company": "Founder & CEO, Jade Stone",
+     "photo": "assets/img/people/katie-motta.webp",
+     "linkedin": "https://www.linkedin.com/company/jade-stone-branding",
+     "website": ""
+    },
+    {
+     "name": "Daniela Williams",
+     "role": "Chapter Leader",
+     "company": "Director, Sales, Greenleaf Business Solutions",
+     "photo": "assets/img/people/daniela-williams.webp",
+     "linkedin": "https://www.linkedin.com/in/daniela-williams-4b338028/",
+     "website": ""
+    },
+    {
+     "name": "Sean Conley",
+     "role": "Chapter Leader",
+     "company": "CEO, MTXE Merchant Processing",
+     "photo": "assets/img/people/sean-conley.webp",
+     "linkedin": "",
+     "website": "https://www.mtxeconsulting.com/"
+    },
+    {
+     "name": "Mike Goral",
+     "role": "Chapter Leader",
+     "company": "Partner-In-Charge, National Cannabis and Hemp Practice at Armanino Advisory LLC",
+     "photo": "assets/img/people/mike-goral.webp",
+     "linkedin": "https://www.linkedin.com/in/goralmike/",
+     "website": ""
+    },
+    {
+     "name": "Stu Zakim",
+     "role": "Chapter Leader",
+     "company": "President, Bridge Strategic Communications",
+     "photo": "assets/img/people/stu-zakim.webp",
+     "linkedin": "https://www.linkedin.com/in/stu-zakim-91a157/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "dmv",
+   "name": "DC, Maryland & Virginia",
+   "region": "north-america",
+   "country": "United States",
+   "city": "Washington",
+   "state": "DC",
+   "status": "active",
+   "lat": 38.9,
+   "lon": -77.04,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Gabe Mendoza",
+     "role": "Regional Chair",
+     "company": "Sales Partner, J & J Merchant Services, LLC",
+     "photo": "assets/img/people/gabe-mendoza.webp",
+     "linkedin": "https://www.linkedin.com/in/gabriel-mendoza-500717220/",
+     "website": ""
+    },
+    {
+     "name": "Jonathan Wachs",
+     "role": "Chapter Leader",
+     "company": "Member, Dickinson Wright",
+     "photo": "assets/img/people/jonathan-wachs.webp",
+     "linkedin": "https://www.linkedin.com/in/jonwachs/",
+     "website": ""
+    },
+    {
+     "name": "Javier Arguello",
+     "role": "Chapter Leader",
+     "company": "Principal, FinEx Concierge Solutions Ltd.",
+     "photo": "assets/img/people/javier-arguello.webp",
+     "linkedin": "https://www.linkedin.com/in/javiermarguello/",
+     "website": ""
+    },
+    {
+     "name": "Amanda Sherman",
+     "role": "Chapter Leader",
+     "company": "",
+     "photo": "assets/img/people/amanda-sherman.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Tausif F. Lodi",
+     "role": "Chapter Leader",
+     "company": "Head of Business Development & CLO, Signal Financial Federal Credit Union",
+     "photo": "assets/img/people/tausif-f-lodi.webp",
+     "linkedin": "https://www.linkedin.com/in/tausiflodi/",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "puerto-rico",
+   "name": "Puerto Rico",
+   "region": "latin-america-caribbean",
+   "country": "Puerto Rico",
+   "city": "San Juan",
+   "state": "",
+   "status": "forming",
+   "lat": 18.47,
+   "lon": -66.11,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": []
+  },
+  {
+   "slug": "canada",
+   "name": "Canada",
+   "region": "north-america",
+   "country": "Canada",
+   "city": "Toronto",
+   "state": "ON",
+   "status": "active",
+   "lat": 43.65,
+   "lon": -79.38,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Alex Revich",
+     "role": "Regional Chair",
+     "company": "Strategy & Partnerships at Loosh Brands",
+     "photo": "assets/img/people/alex-revich-canada.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Philipp Melbinger",
+     "role": "Chapter Leader",
+     "company": "CEO of ePropel Digital Inc.",
+     "photo": "assets/img/people/philipp-melbinger.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Brayden York",
+     "role": "Chapter Leader",
+     "company": "Vice President, Cannabis Commercial Insurance",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Tamara Lilien",
+     "role": "Chapter Leader",
+     "company": "Subject-Matter Expert (SME), CannSell by WKT",
+     "photo": "assets/img/people/tamara-lilien.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Steven Grabenheimer",
+     "role": "Chapter Leader",
+     "company": "Co-Founder & Treasurer, Mary Jane Cones North America Inc.",
+     "photo": "assets/img/people/steven-grabenheimer.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Christopher Ward",
+     "role": "Chapter Leader",
+     "company": "President of North American Operations, Mary Jane Cones North America Inc.",
+     "photo": "assets/img/people/christopher-ward.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Peter Westcott",
+     "role": "Chapter Leader",
+     "company": "Cannabis Attorney & OF Counsel at Dickinson Wright",
+     "photo": "",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "latin-america",
+   "name": "Latin America",
+   "region": "latin-america-caribbean",
+   "country": "Brazil",
+   "city": "Sao Paulo",
+   "state": "",
+   "status": "active",
+   "lat": -23.55,
+   "lon": -46.63,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Mariana Larrea Arias",
+     "role": "Regional Chair",
+     "company": "Founder, MLA Legal & Consulting",
+     "photo": "assets/img/people/mariana-larrea-arias.webp",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "greater-europe",
+   "name": "Greater Europe",
+   "region": "europe",
+   "country": "Germany",
+   "city": "Berlin",
+   "state": "",
+   "status": "active",
+   "lat": 52.52,
+   "lon": 13.4,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Aleksandra Vujinovic",
+     "role": "Regional Chair",
+     "company": "Founder, AV LEGAL",
+     "photo": "assets/img/people/aleksandra-vujinovic.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Riccardo Longato",
+     "role": "Regional Vice Chair",
+     "company": "Co-Founder, Clear Italia",
+     "photo": "assets/img/people/riccardo-longato.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Ian Rassman",
+     "role": "Executive Vice Chair",
+     "company": "CEO of Rassman Payment Solutions",
+     "photo": "assets/img/people/ian-rassman.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Sonny Moerenhout",
+     "role": "Chapter Leader, Netherlands",
+     "company": "Managing Partner, Cultivators",
+     "photo": "assets/img/people/sonny-moerenhout.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Magdalena Wawrzyniak",
+     "role": "Chapter Leader, Poland",
+     "company": "Partner, Food & Pharma Legal",
+     "photo": "assets/img/people/magdalena-wawrzyniak.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Ruggero Stacchini",
+     "role": "Chapter Leader, Italy",
+     "company": "Health Farm Srl",
+     "photo": "assets/img/people/ruggero-stacchini.webp",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "eastern-asia",
+   "name": "Eastern Asia",
+   "region": "asia",
+   "country": "Japan",
+   "city": "Tokyo",
+   "state": "",
+   "status": "forming",
+   "lat": 35.68,
+   "lon": 139.69,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": []
+  },
+  {
+   "slug": "australia-pacific",
+   "name": "Australia Pacific",
+   "region": "oceania",
+   "country": "Australia",
+   "city": "Sydney",
+   "state": "",
+   "status": "active",
+   "lat": -33.87,
+   "lon": 151.21,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Todd McClellan",
+     "role": "Chapter Leader",
+     "company": "Managing Director & Co-Founder, Medigrowth",
+     "photo": "assets/img/people/todd-mcclellan.webp",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  },
+  {
+   "slug": "pan-africa",
+   "name": "Pan Africa",
+   "region": "africa",
+   "country": "Uganda",
+   "city": "Kampala",
+   "state": "",
+   "status": "active",
+   "lat": 0.35,
+   "lon": 32.58,
+   "contact": "Info@TheCannabisChamber.com",
+   "leaders": [
+    {
+     "name": "Anthony Tublu",
+     "role": "Ghana Chair",
+     "company": "Founder, Pendinaco Company Limited",
+     "photo": "assets/img/people/anthony-tublu.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Dr. Cephas Delalorm",
+     "role": "Chapter Leader, Ghana",
+     "company": "Lecturer, University of Environment and Sustainable Development",
+     "photo": "assets/img/people/dr-cephas-delalorm.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Major General Charles Kodjo Abede Asomaning Awity (Retired)",
+     "role": "Chapter Leader, Ghana",
+     "company": "Founder & CEO, CeeKAAA Company Limited",
+     "photo": "assets/img/people/major-general-charles-kodjo-abede-asomaning-awity-retired.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Irene Agbekorvi",
+     "role": "Chapter Leader, Ghana",
+     "company": "Lead Coordinator, Women Farmer Engagement & Agricultural Extension (Volunteer), Ministry of Agriculture",
+     "photo": "assets/img/people/irene-agbekorvi.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Daniel Dodzi",
+     "role": "Chapter Leader, Ghana",
+     "company": "Head of Finance for the Greater Accra Regional Hospital & CEO, Zipat Ventures",
+     "photo": "assets/img/people/daniel-dodzi.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Shane Benis",
+     "role": "Uganda Chair",
+     "company": "Chief Development Officer, Co-Founder, Maisha Pharma",
+     "photo": "assets/img/people/shane-benis.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Brett Rierson",
+     "role": "Chapter Leader, Uganda",
+     "company": "Founder / Chief Executive Officer, Maisha Pharma, Uganda",
+     "photo": "assets/img/people/brett-rierson.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Wesley Petzer",
+     "role": "Chapter Leader",
+     "company": "Brand Representative and Growing Consultant, Atami Nutrients",
+     "photo": "assets/img/people/wesley-petzer.webp",
+     "linkedin": "",
+     "website": ""
+    },
+    {
+     "name": "Timothy Fulton",
+     "role": "Chapter Leader",
+     "company": "Sales & Marketing Specialist, White Lion Holdings",
+     "photo": "assets/img/people/timothy-fulton.webp",
+     "linkedin": "",
+     "website": ""
+    }
+   ]
+  }
+ ]
+}

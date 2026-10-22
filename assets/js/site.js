@@ -141,6 +141,8 @@
   }
   function initReveals() {
     if (!window.IntersectionObserver || !allowed()) return;
+    if (window.innerWidth < 768) return;
+    setTimeout(function () { if (!doc.hidden) settleAll(); }, 3000);
     if (doc.hidden) {
       doc.addEventListener("visibilitychange", function wake() {
         if (doc.hidden) return;
@@ -329,6 +331,57 @@
   doc.readyState === "loading" ? doc.addEventListener("DOMContentLoaded", boot) : boot();
   CCC.motion = { allowed: allowed, set: setMotion, impulse: impulse, guide: moveGuide, rollCount: rollCount, streak: STREAK };
 })();
+try{
+(function () {
+  "use strict";
+  /* Hide events whose end date has passed, so a static page never shows a stale date. */
+  var d = new Date();
+  var today = d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2);
+  function qa(s, c) { return [].slice.call((c || document).querySelectorAll(s)); }
+  function run() {
+    var gone = 0;
+    qa("[data-end]").forEach(function (el) {
+      if (el.getAttribute("data-end") < today) { el.parentNode.removeChild(el); gone++; }
+    });
+    if (!gone) return;
+    qa(".ev-month").forEach(function (g) { if (!g.querySelector(".event-row")) g.parentNode.removeChild(g); });
+    var n = qa(".ev-row").length;
+    qa(".result-count__n").forEach(function (el) { el.textContent = n; });
+    qa("[data-filter-key]").forEach(function (chip) {
+      var k = chip.getAttribute("data-filter-key"), v = chip.getAttribute("data-filter-value");
+      var c = qa(".ev-row").filter(function (r) { return r.getAttribute("data-" + k) === v; }).length;
+      var cnt = chip.querySelector(".chip__count");
+      if (cnt) cnt.textContent = c;
+      if (!c) chip.parentNode.removeChild(chip);
+    });
+    var sec = document.querySelector("[data-chapter]");
+    if (sec) {
+      var own = sec.querySelector("[data-own]");
+      if (own && !own.querySelector(".event-row")) {
+        own.parentNode.removeChild(own);
+        var e = sec.querySelector("[data-own-empty]"), a = sec.querySelector("[data-also]");
+        if (e) e.hidden = false;
+        if (a) a.hidden = false;
+      }
+      var also = sec.querySelector("[data-also]");
+      if (also && !also.querySelector(".event-row")) {
+        var none = also.querySelector("[data-also-none]");
+        if (none) none.hidden = false;
+      }
+    }
+    var strip = document.querySelector(".event-strip");
+    if (strip && !strip.querySelector(".event-strip__item")) {
+      var li = document.createElement("li");
+      li.className = "event-strip__item event-strip__item--none";
+      li.textContent = "No events are scheduled right now.";
+      strip.appendChild(li);
+    }
+    var emp = document.querySelector("[data-empty]");
+    if (emp && !n && document.querySelector(".ev-row, .result-count__n")) emp.hidden = false;
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", run); else run();
+})();
+}catch(e){console.error('expiry.js',e)}
 try{
 (function () {
   "use strict";
