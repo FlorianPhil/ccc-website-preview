@@ -2164,3 +2164,16 @@
 /* Page hero banner: fixed-height photo band under the page head (data-driven, see data/README.md) */
 .page-hero { margin: 0; border-top: var(--rule); background: var(--ink); }
 .page-hero img { display: block; width: 100%; height: clamp(200px, 28vw, 440px); object-fit: cover; object-position: 50% 40%; }
+
+/* spacing pass: date tile padding, count legends with gaps */
+.event-row .date-block { padding: 14px 16px; border: 1px solid var(--ink); align-self: start; justify-items: start; }
+.event-row .date-block__day { font-size: 36px; }
+.region-index__count, .ch-group__count { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
+/* region index: North America full width, smaller regions in an even grid with real gutters */
+.region-index { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); column-gap: 32px; }
+.region-index > * { display: block; min-width: 0; }
+.region-index > :first-child { grid-column: 1 / -1; }
+.region-index > :not(:first-child) .region-index__group { grid-template-columns: minmax(0, 1fr); gap: 8px; height: 100%; }
+.region-index > :not(:first-child) .region-index__count { align-self: start; }
+html.motion-ok .region-index .r3-w, html.motion-ok .region-index .r3-w > span { display: block; height: 100%; }
+.ch-world__svg { -webkit-user-select: none; user-select: none; }

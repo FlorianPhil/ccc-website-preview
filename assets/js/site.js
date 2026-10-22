@@ -1557,13 +1557,33 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
     var nz = Math.min(Math.max(z * f, 1), MAX), k = z / nz;
     cx = ux + (cx - ux) * k; cy = uy + (cy - uy) * k; z = nz; apply();
   }
+  // Buttons and double-click glide to the new view; drag, wheel and pinch stay direct
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)"), raf = 0;
+  function glide(nz, ux, uy) {
+    nz = Math.min(Math.max(nz, 1), MAX);
+    var k = z / nz, tx = ux + (cx - ux) * k, ty = uy + (cy - uy) * k;
+    cancelAnimationFrame(raf);
+    if (still.matches || document.documentElement.getAttribute("data-motion") === "off") { z = nz; cx = tx; cy = ty; apply(); return; }
+    var z0 = z, x0 = cx, y0 = cy, t0 = performance.now(), MS = 560;
+    (function step(now) {
+      var p = Math.min((now - t0) / MS, 1), e = 1 - Math.pow(1 - p, 3);
+      z = z0 * Math.pow(nz / z0, e); cx = x0 + (tx - x0) * e; cy = y0 + (ty - y0) * e; apply();
+      if (p < 1) raf = requestAnimationFrame(step);
+    })(t0);
+  }
   fig.addEventListener("click", function (e) {
     var b = e.target.closest("[data-zoom]");
     if (!b) return;
     var m = b.getAttribute("data-zoom");
-    if (m === "reset") { z = 1; cx = W / 2; cy = H / 2; apply(); }
-    else if (m === "in" && z === 1 && home) { cx = home[0]; cy = home[1]; zoomAt(1.6, cx, cy); }
-    else zoomAt(m === "in" ? 1.6 : 1 / 1.6, cx, cy);
+    if (m === "reset") glide(1, W / 2, H / 2);
+    else if (m === "in" && z === 1 && home) { cx = home[0]; cy = home[1]; glide(1.6, cx, cy); }
+    else glide(z * (m === "in" ? 1.6 : 1 / 1.6), cx, cy);
+  });
+  // Double-click zooms in on that spot; shift double-click zooms out
+  svg.addEventListener("dblclick", function (e) {
+    e.preventDefault();
+    var u = toUnits(e.clientX, e.clientY);
+    glide(e.shiftKey ? z / 2 : z * 2, u[0], u[1]);
   });
   // Plain wheel keeps scrolling the page; ctrl or cmd wheel (and trackpad pinch) zooms
   svg.addEventListener("wheel", function (e) {
@@ -1574,6 +1594,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   }, { passive: false });
   var pts = {}, last = null, moved = 0;
   svg.addEventListener("pointerdown", function (e) {
+    cancelAnimationFrame(raf);
     pts[e.pointerId] = [e.clientX, e.clientY]; last = { x: e.clientX, y: e.clientY }; moved = 0;
     if (z > 1) e.preventDefault();
   });
