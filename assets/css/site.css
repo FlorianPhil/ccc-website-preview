@@ -2083,13 +2083,11 @@
 @media (max-width: 479px) { .statband__list { gap: 12px; } .statband__item { padding-left: 10px; } .statband__l { font-size: 11px; } }
 
 .home-hero__photo { position: relative; z-index: 3; margin: 0; border-top: var(--rule); background: var(--ink); }
-.home-hero__photo img { width: 100%; height: clamp(180px, 26vw, 360px); object-fit: cover; object-position: 50% 35%; filter: grayscale(.35) contrast(1.02); }
-.home-hero__photo::after { content: ""; position: absolute; inset: 0; background: var(--forest); mix-blend-mode: soft-light; opacity: .35; pointer-events: none; }
+.home-hero__photo img { width: 100%; height: clamp(240px, 34vw, 520px); object-fit: cover; object-position: 50% 40%; }
 @media (max-width: 767px) {
   .home-hero { display: flex; flex-direction: column; }
   .home-hero__inner { order: 1; }
-  .home-hero .field { order: 2; }
-  .home-hero .motion-pause { order: 3; }
+  .home-hero .field, .home-hero .motion-pause { display: none; }
   .home-hero__photo { order: 4; }
   .home-hero h1 { max-width: none; }
 }
