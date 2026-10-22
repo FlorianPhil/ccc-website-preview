@@ -2140,3 +2140,7 @@
   .ch-legend { position: static; }
   .ch-lab { font-size: 13px; }
 }
+
+/* Page hero banner: fixed-height photo band under the page head (data-driven, see data/README.md) */
+.page-hero { margin: 0; border-top: var(--rule); background: var(--ink); }
+.page-hero img { display: block; width: 100%; height: clamp(200px, 28vw, 440px); object-fit: cover; object-position: 50% 40%; }

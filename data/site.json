@@ -1,3 +1,19 @@
 {
- "eventsPerYear": 75
+ "eventsPerYear": 75,
+ "heroes": {
+  "home": "home-hero",
+  "about": "about",
+  "events": "events",
+  "membership": "membership",
+  "contact": "contact",
+  "resources": "resources",
+  "chapters": "chapters"
+ },
+ "heroAlt": {
+  "about": "Chamber leaders around a board table, talking through plans",
+  "events": "Attendees meeting and shaking hands on a busy Chamber event floor",
+  "membership": "New members being welcomed at a Chamber event",
+  "contact": "A Chamber team member welcoming a visitor at a reception counter",
+  "chapters": "Professionals from many countries sharing a toast at a Chamber gathering"
+ }
 }

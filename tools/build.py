@@ -421,6 +421,71 @@ def breadcrumbs(s, rel):
     return s.replace('</head>', '<script type="application/ld+json" data-breadcrumbs>%s</script>\n</head>' % ld, 1)
 
 
+HERO_DIR = 'assets/img/heroes/'
+HERO_WIDTHS = (480, 800, 1200)
+BANNER_PAGES = {'about/index.html': 'about', 'events/index.html': 'events', 'membership/index.html': 'membership',
+                'contact/index.html': 'contact', 'chapters/index.html': 'chapters'}
+
+
+def hero_for(rel):
+    """Return (hero name, page key) for a page, from data (chapters[].hero, site.json heroes)."""
+    H_ = SITE.get('heroes', {})
+    m = re.match(r'chapters/([^/]+)/index\.html$', rel)
+    if m and m.group(1) in BY_SLUG:
+        return BY_SLUG[m.group(1)].get('hero') or H_.get('chapters')
+    top = rel.split('/')[0]
+    if rel == 'index.html':
+        return H_.get('home')
+    if top == 'chapters':
+        return H_.get('chapters')
+    if top == 'members':
+        return H_.get('membership')
+    return H_.get(top) or H_.get('home')
+
+
+def hero_alt(rel, c=None):
+    if c:
+        return 'Members at a gathering of the %s Chamber chapter' % c['name']
+    return SITE.get('heroAlt', {}).get(BANNER_PAGES.get(rel, ''), '')
+
+
+def banner_html(name, alt):
+    w, h = img_size(HERO_DIR + name + '.webp')
+    ss = ', '.join('%s%s%s-%dw.webp %dw' % (P, HERO_DIR, name, x, x) for x in HERO_WIDTHS)
+    ss += ', %s%s%s.webp %dw' % (P, HERO_DIR, name, w)
+    return ('<figure class="page-hero" data-hero><img src="%s%s%s.webp" srcset="%s" sizes="100vw" alt="%s" width="%d" height="%d" '
+            'loading="eager" decoding="async" data-origin="ai-generated"></figure>' % (P, HERO_DIR, name, ss, esc(alt), w, h))
+
+
+def close_of(s, start):
+    """Index just after the element that opens at s[start] (same-tag nesting aware)."""
+    tag = re.match(r'<(\w+)', s[start:]).group(1)
+    depth, pos = 0, start
+    for m in re.finditer(r'<(/?)%s\b[^>]*>' % tag, s[start:]):
+        depth += -1 if m.group(1) else 1
+        if depth == 0:
+            return start + m.end()
+    return None
+
+
+def apply_hero(s, rel):
+    name = hero_for(rel)
+    if not name:
+        return s
+    url = ORIGIN + P + HERO_DIR + name + '.webp'
+    s = re.sub(r'(<meta property="og:image" content=")[^"]*(")', lambda m: m.group(1) + url + m.group(2), s, count=1)
+    s = s.replace(ORIGIN + P + 'assets/img/other/home-hero-event-photo.webp', url)
+    if rel in BANNER_PAGES or re.match(r'chapters/[^/]+/index\.html$', rel):
+        c = BY_SLUG.get(rel.split('/')[1]) if rel.startswith('chapters/') and rel != 'chapters/index.html' else None
+        s = re.sub(r'<figure class="page-hero" data-hero>.*?</figure>\n?', '', s, flags=re.S)
+        m = re.search(r'<main[^>]*>\s*(<(?:header|section)\b)', s)
+        if m:
+            end = close_of(s, m.start(1))
+            if end:
+                s = s[:end] + '\n' + banner_html(name, hero_alt(rel, c)) + s[end:]
+    return s
+
+
 def process(path):
     rel = str(path.relative_to(ROOT))
     s = path.read_text(encoding='utf-8')
@@ -449,6 +514,7 @@ def process(path):
             old = re.search(r'<section class="section surface-ivory cd-events".*?</section>', s, re.S)
             if old:
                 s = s.replace(old.group(0), chapter_events_section(c, old.group(0)), 1)
+    s = apply_hero(s, rel)
     s = breadcrumbs(s, rel)
     if s != o:
         path.write_text(s, encoding='utf-8')

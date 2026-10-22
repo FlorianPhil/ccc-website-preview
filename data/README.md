@@ -35,6 +35,12 @@ Per continent: name, box [lon0, lon1, lat0, lat1], k, cx, width, height, path. G
 ## site.json
 
 `eventsPerYear`: editorial figure shown on the home page.
+`heroes`: page key (home, about, events, membership, contact, resources, chapters) to a hero name in `assets/img/heroes/`.
+`heroAlt`: alt text for the banner on each page key.
+
+## Heroes
+
+Images live in `assets/img/heroes/<name>.webp` (1600w) plus `-480w`, `-800w`, `-1200w`. Each chapter in `chapters.json` has a `hero` field (a hero name; US chapters share four regional heroes). The build sets og:image per page and inserts a `.page-hero` banner on about, events, membership, contact, chapters and each chapter page. All hero images are AI-generated scenes of invented people.
 
 ## Number markers
 

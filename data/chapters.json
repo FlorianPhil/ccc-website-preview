@@ -90,7 +90,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "san-diego",
@@ -152,7 +153,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "orange-county",
@@ -222,7 +224,8 @@
      "linkedin": "https://www.linkedin.com/in/jakki-hernandez/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "bay-area",
@@ -292,7 +295,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "sacramento",
@@ -338,7 +342,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "riverside-san-bernardino",
@@ -416,7 +421,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-west-coast"
   },
   {
    "slug": "oregon",
@@ -429,7 +435,8 @@
    "lat": 45.52,
    "lon": -122.68,
    "contact": "Info@TheCannabisChamber.com",
-   "leaders": []
+   "leaders": [],
+   "hero": "us-west-coast"
   },
   {
    "slug": "colorado",
@@ -531,7 +538,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-mountain-south"
   },
   {
    "slug": "illinois",
@@ -569,7 +577,8 @@
      "linkedin": "https://www.linkedin.com/in/ryan-thoma-a296aa148/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-midwest"
   },
   {
    "slug": "minnesota",
@@ -582,7 +591,8 @@
    "lat": 44.98,
    "lon": -93.27,
    "contact": "Info@TheCannabisChamber.com",
-   "leaders": []
+   "leaders": [],
+   "hero": "us-midwest"
   },
   {
    "slug": "ohio",
@@ -595,7 +605,8 @@
    "lat": 39.96,
    "lon": -83.0,
    "contact": "Info@TheCannabisChamber.com",
-   "leaders": []
+   "leaders": [],
+   "hero": "us-midwest"
   },
   {
    "slug": "michigan",
@@ -649,7 +660,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-midwest"
   },
   {
    "slug": "iowa-nebraska",
@@ -703,7 +715,8 @@
      "linkedin": "https://www.linkedin.com/in/kayla-bertsch-7b5643324/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-midwest"
   },
   {
    "slug": "tennessee",
@@ -725,7 +738,8 @@
      "linkedin": "",
      "website": "http://www.SDCCTN.com"
     }
-   ]
+   ],
+   "hero": "us-mountain-south"
   },
   {
    "slug": "florida",
@@ -755,7 +769,8 @@
      "linkedin": "https://www.linkedin.com/in/jennifersmakris/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-mountain-south"
   },
   {
    "slug": "texas",
@@ -777,7 +792,8 @@
      "linkedin": "https://www.linkedin.com/in/tomzuber/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-mountain-south"
   },
   {
    "slug": "oklahoma",
@@ -815,7 +831,8 @@
      "linkedin": "https://www.linkedin.com/in/chelsea-landow-7b6b0b2b/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-mountain-south"
   },
   {
    "slug": "northeastern-us",
@@ -893,7 +910,8 @@
      "linkedin": "https://www.linkedin.com/in/stu-zakim-91a157/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-east"
   },
   {
    "slug": "dmv",
@@ -947,7 +965,8 @@
      "linkedin": "https://www.linkedin.com/in/tausiflodi/",
      "website": ""
     }
-   ]
+   ],
+   "hero": "us-east"
   },
   {
    "slug": "puerto-rico",
@@ -960,7 +979,8 @@
    "lat": 18.47,
    "lon": -66.11,
    "contact": "Info@TheCannabisChamber.com",
-   "leaders": []
+   "leaders": [],
+   "hero": "puerto-rico"
   },
   {
    "slug": "canada",
@@ -1030,7 +1050,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "canada"
   },
   {
    "slug": "latin-america",
@@ -1052,7 +1073,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "latin-america"
   },
   {
    "slug": "greater-europe",
@@ -1114,7 +1136,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "greater-europe"
   },
   {
    "slug": "eastern-asia",
@@ -1127,7 +1150,8 @@
    "lat": 35.68,
    "lon": 139.69,
    "contact": "Info@TheCannabisChamber.com",
-   "leaders": []
+   "leaders": [],
+   "hero": "eastern-asia"
   },
   {
    "slug": "australia-pacific",
@@ -1149,7 +1173,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "australia-pacific"
   },
   {
    "slug": "pan-africa",
@@ -1235,7 +1260,8 @@
      "linkedin": "",
      "website": ""
     }
-   ]
+   ],
+   "hero": "pan-africa"
   }
  ]
 }
