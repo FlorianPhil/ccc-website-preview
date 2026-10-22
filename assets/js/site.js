@@ -272,7 +272,7 @@
       var r = rail.getBoundingClientRect(), h = r.height;
       var top = after ? Math.max(0, Math.min(h, after.getBoundingClientRect().bottom - r.top)) : 0;
       var bot = before ? Math.max(0, Math.min(h, r.bottom - before.getBoundingClientRect().top)) : 0;
-      rail.style.clipPath = "inset(" + top.toFixed(1) + "px -8px " + bot.toFixed(1) + "px -8px)";
+      rail.style.clipPath = "inset(" + top.toFixed(1) + "px -16px " + bot.toFixed(1) + "px -16px)";
       rail.classList.toggle("is-shown", top + bot < h - 24);
       ticks.forEach(function (t, i) { t.classList.toggle("is-on", !on || (secs[i] && secs[i].getBoundingClientRect().top < vh() / 2)); });
     }
@@ -1314,7 +1314,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
     ctx.fillStyle = FIELD.background;
     ctx.fillRect(0, 0, w, h);
     ctx.setTransform(s, 0, 0, s, dx, dy);
-    var guideWidth = Math.max(1.2, (this.ratio_ || 1) / s);
+    var guideWidth = Math.max(2, (this.ratio_ || 1) / s);
     for (var ri = 0; ri < this.routes.length; ri++) {
       var entry = this.routes[ri], r = entry.r, i = r.index, dir = entry.dir, total = r.total;
       ctx.globalAlpha = P.guides;
@@ -1522,4 +1522,90 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   CCC.signature = { init: init, initAll: initAll, allowed: motionAllowed };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { initAll(); });
   else initAll();
+})();
+
+/* Chapters world map: zoom buttons, ctrl or pinch wheel, two-finger pinch and drag to pan.
+   Zoom rewrites the SVG viewBox; --z keeps pins and labels at screen size. A region hash opens its accordion. */
+(function () {
+  var fig = document.querySelector("[data-world]");
+  if (!fig) return;
+  var svg = fig.querySelector("svg");
+  var W = +svg.getAttribute("data-w"), H = +svg.getAttribute("data-h");
+  var z = 1, cx = W / 2, cy = H / 2, MAX = 8;
+  // First zoom heads for the chapter cluster rather than the middle of the ocean
+  var home = null, pins = svg.querySelectorAll(".ch-pin");
+  if (pins.length) {
+    var xs = [], ys = [];
+    pins.forEach(function (p) { var t = p.transform.baseVal.consolidate(); if (t) { xs.push(t.matrix.e); ys.push(t.matrix.f); } });
+    var mid = function (a) { a.sort(function (m, n) { return m - n; }); return a[a.length >> 1]; };
+    if (xs.length) home = [mid(xs), mid(ys)];
+  }
+  function apply() {
+    z = Math.min(Math.max(z, 1), MAX);
+    var vw = W / z, vh = H / z;
+    cx = Math.min(Math.max(cx, vw / 2), W - vw / 2);
+    cy = Math.min(Math.max(cy, vh / 2), H - vh / 2);
+    svg.setAttribute("viewBox", (cx - vw / 2).toFixed(1) + " " + (cy - vh / 2).toFixed(1) + " " + vw.toFixed(1) + " " + vh.toFixed(1));
+    svg.style.setProperty("--z", z.toFixed(3));
+    fig.classList.toggle("is-zoomed", z > 1.6);
+  }
+  function toUnits(clientX, clientY) {
+    var r = svg.getBoundingClientRect();
+    return [cx + ((clientX - r.left) / r.width - .5) * W / z, cy + ((clientY - r.top) / r.height - .5) * H / z];
+  }
+  function zoomAt(f, ux, uy) {
+    var nz = Math.min(Math.max(z * f, 1), MAX), k = z / nz;
+    cx = ux + (cx - ux) * k; cy = uy + (cy - uy) * k; z = nz; apply();
+  }
+  fig.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-zoom]");
+    if (!b) return;
+    var m = b.getAttribute("data-zoom");
+    if (m === "reset") { z = 1; cx = W / 2; cy = H / 2; apply(); }
+    else if (m === "in" && z === 1 && home) { cx = home[0]; cy = home[1]; zoomAt(1.6, cx, cy); }
+    else zoomAt(m === "in" ? 1.6 : 1 / 1.6, cx, cy);
+  });
+  // Plain wheel keeps scrolling the page; ctrl or cmd wheel (and trackpad pinch) zooms
+  svg.addEventListener("wheel", function (e) {
+    if (!e.ctrlKey && !e.metaKey) return;
+    e.preventDefault();
+    var u = toUnits(e.clientX, e.clientY);
+    zoomAt(Math.exp(-e.deltaY * .01), u[0], u[1]);
+  }, { passive: false });
+  var pts = {}, last = null, moved = 0;
+  svg.addEventListener("pointerdown", function (e) {
+    pts[e.pointerId] = [e.clientX, e.clientY]; last = { x: e.clientX, y: e.clientY }; moved = 0;
+    if (z > 1) e.preventDefault();
+  });
+  window.addEventListener("pointermove", function (e) {
+    if (!pts[e.pointerId]) return;
+    pts[e.pointerId] = [e.clientX, e.clientY];
+    var ids = Object.keys(pts), r = svg.getBoundingClientRect();
+    if (ids.length === 2) {
+      var a = pts[ids[0]], b = pts[ids[1]];
+      var d = Math.hypot(a[0] - b[0], a[1] - b[1]), m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+      if (last && last.d) { var u = toUnits(m[0], m[1]); zoomAt(d / last.d, u[0], u[1]); }
+      last = { d: d };
+    } else if (z > 1) {
+      if (last && last.x != null) {
+        var dx = e.clientX - last.x, dy = e.clientY - last.y;
+        moved += Math.abs(dx) + Math.abs(dy);
+        cx -= dx / r.width * W / z; cy -= dy / r.height * H / z; apply();
+      }
+      last = { x: e.clientX, y: e.clientY };
+    }
+  });
+  function up(e) { delete pts[e.pointerId]; last = null; }
+  window.addEventListener("pointerup", up);
+  window.addEventListener("pointercancel", up);
+  // A drag that panned the map should not follow the pin link under the pointer
+  svg.addEventListener("click", function (e) { if (moved > 6) { e.preventDefault(); moved = 0; } }, true);
+  svg.style.touchAction = "pan-y";
+  apply();
+  function openHash() {
+    var d = location.hash && document.getElementById(location.hash.slice(1));
+    if (d && d.tagName === "DETAILS") d.open = true;
+  }
+  window.addEventListener("hashchange", openHash);
+  openHash();
 })();

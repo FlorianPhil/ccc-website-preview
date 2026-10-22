@@ -135,83 +135,66 @@ def spread(pts, w, h, mind=15.0, iters=140):
     return pos
 
 
-def overlap(a, b):
-    return not (a[2] <= b[0] or b[2] <= a[0] or a[3] <= b[1] or b[3] <= a[1])
-
-
-def map_svg(region):
-    cont = CONT[region['continent']]
-    w, h = cont['width'], cont['height']
-    chs = region_chapters(region['key'])
-    true = [project(c, cont) for c in chs]
-    pos = spread(true, w, h)
-    uid = region['anchor']
-    boxes = [(p[0] - 8, p[1] - 8, p[0] + 8, p[1] + 8) for p in pos]
-    placed = []
-    labels = {}
-    order = sorted(range(len(chs)), key=lambda i: (chs[i]['status'] != 'active', i))
-    for i in order:
-        txt = chs[i]['name']
-        tw = len(txt) * 6.1 + 4
-        px, py = pos[i]
-        cands = [
-            (px + 11, py - 6, px + 11 + tw, py + 7, 'start', px + 11, py + 4),
-            (px - 11 - tw, py - 6, px - 11, py + 7, 'end', px - 11, py + 4),
-            (px - tw / 2, py - 22, px + tw / 2, py - 9, 'middle', px, py - 12),
-            (px - tw / 2, py + 9, px + tw / 2, py + 22, 'middle', px, py + 19),
-        ]
-        for (x0, y0, x1, y1, anchor, tx, ty) in cands:
-            if x0 < 2 or x1 > w - 2 or y0 < 2 or y1 > h - 2:
-                continue
-            bb = (x0, y0, x1, y1)
-            if any(overlap(bb, o) for j, o in enumerate(boxes) if j != i) or any(overlap(bb, o) for o in placed):
-                continue
-            placed.append(bb)
-            labels[i] = (tx, ty, anchor)
-            break
-    parts = ['<svg class="ch-svg" viewBox="0 0 %d %d" role="group" aria-label="%s chapter map" focusable="false">' % (w, h, esc(region['label']))]
-    parts.append('<defs><pattern id="dots-%s" width="8" height="8" patternUnits="userSpaceOnUse"><circle cx="4" cy="4" r="1.15" class="ch-dot"/></pattern>'
-                 '<clipPath id="land-%s"><path d="%s"/></clipPath></defs>' % (uid, uid, cont['path']))
-    parts.append('<rect width="%d" height="%d" fill="url(#dots-%s)" clip-path="url(#land-%s)"/>' % (w, h, uid, uid))
-    parts.append('<path class="ch-land" d="%s"/>' % cont['path'])
-    for i, c in enumerate(chs):
-        if math.hypot(pos[i][0] - true[i][0], pos[i][1] - true[i][1]) > 2.5:
-            parts.append('<line class="ch-lead-line" x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f"/><circle class="ch-true" cx="%.1f" cy="%.1f" r="1.8"/>'
-                         % (true[i][0], true[i][1], pos[i][0], pos[i][1], true[i][0], true[i][1]))
-    for i, c in enumerate(chs):
-        st = c['status']
-        parts.append('<a class="ch-pin ch-pin--%s" href="%schapters/%s/"><title>%s, %s</title><circle class="ch-pin__hit" cx="%.1f" cy="%.1f" r="11"/><circle class="ch-pin__dot" cx="%.1f" cy="%.1f" r="6"/></a>'
-                     % ('soon' if st == 'coming-soon' else st, P, c['slug'], esc(c['name']), STATE_LABEL[st].lower(), pos[i][0], pos[i][1], pos[i][0], pos[i][1]))
-    for i, (tx, ty, anchor) in labels.items():
-        parts.append('<text class="ch-lab" x="%.1f" y="%.1f" text-anchor="%s" aria-hidden="true">%s</text>' % (tx, ty, anchor, esc(chs[i]['name'])))
-    parts.append('</svg>')
-    return ''.join(parts)
-
-
 LEGEND = ('<ul class="ch-legend" role="list" aria-label="Map key">'
           '<li><span class="ch-legend__dot ch-legend__dot--active" aria-hidden="true"></span>Active chapter</li>'
           '<li><span class="ch-legend__dot ch-legend__dot--forming" aria-hidden="true"></span>Forming</li>'
           '<li><span class="ch-legend__dot ch-legend__dot--soon" aria-hidden="true"></span>Coming soon</li></ul>')
 
 
+REGION_IMG = 'assets/img/regions/'
+
+
+def world_svg():
+    """One world map for the chapters page: every pin, colored by status. site.js adds zoom and pan."""
+    cont = CONT['world']
+    w, h = cont['width'], cont['height']
+    true = [project(c, cont) for c in CHAPTERS]
+    pos = spread(true, w, h, mind=9.0)
+    parts = ['<svg class="ch-world__svg" viewBox="0 0 %d %d" role="group" aria-label="World map of Chamber chapters" focusable="false" data-w="%d" data-h="%d">' % (w, h, w, h)]
+    parts.append('<defs><pattern id="dots-world" width="6" height="6" patternUnits="userSpaceOnUse"><circle cx="3" cy="3" r=".9" class="ch-dot"/></pattern>'
+                 '<clipPath id="land-world"><path d="%s"/></clipPath></defs>' % cont['path'])
+    parts.append('<rect width="%d" height="%d" fill="url(#dots-world)" clip-path="url(#land-world)"/>' % (w, h))
+    parts.append('<path class="ch-land" d="%s"/>' % cont['path'])
+    for i, c in enumerate(CHAPTERS):
+        st = 'soon' if c['status'] == 'coming-soon' else c['status']
+        parts.append('<a class="ch-pin ch-pin--%s" href="%schapters/%s/" transform="translate(%.1f %.1f)"><title>%s, %s</title>'
+                     '<g class="ch-pin__s"><circle class="ch-pin__hit" r="10"/><circle class="ch-pin__halo" r="7.5"/><circle class="ch-pin__dot" r="4.5"/>'
+                     '<text class="ch-lab" x="8" y="3.5" aria-hidden="true">%s</text></g></a>'
+                     % (st, P, c['slug'], pos[i][0], pos[i][1], esc(c['name']), STATE_LABEL[c['status']].lower(), esc(c['name'])))
+    parts.append('</svg>')
+    return ''.join(parts)
+
+
+def region_banner(r):
+    rel = REGION_IMG + r['key'] + '.webp'
+    if not (ROOT / rel).exists():
+        return ''
+    return '<img class="ch-region__img" src="%s%s" alt="" width="900" height="300" loading="lazy" decoding="async">' % (P, rel)
+
+
 def atlas():
-    out = ['    <div class="ch-atlas sec-body" data-atlas>', '      ' + LEGEND]
+    out = ['    <div class="ch-atlas sec-body" data-atlas>',
+           '      <figure class="ch-world" data-world>',
+           '        ' + LEGEND,
+           '        <div class="ch-world__stage">' + world_svg() + '</div>',
+           '        <div class="ch-world__zoom" role="group" aria-label="Map zoom">'
+           '<button type="button" class="ch-world__btn" data-zoom="in" aria-label="Zoom in">+</button>'
+           '<button type="button" class="ch-world__btn" data-zoom="out" aria-label="Zoom out">&minus;</button>'
+           '<button type="button" class="ch-world__btn ch-world__btn--reset" data-zoom="reset">Reset</button></div>',
+           '      </figure>',
+           '      <div class="ch-regions">']
     for r in REGIONS:
         chs = region_chapters(r['key'])
         if not chs:
             continue
         out.append(
-            '      <article class="ch-panel" id="%(a)s" data-region="%(k)s" aria-labelledby="ch-%(a)s-title">\n'
-            '        <header class="ch-panel__head">\n'
-            '          <h3 class="ch-panel__title" id="ch-%(a)s-title">%(l)s</h3>\n'
-            '          <p class="ch-group__count">%(cnt)s</p>\n'
-            '        </header>\n'
-            '        <div class="ch-panel__body">\n'
-            '          <figure class="ch-mapfig">%(svg)s</figure>\n'
+            '        <details class="ch-region" id="%(a)s" data-region="%(k)s">\n'
+            '          <summary class="ch-region__sum">%(img)s<span class="ch-region__bar"><span class="ch-region__title">%(l)s</span>'
+            '<span class="ch-region__n">%(n)d %(w)s</span></span></summary>\n'
             '          <ul class="chapter-list" role="list">\n%(items)s\n          </ul>\n'
-            '        </div>\n'
-            '      </article>' % {'a': r['anchor'], 'k': r['key'], 'l': esc(r['label']), 'cnt': count_spans(chs),
-                                  'svg': map_svg(r), 'items': chapter_items(chs)})
+            '        </details>' % {'a': r['anchor'], 'k': r['key'], 'l': esc(r['label']), 'img': region_banner(r),
+                                    'n': len(chs), 'w': 'chapter' if len(chs) == 1 else 'chapters', 'items': chapter_items(chs)})
+    out.append('      </div>')
     out.append('    </div>')
     return '\n'.join(out)
 
@@ -482,7 +465,8 @@ def apply_hero(s, rel):
         if m:
             end = close_of(s, m.start(1))
             if end:
-                s = s[:end] + '\n' + banner_html(name, hero_alt(rel, c)) + s[end:]
+                # Photo first on every page, then the header (same order as the homepage)
+                s = s[:m.start(1)] + banner_html(name, hero_alt(rel, c)) + '\n' + s[m.start(1):]
     return s
 
 
@@ -535,3 +519,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+    # UI markers must use the signature's round nodes (ISS-095)
+    import subprocess, sys
+    sys.exit(subprocess.call([sys.executable, str(ROOT / 'tools' / 'check_markers.py')]))

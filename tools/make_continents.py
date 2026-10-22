@@ -19,6 +19,8 @@ BOXES = {
     "africa": ("Africa", -20.0, 52.0, -36.0, 38.0),
     "asia": ("Asia", 60.0, 150.0, 5.0, 55.0),
     "oceania": ("Oceania", 110.0, 180.0, -48.0, -8.0),
+    # Chapters page world map (one equirectangular frame, wider canvas)
+    "world": ("World", -170.0, 190.0, -56.0, 84.0, 1200),
 }
 
 def decode(topo):
@@ -86,12 +88,16 @@ def main(src):
         for poly in polys:
             rings.append(ring(arcs, poly[0]))  # outer ring only; lakes ignored
     out = {}
-    for cid, (name, lon0, lon1, lat0, lat1) in BOXES.items():
-        k = W / ((lon1 - lon0) * math.cos(math.radians((lat0 + lat1) / 2)))
+    for cid, (name, lon0, lon1, lat0, lat1, *wide) in BOXES.items():
+        Wc = wide[0] if wide else W
+        k = Wc / ((lon1 - lon0) * math.cos(math.radians((lat0 + lat1) / 2)))
         cx = math.cos(math.radians((lat0 + lat1) / 2))
         H = round((lat1 - lat0) * k)
         d = []
         for r in rings:
+            if wide and any(abs(r[i][0] - r[i - 1][0]) > 180 for i in range(1, len(r))):
+                # world frame: a ring that crosses 180 (Russia, Fiji) is unwrapped east so it never jumps across the map
+                r = [(x + 360 if x < -100 else x, y) for x, y in r]
             c = clip(r, lon0, lon1, lat0, lat1)
             if len(c) < 3 or area(c) < 0.6: continue
             c = simp_ring(c, 0.12)
@@ -99,7 +105,7 @@ def main(src):
             pts = [((x - lon0) * cx * k, (lat1 - y) * k) for x, y in c]
             d.append("M" + "L".join(f"{x:.1f} {y:.1f}" for x, y in pts) + "Z")
         out[cid] = {"name": name, "box": [lon0, lon1, lat0, lat1], "k": k, "cx": cx,
-                    "width": W, "height": H, "path": "".join(d)}
+                    "width": Wc, "height": H, "path": "".join(d)}
     (ROOT / "data" / "continents.json").write_text(json.dumps(out, separators=(",", ":")))
     print({c: len(v["path"]) for c, v in out.items()})
 
