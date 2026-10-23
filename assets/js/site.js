@@ -251,77 +251,59 @@
       targets.forEach(function (t) { hop.observe(t); });
     });
   }
-  // The rail is a straight Chamber line: route colours and weight, signature dots and ends, all from CCC_SIG.
+  // The rail is a plain scroll indicator: a thin line, one small dot per section, filled up to where you are.
   function initRail() {
     var rail = doc.querySelector(".rail");
     if (!rail) return;
-    var ticks = $$(".rail__tick", rail), start = 0, end = 1, tops = [];
+    var ticks = $$(".rail__tick", rail), n = ticks.length;
     var secs = ticks.map(function (t) { return doc.getElementById(t.getAttribute("data-for")); });
-    var after = doc.querySelector(rail.getAttribute("data-clip-after") || "#none");
     var before = doc.querySelector(rail.getAttribute("data-clip-before") || "#none");
-    var cv = doc.createElement("canvas"), lc = cv.getContext("2d");
-    rail.insertBefore(cv, rail.firstChild);
-    function y(el, edge) { return el.getBoundingClientRect()[edge] + pageYOffset - vh() / 2; }
-    function measure() {
-      if (!secs[0]) return;
-      start = y(secs[0], "top");
-      end = y(secs[secs.length - 1], "bottom");
-      tops = secs.map(function (s) { return s ? clamp((y(s, "top") - start) / (end - start)) : 0; });
-      update();
-    }
-    function draw(p) {
-      var SIG = window.CCC_SIG, kit = window.CCC && window.CCC.sig;
-      if (!SIG || !kit || !lc) return;
-      var F = SIG.field, P = SIG.player, R = (SIG.groups && SIG.groups.rail) || {};
-      var s = innerWidth / F.width, w = P.weight * s;
-      var dot = Math.min.apply(null, F.nodes.map(function (n) { return n.r; })) * s;
-      var ring = Math.min.apply(null, F.nodes.map(function (n) { return n.outerR; })) * s;
-      var pad = w * 0.8, W = Math.ceil(ring * 2), H = rail.clientHeight;
-      var dpr = Math.min(devicePixelRatio || 1, (SIG.budget && SIG.budget.dprCap) || 1.5);
-      rail.style.width = W + "px";
-      if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
-      lc.setTransform(dpr, 0, 0, dpr, 0, 0);
-      lc.clearRect(0, 0, W, H);
-      // Stations sit inside the line, so both ends run on past the first and last dot.
-      var x = W / 2, y0 = pad + ring * 2, y1 = H - pad - ring * 2, at = function (t) { return y0 + (y1 - y0) * t; };
-      var colors = F.routes.map(function (r) { return r.color; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
-      var stops = [0].concat(tops.filter(function (t) { return t > 0 && t < 1; }), [1]);
-      for (var i = 0; i < stops.length - 1; i++) {
-        var a = i ? at(stops[i]) : pad, b = i < stops.length - 2 ? at(stops[i + 1]) : H - pad, m = Math.max(a, Math.min(b, at(p)));
-        lc.fillStyle = colors[i % colors.length];
-        lc.globalAlpha = P.lines;
-        lc.fillRect(x - w / 2, a, w, m - a);
-        if (i === 0) kit.cap(lc, P.back, x, a, 0, -1, w, P.cup);
-        lc.globalAlpha = P.lines * (R.upcoming == null ? 1 : R.upcoming);
-        lc.fillRect(x - w / 2, m, w, b - m);
-        if (i === stops.length - 2) kit.cap(lc, P.front, x, b, 0, 1, w, P.cup);
-      }
-      lc.globalAlpha = 1;
-      // Stations: a clear gap cut out of the line, then a solid dot.
-      tops.forEach(function (t) {
-        var cy = at(t);
-        lc.save(); lc.globalCompositeOperation = "destination-out";
-        lc.beginPath(); lc.arc(x, cy, ring, 0, Math.PI * 2); lc.fill(); lc.restore();
-        lc.fillStyle = kit.mixHex(F.background, F.gold, P.dots);
-        lc.beginPath(); lc.arc(x, cy, dot, 0, Math.PI * 2); lc.fill();
-      });
-    }
+    var fill = doc.createElement("span");
+    fill.className = "rail__fill";
+    rail.insertBefore(fill, rail.firstChild);
+    ticks.forEach(function (t, i) { t.style.top = (n > 1 ? i / (n - 1) * 100 : 0) + "%"; });
     function update() {
-      var on = allowed(), p = on ? clamp((pageYOffset - start) / (end - start)) : 1;
-      draw(p);
-      var r = rail.getBoundingClientRect(), h = r.height;
-      var top = after ? Math.max(0, Math.min(h, after.getBoundingClientRect().bottom - r.top)) : 0;
-      var bot = before ? Math.max(0, Math.min(h, r.bottom - before.getBoundingClientRect().top)) : 0;
-      rail.style.clipPath = "inset(" + top.toFixed(1) + "px 0 " + bot.toFixed(1) + "px 0)";
-      rail.classList.toggle("is-shown", top + bot < h - 24);
+      var mid = vh() / 2, cur = -1, frac = 0;
+      secs.forEach(function (s, i) {
+        if (!s) return;
+        var r = s.getBoundingClientRect();
+        if (r.top <= mid) { cur = i; frac = clamp((mid - r.top) / r.height); }
+      });
+      var p = cur < 0 ? 0 : Math.min(1, (cur + (cur < n - 1 ? frac : 0)) / Math.max(1, n - 1));
+      fill.style.transform = "scaleY(" + p.toFixed(4) + ")";
+      ticks.forEach(function (t, i) { t.classList.toggle("is-on", i <= cur); t.classList.toggle("is-current", i === cur); });
+      rail.setAttribute("data-tone", Math.max(cur, 0) % 3);
+      // Light line and dots while the rail sits over a dark section.
+      var r = rail.getBoundingClientRect(), under = doc.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+      var sec = under && under.closest("section");
+      rail.classList.toggle("rail--dark", !!sec && /surface-(coral|forest|ink)/.test(sec.className));
+      rail.classList.toggle("is-shown", cur >= 0 && (!before || before.getBoundingClientRect().top > r.bottom + 24));
     }
     onScroll(update);
-    addEventListener("resize", measure);
-    addEventListener("load", measure);
-    doc.addEventListener("ccc:motion", update);
-    if (doc.fonts) doc.fonts.ready.then(measure);
-    setTimeout(measure);
+    addEventListener("resize", update);
+    addEventListener("load", update);
+    setTimeout(update);
   }
+  // Member voice: the arrows step the testimonial row one card at a time.
+  function initVoice() {
+    var track = doc.querySelector(".voice-track");
+    if (!track) return;
+    var btns = $$(".voice-nav");
+    function sync() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      btns.forEach(function (b) { b.disabled = b.getAttribute("data-dir") < 0 ? track.scrollLeft <= 2 : track.scrollLeft >= max; });
+    }
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var card = track.firstElementChild, step = card ? card.getBoundingClientRect().width + 24 : track.clientWidth;
+        track.scrollBy({ left: step * +b.getAttribute("data-dir"), behavior: allowed() ? "smooth" : "auto" });
+      });
+    });
+    track.addEventListener("scroll", sync, { passive: true });
+    addEventListener("resize", sync);
+    sync();
+  }
+
   function initDrift() {
     var items = $$("[data-drift]"), desk = matchMedia("(min-width: 1024px)"), live = [];
     if (!items.length || !window.IntersectionObserver) return;
@@ -364,6 +346,7 @@
     initImpulses();
     initGuides();
     initRail();
+    initVoice();
     initDrift();
     initReadingRule();
   }
