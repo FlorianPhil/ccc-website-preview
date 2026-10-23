@@ -350,6 +350,9 @@
   .field__canvas { opacity: 0; transition: opacity var(--t-ui) var(--ease-quart); }
   .field.is-live .field__canvas { opacity: 1; }
   .field.is-live .field__poster { visibility: hidden; transition: visibility 0s linear var(--t-ui); }
+  /* Over a photo the canvas never fades in: a half-faded canvas would make the dots see-through. */
+  .field--photo { position: absolute; inset: 0; z-index: 1; background: none; pointer-events: none; }
+  .field--photo .field__canvas { opacity: 1; transition: none; }
   .field--band { height: clamp(220px, 26vw, 360px); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
   .field--strip { height: 96px; border-top: 1px solid var(--ink); }
   .panel {
@@ -1089,14 +1092,9 @@
   .home-hero h1 { font-size: clamp(40px, 4.6vw, 72px); line-height: var(--lh-display); max-width: 13ch; }
   .home-hero .lede { margin-top: 20px; max-width: 46ch; }
   .home-hero__ctas { margin-top: 28px; }
-  .sig-band { position: relative; height: clamp(200px, 24vw, 360px); background: var(--ivory); border-bottom: var(--rule); overflow: hidden; }
-  .sig-band .field { position: absolute; inset: 0; }
-  .sig-band .motion-pause { right: var(--gutter); bottom: 16px; }
   @media (max-width: 767px) {
     .home-hero__inner { min-height: 0; padding-block: 0; }
     .home-hero .panel { border: 0; padding: 32px var(--gutter) 40px; margin-inline: calc(var(--gutter) * -1); max-width: none; }
-    .sig-band { height: 160px; }
-    .sig-band .motion-pause { display: none; }
   }
   @media (max-width: 479px) {
     .home-hero__ctas .btn, .offer-band__ctas .btn { flex: 1 1 100%; justify-content: center; }
