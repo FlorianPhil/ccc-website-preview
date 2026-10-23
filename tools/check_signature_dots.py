@@ -1,8 +1,10 @@
 """A station dot must stay solid: no line may ever show through it.
 
-Opaque fields paint the field-colour ring before the faded gold. Transparent
-fields (lines over a photo) cut the ring out of the lines and fill the dot with
-gold pre-mixed into the field colour at full opacity. Run: python3 tools/check_signature_dots.py
+Every dot sits on a solid ring painted in the field colour, on opaque fields and
+on transparent fields over a photo alike. Nothing is cut out, so neither a line
+nor the photo shows under or around a dot. Opaque fields fade the gold onto that
+ring; transparent fields fill the dot with gold pre-mixed into the field colour
+at full opacity, so the dot itself is never see-through. Run: python3 tools/check_signature_dots.py
 """
 import re
 import sys
@@ -20,9 +22,13 @@ else:
         problems.append("node loop has no transparent / opaque branches")
     else:
         clear, opaque = t.group(1), t.group(2)
-        if "destination-out" not in clear:
-            problems.append("transparent dots do not cut the ring out of the lines")
-        if "mixHex(FIELD.background, FIELD.gold, P.dots)" not in clear or "globalAlpha = P.dots" in clear:
+        if "destination-out" in loop:
+            problems.append("a dot ring is cut out, so the photo or lines show around the dot")
+        for name, branch in (("transparent", clear), ("opaque", opaque)):
+            ring = re.search(r"fillStyle = FIELD\.background;\s*ctx\.beginPath\(\); ctx\.arc\(node\.cx, node\.cy, node\.outerR", branch)
+            if not ring:
+                problems.append(name + " dots have no solid field-colour ring under them")
+        if "mixHex(FIELD.background, FIELD.gold, P.dots)" not in clear or "globalAlpha" in clear:
             problems.append("transparent dots are not filled with an opaque pre-mixed gold")
         ring = opaque.find("FIELD.background")
         fade = opaque.find("globalAlpha = P.dots")
