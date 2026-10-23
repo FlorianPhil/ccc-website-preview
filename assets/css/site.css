@@ -818,14 +818,13 @@
   .bd-tile .link { justify-self: start; }
   @media (min-width: 768px) and (max-width: 1023px) { .bd-tile { display: none; } }
   @media (max-width: 767px) { .bd-tile { grid-column: span 1; padding-top: 16px; } .bd-tile__t { font-size: 20px; } .bd-tile p:not(.label) { font-size: var(--fs-small); } }
-  /* Board portraits: transparent cutouts over a signature field that comes alive on hover. */
+  /* Board portraits: on hover the signature runs behind the head and crosses over the shoulders. */
   .bd-directors .person__photo { position: relative; isolation: isolate; }
-  .bd-directors .person__photo img { position: relative; z-index: 1; background: transparent; object-fit: contain; object-position: 50% 100%; transform-origin: 50% 100%; transition: transform var(--t-ui) var(--ease-quart); }
-  .person__field { position: absolute; inset: 0; z-index: 0; opacity: 0.32; transition: opacity var(--t-ui) var(--ease-quart); }
-  .person:hover .person__field, .person:focus-within .person__field { opacity: 1; }
-  @media (prefers-reduced-motion: no-preference) {
-    .person:hover .person__photo img, .person:focus-within .person__photo img { transform: scale(1.03); }
-  }
+  .bd-directors .person__photo > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 50%; }
+  .bd-directors .person__photo > img { z-index: 0; }
+  .person__field { z-index: 1; background: transparent; opacity: 0; transition: opacity var(--t-ui) var(--ease-quart); }
+  .bd-directors .person__photo > .person__cut { z-index: 2; pointer-events: none; background: transparent; -webkit-mask-image: linear-gradient(to bottom, #000 50%, transparent 58%); mask-image: linear-gradient(to bottom, #000 50%, transparent 58%); }
+  .person:hover .person__field, .person:focus-within .person__field, .person.is-signed .person__field { opacity: 1; }
   .bd-go__grid { align-items: start; }
   .bd-go h2 { margin-top: 28px; max-width: 16ch; }
   .bd-go .lede { margin-top: 24px; max-width: 46ch; color: var(--ivory); }
