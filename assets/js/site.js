@@ -282,11 +282,12 @@
       if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
       lc.setTransform(dpr, 0, 0, dpr, 0, 0);
       lc.clearRect(0, 0, W, H);
-      var x = W / 2, y0 = pad, y1 = H - pad, at = function (t) { return y0 + (y1 - y0) * t; };
+      // Stations sit inside the line, so both ends run on past the first and last dot.
+      var x = W / 2, y0 = pad + ring * 2, y1 = H - pad - ring * 2, at = function (t) { return y0 + (y1 - y0) * t; };
       var colors = F.routes.map(function (r) { return r.color; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
       var stops = [0].concat(tops.filter(function (t) { return t > 0 && t < 1; }), [1]);
       for (var i = 0; i < stops.length - 1; i++) {
-        var a = at(stops[i]), b = at(stops[i + 1]), m = Math.max(a, Math.min(b, at(p)));
+        var a = i ? at(stops[i]) : pad, b = i < stops.length - 2 ? at(stops[i + 1]) : H - pad, m = Math.max(a, Math.min(b, at(p)));
         lc.fillStyle = colors[i % colors.length];
         lc.globalAlpha = P.lines;
         lc.fillRect(x - w / 2, a, w, m - a);

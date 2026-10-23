@@ -1251,6 +1251,8 @@
     .rail__tick { display: none; }
     .rail.is-shown { opacity: 1; }
     .home-model__media, .offer-band { position: relative; z-index: 2; }
+    /* Coral and forest sections would swallow their own route colour, so the line passes behind them */
+    #leadership, #model { z-index: 2; }
   }
   @media (prefers-reduced-motion: reduce) { .rail.is-shown { opacity: 1; } }
   html[data-motion="off"] .rail.is-shown { opacity: 1; }
