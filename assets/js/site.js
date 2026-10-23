@@ -1847,3 +1847,36 @@ window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"backgrou
     window.setTimeout(function () { play(); window.setInterval(play, EVERY); }, FIRST);
   }).catch(function () {});
 })();
+(function () {
+  "use strict";
+  // Homepage hero loop: plays only when motion is allowed and the hero is on screen; the still stays as poster and fallback.
+  var v = document.querySelector("[data-hero-video]");
+  if (!v || !v.play) return;
+  var root = document.documentElement, mq = window.matchMedia("(prefers-reduced-motion: reduce)"), seen = true, loaded = false;
+  function allowed() { return !mq.matches && !(navigator.connection && navigator.connection.saveData) && root.getAttribute("data-motion") !== "off"; }
+  function load() {
+    if (loaded) return;
+    loaded = true;
+    [].forEach.call(v.querySelectorAll("source[data-src]"), function (s) { s.src = s.getAttribute("data-src"); });
+    v.load();
+  }
+  function update() {
+    if (allowed() && seen && !document.hidden) {
+      load();
+      var p = v.play();
+      if (p && p.catch) p.catch(function () {});
+    } else {
+      v.pause();
+      if (!allowed()) v.classList.remove("is-playing");
+    }
+  }
+  v.muted = true;
+  v.addEventListener("playing", function () { v.classList.add("is-playing"); });
+  document.addEventListener("ccc:motion", update);
+  document.addEventListener("visibilitychange", update);
+  if (mq.addEventListener) mq.addEventListener("change", update); else if (mq.addListener) mq.addListener(update);
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (e) { seen = e[0].isIntersecting; update(); }).observe(v);
+  }
+  update();
+})();

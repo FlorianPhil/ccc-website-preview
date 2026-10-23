@@ -2170,6 +2170,10 @@
 
 .home-hero__photo { position: absolute; inset: 0; z-index: 1; margin: 0; }
 .home-hero__photo img { width: 100%; height: 100%; object-fit: cover; object-position: 20% 40%; }
+.home-hero__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 20% 40%; opacity: 0; transition: opacity 1.2s ease; pointer-events: none; }
+.home-hero__video.is-playing { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { .home-hero__video { display: none; } }
+html[data-motion="off"] .home-hero__video { display: none; }
 @media (max-width: 767px) {
   .home-hero__photo { position: relative; inset: auto; }
   .home-hero__photo img { height: auto; aspect-ratio: 4 / 3; }
