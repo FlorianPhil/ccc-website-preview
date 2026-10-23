@@ -519,6 +519,7 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # UI markers must use the signature's round nodes (ISS-095)
+    # UI markers must use the signature's round nodes (ISS-095); email addresses stay lowercase
     import subprocess, sys
-    sys.exit(subprocess.call([sys.executable, str(ROOT / 'tools' / 'check_markers.py')]))
+    sys.exit(max(subprocess.call([sys.executable, str(ROOT / 'tools' / c)])
+                 for c in ('check_markers.py', 'check_emails.py')))
