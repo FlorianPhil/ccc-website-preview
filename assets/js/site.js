@@ -888,7 +888,7 @@ try{
   }
 })();
 }catch(e){console.error('forms-demo.js',e)}
-window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 88 -100 C 12 100, 20 235, 84 381 C 128 507, 138 571, 222 681.5 C 307 793, 440 889, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1150 25, 1167 90, 1254.5 152.5 C 1370 234, 1515 317, 1581 479.5 C 1646 640, 1680 810, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 356 120, 252 267, 84 381 C 27 420, -28 451, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1708 389, 1636 433, 1581 479.5 C 1440 599, 1310 745, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 580 26, 538 121, 469 191.5 C 352 310, 223 373, 84 381 C 12 385, -59 365, -110 354","color":"#D06E53","direction":1},{"d":"M 980 1040 C 1004 881, 1038 778, 1137 670.5 C 1259 538, 1400 478, 1581 479.5 C 1650 480, 1718 489, 1780 508","color":"#D06E53","direction":-1}]},"player":{"length":12.0,"weight":28.0,"speed":1.65,"guides":0.4,"body":0.6,"gap":1860.0},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"rampMs":1200,"mobile":{"maxWidth":767,"clock":"once","crop":{"cx":0.5,"cy":0.5,"scale":1},"startPhase":5.55},"poster":true,"pauseControl":true,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.2,"cy":0.48,"scale":1.5},"routes":[0,2,4],"dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2","mobile":{"maxWidth":767,"crop":{"cx":0.2,"cy":0.46,"scale":1.5},"startPhase":5.55}},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"static","heightPx":96,"reduced":"same static frame"}},"staticPhase":4.2,"budget":{"maxLive":2,"maxLoop":1,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
+window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1738.2 395.8, 1696.3 437.7, 1654.5 479.5 C 1638 479.5, 1621.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]},"player":{"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"rampMs":1200,"mobile":{"maxWidth":767,"clock":"once","crop":{"cx":0.5,"cy":0.5,"scale":1},"startPhase":5.55},"poster":true,"pauseControl":true,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.2,"cy":0.48,"scale":1.5},"routes":[0,2,4],"dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2","mobile":{"maxWidth":767,"crop":{"cx":0.2,"cy":0.46,"scale":1.5},"startPhase":5.55}},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"once","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"static","heightPx":96,"reduced":"same static frame"},"portrait":{"shape":"P1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"hover":true,"hoverTarget":".person","avoid":false,"nodeSafe":false,"reduced":"static t=4.2"}},"staticPhase":4.2,"budget":{"maxLive":2,"maxLoop":1,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
 (function () {
   "use strict";
   var SIG = window.CCC_SIG;
@@ -962,26 +962,50 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
     PX = r.xs[lo] + (r.xs[hi] - r.xs[lo]) * t;
     PY = r.ys[lo] + (r.ys[hi] - r.ys[lo]) * t;
   }
-  function profile(t, body) {
+  // Each end of a streak has its own shape. "taper" thins and fades that end;
+  // every other shape keeps it at full width and draws the end as a cap.
+  var ENDS = ["taper", "round", "flat", "nose", "bullet", "cup"];
+  function profile(t, body, back, front) {
+    var cb = back !== "taper", cf = front !== "taper";
     if (body === 0) {
-      return { width: Math.pow(t, 0.7) * Math.min(1, (1 - t) / 0.11), alpha: Math.pow(t, 0.6) * Math.min(1, (1 - t) / 0.06) };
+      return { width: (cb ? 1 : Math.pow(t, 0.7)) * (cf ? 1 : Math.min(1, (1 - t) / 0.11)),
+               alpha: (cb ? 1 : Math.pow(t, 0.6)) * (cf ? 1 : Math.min(1, (1 - t) / 0.06)) };
     }
     var tail = (1 - body) * 0.8, head = (1 - body) * 0.2;
     return {
-      width: Math.min(1, Math.pow(t / tail, 0.7), (1 - t) / head),
-      alpha: Math.min(1, Math.pow(t / tail, 0.6), (1 - t) / (head * 0.55))
+      width: Math.min(1, cb ? 1 : Math.pow(t / tail, 0.7), cf ? 1 : (1 - t) / head),
+      alpha: Math.min(1, cb ? 1 : Math.pow(t / tail, 0.6), cf ? 1 : (1 - t) / (head * 0.55))
     };
   }
+  // Draws one end of a streak at (x, y); (ux, uy) points out of the streak.
+  function cap(lc, shape, x, y, ux, uy, w, cup) {
+    var h = w / 2, k;
+    if (shape === "round") {
+      lc.beginPath(); lc.arc(x, y, h, 0, Math.PI * 2); lc.fill();
+    } else if (shape === "nose" || shape === "bullet") {
+      // "nose" is a square train front with rounded corners, "bullet" a long rounded one.
+      lc.save(); lc.translate(x, y); lc.rotate(Math.atan2(uy, ux)); lc.beginPath();
+      if (shape === "bullet") { lc.moveTo(-1, -h); lc.ellipse(0, 0, h * 1.6, h, 0, -Math.PI / 2, Math.PI / 2); lc.lineTo(-1, h); }
+      else { k = h * 0.6; lc.moveTo(-1, -h); lc.arcTo(k, -h, k, h, k); lc.arcTo(k, h, -1, h, k); lc.lineTo(-1, h); }
+      lc.closePath(); lc.fill(); lc.restore();
+    } else if (shape === "cup") {
+      // A concave end, like the arcs of the mark cupping a dot. The bite passes
+      // through both corners and goes cup * half the width deep.
+      var d = h * cup, c = (h * h - d * d) / (2 * d);
+      lc.save(); lc.globalCompositeOperation = "destination-out";
+      lc.beginPath(); lc.arc(x + ux * c, y + uy * c, c + d, 0, Math.PI * 2); lc.fill(); lc.restore();
+    }
+  }
   var profileCache = {};
-  function profileTable(samples, body) {
-    var key = samples + ":" + body;
+  function profileTable(samples, body, back, front) {
+    var key = samples + ":" + body + ":" + back + ":" + front;
     if (profileCache[key]) return profileCache[key];
     var W = new Float32Array(samples), A = new Float32Array(samples);
     var bestS = -1, bestE = -1, runS = -1;
     for (var j = 0; j <= samples; j++) {
       var full = false;
       if (j < samples) {
-        var e = profile((j + 0.5) / samples, body);
+        var e = profile((j + 0.5) / samples, body, back, front);
         W[j] = e.width; A[j] = e.alpha;
         full = e.width >= 1 && e.alpha >= 1;
       }
@@ -1003,6 +1027,16 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
       var v = overrides && clamp(overrides[k], LIMITS[k]);
       p[k] = v === undefined ? PLAYER[k] : v;
     });
+    ["front", "back"].forEach(function (k) {
+      var v = overrides && overrides[k];
+      p[k] = ENDS.indexOf(v) >= 0 ? v : ENDS.indexOf(PLAYER[k]) >= 0 ? PLAYER[k] : "taper";
+    });
+    ["lines", "dots"].forEach(function (k) {
+      var v = overrides && clamp(overrides[k], [0, 1]);
+      p[k] = v === undefined ? (typeof PLAYER[k] === "number" ? PLAYER[k] : 1) : v;
+    });
+    var cup = overrides && clamp(overrides.cup, [0.1, 1]);
+    p.cup = cup === undefined ? (typeof PLAYER.cup === "number" ? PLAYER.cup : 0.5) : cup;
     return p;
   }
   var instances = [];
@@ -1110,7 +1144,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
       return { r: r, guide: r.color, impulse: colors.length ? colors[i % colors.length] : r.color, dir: r.direction * self.dir };
     });
     this.samples = Math.ceil(96 * this.P.length);
-    this.table = profileTable(this.samples, this.P.body);
+    this.table = profileTable(this.samples, this.P.body, this.P.back, this.P.front);
     this.time = this.restingTime();
     this.elapsed = 0;
     this.onceElapsed = 0;
@@ -1118,7 +1152,8 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
     this.done = false;
     this.playing = false;
     this.prepared = false;
-    this.userPaused = false;
+    // Hover fields rest on their first frame until the card is hovered or focused.
+    this.userPaused = !!opts.hover;
     this.degraded = false;
     this.throttled = false;
     this.skip = false;
@@ -1341,30 +1376,36 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
           if (end <= first) continue;
           var a = start + (first / samples) * trail;
           at(r, dir === 1 ? a : total - a);
-          var px = PX, py = PY, inRun = false;
+          var a0x = PX, a0y = PY, px = PX, py = PY, inRun = false, ox = px, oy = py, tx = 0, ty = 0;
           if (px < x0) x0 = px; if (px > x1) x1 = px; if (py < y0) y0 = py; if (py > y1) y1 = py;
           for (var j = first; j < end; j++) {
             var b = start + ((j + 1) / samples) * trail;
             at(r, dir === 1 ? b : total - b);
             var qx = PX, qy = PY;
             if (qx < x0) x0 = qx; if (qx > x1) x1 = qx; if (qy < y0) y0 = qy; if (qy > y1) y1 = qy;
+            if (j === first) { tx = qx; ty = qy; }
             if (j >= pS && j < pE) {
               if (!inRun) {
-                lc.lineWidth = P.weight; lc.globalAlpha = 1;
+                lc.lineWidth = P.weight; lc.globalAlpha = 1; lc.lineCap = "butt";
                 lc.beginPath(); lc.moveTo(px, py); inRun = true;
               }
               lc.lineTo(qx, qy);
             } else {
               if (inRun) { lc.stroke(); inRun = false; }
+              lc.lineCap = "round";
               var wj = W[j], aj = A[j];
               if (aj >= 0.001 && wj >= 0.001) {
                 lc.lineWidth = P.weight * wj; lc.globalAlpha = aj;
                 lc.beginPath(); lc.moveTo(px, py); lc.lineTo(qx, qy); lc.stroke();
               }
             }
-            px = qx; py = qy;
+            ox = px; oy = py; px = qx; py = qy;
           }
           if (inRun) lc.stroke();
+          lc.globalAlpha = 1; lc.fillStyle = entry.impulse;
+          var ul;
+          if (end === samples && (ul = Math.hypot(px - ox, py - oy))) cap(lc, P.front, px, py, (px - ox) / ul, (py - oy) / ul, P.weight, P.cup);
+          if (first === 0 && (ul = Math.hypot(tx - a0x, ty - a0y))) cap(lc, P.back, a0x, a0y, (a0x - tx) / ul, (a0y - ty) / ul, P.weight, P.cup);
         }
         if (x0 === Infinity) { this.prevBox = null; continue; }
         var bx0 = Math.max(0, Math.floor((x0 - pad) * s + dx));
@@ -1383,20 +1424,24 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
         }
         ctx.save();
         ctx.setTransform(1, 0, 0, 1, 0, 0);
-        ctx.globalAlpha = EXPOSURE[exposure];
+        ctx.globalAlpha = EXPOSURE[exposure] * P.lines;
         ctx.drawImage(this.layer, box[0], box[1], box[2], box[3], box[0], box[1], box[2], box[3]);
         ctx.restore();
         this.prevBox = box;
       }
     }
+    // The ring stays solid so lines never show through; only the gold fades into it.
     ctx.globalAlpha = 1;
     for (var n = 0; n < this.nodes.length; n++) {
       var node = this.nodes[n];
+      ctx.globalAlpha = 1;
       ctx.fillStyle = FIELD.background;
       ctx.beginPath(); ctx.arc(node.cx, node.cy, node.outerR, 0, Math.PI * 2); ctx.fill();
+      ctx.globalAlpha = P.dots;
       ctx.fillStyle = FIELD.gold;
       ctx.beginPath(); ctx.arc(node.cx, node.cy, node.r, 0, Math.PI * 2); ctx.fill();
     }
+    ctx.globalAlpha = 1;
   };
   Field.prototype.begin = function () {
     this.playing = true;
@@ -1509,9 +1554,20 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
     var merged = {};
     Object.keys(group).forEach(function (k) { merged[k] = group[k]; });
     if (opts) Object.keys(opts).forEach(function (k) { merged[k] = opts[k]; });
+    if (el.hasAttribute("data-crop-x")) {
+      merged.crop = Object.assign({}, merged.crop, { cx: +el.getAttribute("data-crop-x") });
+    }
     var inst = new Field(el, merged);
     instances.push(inst);
-    return inst.api();
+    var api = inst.api();
+    var target = merged.hover && el.closest(merged.hoverTarget || "li, article, figure");
+    if (target) {
+      target.addEventListener("pointerenter", api.play);
+      target.addEventListener("pointerleave", api.pause);
+      target.addEventListener("focusin", api.play);
+      target.addEventListener("focusout", api.pause);
+    }
+    return api;
   }
   function initAll(scope) {
     var list = (scope || document).querySelectorAll(".field[data-signature]");

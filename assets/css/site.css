@@ -811,14 +811,21 @@
   .bd-co { margin-top: 6px; font-size: var(--fs-small); line-height: 1.45; color: var(--ink-72); }
   .bd-links { margin-top: 8px; }
   .bd-link { display: inline-flex; align-items: center; min-height: 24px; }
-  .bd-directors .person__photo img { object-position: 50% 24%; }
-  .bd-tile { grid-column: span 3; border-top: var(--rule); padding-top: 20px; display: grid; gap: 12px; align-content: start; }
+  .bd-tile { grid-column: span 2; border-top: var(--rule); padding-top: 20px; display: grid; gap: 12px; align-content: start; }
   .bd-tile__label { color: var(--forest); }
   .bd-tile__t { font-size: var(--fs-h3); line-height: var(--lh-h3); max-width: 18ch; }
   .bd-tile p:not(.label) { max-width: 40ch; }
   .bd-tile .link { justify-self: start; }
   @media (min-width: 768px) and (max-width: 1023px) { .bd-tile { display: none; } }
   @media (max-width: 767px) { .bd-tile { grid-column: span 1; padding-top: 16px; } .bd-tile__t { font-size: 20px; } .bd-tile p:not(.label) { font-size: var(--fs-small); } }
+  /* Board portraits: transparent cutouts over a signature field that comes alive on hover. */
+  .bd-directors .person__photo { position: relative; isolation: isolate; }
+  .bd-directors .person__photo img { position: relative; z-index: 1; background: transparent; object-fit: contain; object-position: 50% 100%; transform-origin: 50% 100%; transition: transform var(--t-ui) var(--ease-quart); }
+  .person__field { position: absolute; inset: 0; z-index: 0; opacity: 0.32; transition: opacity var(--t-ui) var(--ease-quart); }
+  .person:hover .person__field, .person:focus-within .person__field { opacity: 1; }
+  @media (prefers-reduced-motion: no-preference) {
+    .person:hover .person__photo img, .person:focus-within .person__photo img { transform: scale(1.03); }
+  }
   .bd-go__grid { align-items: start; }
   .bd-go h2 { margin-top: 28px; max-width: 16ch; }
   .bd-go .lede { margin-top: 24px; max-width: 46ch; color: var(--ivory); }
