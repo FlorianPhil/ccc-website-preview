@@ -213,8 +213,8 @@ def region_index():
         out.append('        <li class="region-index__group">\n'
                    '          <h3 class="region-index__name"><a href="%schapters/#%s">%s</a></h3>\n'
                    '          <p class="region-index__count">%s</p>\n'
-                   '          <p class="region-index__places">%s</p>\n        </li>'
-                   % (P, r['anchor'], esc(r['label']), count_spans(chs), esc(', '.join(c['name'] for c in chs))))
+                   '          <ul class="region-index__places" role="list">%s</ul>\n        </li>'
+                   % (P, r['anchor'], esc(r['label']), count_spans(chs), ''.join('<li>%s</li>' % esc(c['name']) for c in chs)))
     return '\n'.join(out)
 
 

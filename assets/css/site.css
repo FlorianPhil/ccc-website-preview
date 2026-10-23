@@ -2259,10 +2259,27 @@
 }
 .region-index__count, .ch-group__count { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
 /* region index: North America full width, smaller regions in an even grid with real gutters */
-.region-index { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); column-gap: 32px; }
-.region-index > * { display: block; min-width: 0; }
-.region-index > :first-child { grid-column: 1 / -1; }
-.region-index > :not(:first-child) .region-index__group { grid-template-columns: minmax(0, 1fr); gap: 8px; height: 100%; }
-.region-index > :not(:first-child) .region-index__count { align-self: start; }
-html.motion-ok .region-index .r3-w, html.motion-ok .region-index .r3-w > span { display: block; height: 100%; }
+/* Homepage chapters: one aligned table, region | count | places. */
+.region-index { display: block; border-top: var(--rule); }
+.region-index__group { display: grid; grid-template-columns: minmax(0, 3.5fr) minmax(0, 1.5fr) minmax(0, 7fr); column-gap: 32px; row-gap: 8px; align-items: baseline; padding-block: 28px; border-bottom: var(--rule-fine); }
+.region-index__name { font-size: 24px; line-height: 1.2; }
+.region-index__name a { text-decoration: none; }
+.region-index__name a:hover { color: var(--forest); text-decoration: underline; text-decoration-thickness: 2px; }
+.region-index__count { display: grid; gap: 6px; align-self: baseline; }
+.region-index .state::before { display: none; }
+.region-index .state--active { color: var(--ink); }
+.region-index__places { grid-column: auto; columns: 3; column-gap: 24px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-body); line-height: 1.35; color: var(--ink-72); }
+.region-index__places li { break-inside: avoid; padding-block: 4px; }
+.home-chapters .sec-body { margin-top: clamp(40px, 4vw, 56px); }
+@media (max-width: 1023px) {
+  .region-index__group { grid-template-columns: minmax(0, 1fr) auto; }
+  .region-index__count { display: flex; gap: 16px; }
+  .region-index__places { grid-column: 1 / -1; columns: 3; margin-top: 4px; }
+}
+@media (max-width: 767px) {
+  .region-index__group { padding-block: 22px; }
+  .region-index__name { font-size: 20px; }
+  .region-index__count { flex-direction: column; gap: 2px; align-items: end; text-align: right; }
+  .region-index__places { columns: 2; column-gap: 16px; }
+}
 .ch-world__svg { -webkit-user-select: none; user-select: none; }
