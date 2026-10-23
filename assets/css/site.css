@@ -1181,15 +1181,6 @@
     .model-list__num { padding-top: 5px; }
     .home-model__media { aspect-ratio: 4 / 3; min-height: 0; }
   }
-  .region-index { border-top: var(--rule); }
-  .region-index__group { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 24px; padding-block: 18px; border-bottom: var(--rule-fine); }
-  .region-index__name { font-family: var(--font-display); font-weight: 600; font-size: 20px; }
-  .region-index__count { font-size: var(--fs-small); color: var(--ink-72); align-self: center; }
-  .region-index__places { grid-column: 1 / -1; font-size: var(--fs-small); color: var(--ink-72); max-width: none; }
-  @media (max-width: 767px) {
-    .region-index__group { grid-template-columns: minmax(0, 1fr); gap: 6px; padding-block: 20px; }
-    .region-index__count { align-self: start; }
-  }
   .partner-row { display: flex; flex-wrap: wrap; border-top: var(--rule); border-bottom: var(--rule); }
   .partner-row li {
     flex: 1 1 180px; padding: 28px 24px 28px 0;
@@ -2262,29 +2253,36 @@ html[data-motion="off"] .home-hero__video { display: none; }
   .event-row--thumb .date-block { padding: 8px 0; }
   .event-row--thumb .date-block__day { font-size: 24px; }
 }
-.region-index__count, .ch-group__count { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
-/* region index: North America full width, smaller regions in an even grid with real gutters */
-/* Homepage chapters: one aligned table, region | count | places. */
-.region-index { display: block; border-top: var(--rule); }
-.region-index__group { display: grid; grid-template-columns: minmax(0, 3.5fr) minmax(0, 1.5fr) minmax(0, 7fr); column-gap: 32px; row-gap: 8px; align-items: baseline; padding-block: 28px; border-bottom: var(--rule-fine); }
-.region-index__name { font-size: 24px; line-height: 1.2; }
-.region-index__name a { text-decoration: none; }
-.region-index__name a:hover { color: var(--forest); text-decoration: underline; text-decoration-thickness: 2px; }
-.region-index__count { display: grid; gap: 6px; align-self: baseline; }
-.region-index .state::before { display: none; }
-.region-index .state--active { color: var(--ink); }
-.region-index__places { grid-column: auto; columns: 3; column-gap: 24px; margin: 0; padding: 0; list-style: none; font-size: var(--fs-body); line-height: 1.35; color: var(--ink-72); }
-.region-index__places li { break-inside: avoid; padding-block: 4px; }
+.ch-group__count { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 20px; }
+/* Homepage chapters: one photo card per region, bento grid. The chapters page holds the full list. */
+.region-cards { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: clamp(220px, 20vw, 300px); gap: 16px; margin: 0; padding: 0; list-style: none; }
+.region-card { grid-column: span 3; position: relative; min-width: 0; }
+.region-card:first-child, .region-card:last-child { grid-column: span 6; }
+.region-card__link { position: absolute; inset: 0; display: block; overflow: hidden; border-radius: 4px; background: var(--ink); color: var(--ivory); text-decoration: none; isolation: isolate; }
+.region-card__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 900ms var(--ease-quart); }
+.region-card__link::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(28, 36, 32, 0.08) 0%, rgba(28, 36, 32, 0.28) 45%, rgba(28, 36, 32, 0.86) 100%); }
+.region-card__body { position: absolute; left: clamp(18px, 2vw, 28px); right: clamp(18px, 2vw, 28px); bottom: clamp(16px, 1.8vw, 26px); display: flex; align-items: flex-end; gap: clamp(12px, 1.4vw, 20px); }
+.region-card__n { font-family: var(--font-display); font-weight: 600; font-size: clamp(48px, 4.6vw, 72px); line-height: 0.82; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.region-card:first-child .region-card__n { font-size: clamp(64px, 7vw, 112px); }
+.region-card__text { display: grid; gap: 6px; min-width: 0; padding-bottom: 2px; }
+.region-card__name { font-family: var(--font-display); font-weight: 600; font-size: clamp(18px, 1.5vw, 22px); line-height: 1.15; }
+.region-card:first-child .region-card__name, .region-card:last-child .region-card__name { font-size: clamp(20px, 2vw, 28px); }
+.region-card__count { display: flex; flex-wrap: wrap; gap: 4px 12px; }
+.region-card__count .state { letter-spacing: 0.06em; }
+.region-card .state { color: var(--ivory); font-size: 12px; }
+.region-card .state::before { border-color: var(--ivory); }
+.region-card__link:hover .region-card__img { transform: scale(1.04); }
+.region-card__link:focus-visible { outline: 3px solid var(--coral); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .region-card__img { transition: none; } .region-card__link:hover .region-card__img { transform: none; } }
+@media (max-width: 899px) {
+  .region-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: clamp(170px, 42vw, 220px); gap: 10px; }
+  .region-card, .region-card:first-child, .region-card:last-child { grid-column: span 1; }
+  .region-card:first-child, .region-card:last-child { grid-column: span 2; }
+  .region-card__body { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .region-card__n { font-size: 40px; }
+  .region-card__link::after { background: linear-gradient(180deg, rgba(28, 36, 32, 0.1) 0%, rgba(28, 36, 32, 0.45) 40%, rgba(28, 36, 32, 0.9) 100%); }
+  .region-card__name { font-size: 18px; }
+  .region-card:first-child .region-card__n { font-size: 64px; }
+}
 .home-chapters .sec-body { margin-top: clamp(40px, 4vw, 56px); }
-@media (max-width: 1023px) {
-  .region-index__group { grid-template-columns: minmax(0, 1fr) auto; }
-  .region-index__count { display: flex; gap: 16px; }
-  .region-index__places { grid-column: 1 / -1; columns: 3; margin-top: 4px; }
-}
-@media (max-width: 767px) {
-  .region-index__group { padding-block: 22px; }
-  .region-index__name { font-size: 20px; }
-  .region-index__count { flex-direction: column; gap: 2px; align-items: end; text-align: right; }
-  .region-index__places { columns: 2; column-gap: 16px; }
-}
 .ch-world__svg { -webkit-user-select: none; user-select: none; }

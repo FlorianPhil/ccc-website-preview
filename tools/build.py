@@ -205,16 +205,21 @@ def forming_list():
 
 
 def region_index():
+    """Home page teaser: one photo card per region with its chapter count. The chapters page holds the full list."""
     out = []
     for r in REGIONS:
         chs = region_chapters(r['key'])
         if not chs:
             continue
-        out.append('        <li class="region-index__group">\n'
-                   '          <h3 class="region-index__name"><a href="%schapters/#%s">%s</a></h3>\n'
-                   '          <p class="region-index__count">%s</p>\n'
-                   '          <ul class="region-index__places" role="list">%s</ul>\n        </li>'
-                   % (P, r['anchor'], esc(r['label']), count_spans(chs), ''.join('<li>%s</li>' % esc(c['name']) for c in chs)))
+        base = REGION_IMG + r['key']
+        srcset = ', '.join('%s%s-%dw.webp %dw' % (P, base, w, w) for w in (480, 800, 1200) if (ROOT / ('%s-%dw.webp' % (base, w))).exists())
+        out.append('        <li class="region-card">\n'
+                   '          <a class="region-card__link" href="%schapters/#%s">\n'
+                   '            <img class="region-card__img" src="%s%s.webp" srcset="%s" sizes="(min-width: 900px) 50vw, 100vw" alt="" width="1200" height="400" loading="lazy" decoding="async">\n'
+                   '            <span class="region-card__body"><span class="region-card__n">%d</span>'
+                   '<span class="region-card__text"><span class="region-card__name">%s</span><span class="region-card__count">%s</span></span></span>\n'
+                   '          </a>\n        </li>'
+                   % (P, r['anchor'], P, base, srcset, len(chs), esc(r['label']), count_spans(chs)))
     return '\n'.join(out)
 
 
