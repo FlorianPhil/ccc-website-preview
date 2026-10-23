@@ -1452,10 +1452,11 @@ window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"backgrou
       var node = this.nodes[n];
       ctx.globalAlpha = 1;
       if (this.transparent) {
-        // Over a photo the ring is painted in the field colour too, so nothing shows under the
-        // dot, and the gold is pre-mixed into that colour so the dot itself is never see-through.
-        ctx.fillStyle = FIELD.background;
+        // Over a photo the clearance ring is cut out of the lines, so it reads as an invisible
+        // gap with no outline, and the gold is pre-mixed so the dot itself is fully opaque.
+        ctx.globalCompositeOperation = "destination-out";
         ctx.beginPath(); ctx.arc(node.cx, node.cy, node.outerR, 0, Math.PI * 2); ctx.fill();
+        ctx.globalCompositeOperation = "source-over";
         ctx.fillStyle = mixHex(FIELD.background, FIELD.gold, P.dots);
       } else {
         ctx.fillStyle = FIELD.background;

@@ -1,10 +1,11 @@
 """A station dot must stay solid: no line may ever show through it.
 
-Every dot sits on a solid ring painted in the field colour, on opaque fields and
-on transparent fields over a photo alike. Nothing is cut out, so neither a line
-nor the photo shows under or around a dot. Opaque fields fade the gold onto that
-ring; transparent fields fill the dot with gold pre-mixed into the field colour
-at full opacity, so the dot itself is never see-through. A field over a photo
+Florian's design (ISS-119): no visible line or outline around a dot, and the dot
+is never see-through. On opaque fields the clearance ring is the field colour, so
+it is invisible, and the gold fades onto it. Over a photo the clearance ring is
+cut out of the lines (destination-out), so the photo shows in the gap and no
+cream ring is drawn; the dot is filled with gold pre-mixed into the field colour
+at full opacity. A field over a photo
 never fades its canvas in, because a half-faded canvas makes every dot see-through. Run: python3 tools/check_signature_dots.py
 """
 import json
@@ -25,12 +26,12 @@ else:
         problems.append("node loop has no transparent / opaque branches")
     else:
         clear, opaque = t.group(1), t.group(2)
-        if "destination-out" in loop:
-            problems.append("a dot ring is cut out, so the photo or lines show around the dot")
-        for name, branch in (("transparent", clear), ("opaque", opaque)):
-            ring = re.search(r"fillStyle = FIELD\.background;\s*ctx\.beginPath\(\); ctx\.arc\(node\.cx, node\.cy, node\.outerR", branch)
-            if not ring:
-                problems.append(name + " dots have no solid field-colour ring under them")
+        if "destination-out" not in clear:
+            problems.append("dots over a photo do not cut an invisible clearance gap out of the lines")
+        if "FIELD.background" in clear.split("mixHex")[0]:
+            problems.append("dots over a photo paint a visible field-colour ring (Florian: no line around the circle)")
+        if "destination-out" in opaque:
+            problems.append("opaque dots cut the field instead of using the field-colour ring")
         if "mixHex(FIELD.background, FIELD.gold, P.dots)" not in clear or "globalAlpha" in clear:
             problems.append("transparent dots are not filled with an opaque pre-mixed gold")
         ring = opaque.find("FIELD.background")
