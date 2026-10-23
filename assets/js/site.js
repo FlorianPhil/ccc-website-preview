@@ -1631,7 +1631,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   openHash();
 })();
 // Animated mark in the site header. The lockup is inlined so the Three-C mark can
-// play the brand loop: every 30 s the lines draw into the brass dot while the mark
+// play the brand loop: every 10 s the lines draw into the brass dot while the mark
 // turns counterclockwise, the dot bounces once with a glint, and the lines draw
 // straight back out. It always rests on the locked lockup. Reduced motion keeps the image.
 (function () {
@@ -1640,7 +1640,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   if (!img || !window.fetch || !window.DOMParser) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var NS = "http://www.w3.org/2000/svg";
-  var W = 95.49, A = 250, R = 202.255, DUR = 1.8, EVERY = 30000, FIRST = 3000;
+  var W = 95.49, A = 250, R = 202.255, DUR = 1.8, EVERY = 10000, FIRST = 3000;
   var COLORS = ["#2D432B", "#2A5D5B", "#D06E53"];
   function el(tag, attrs, parent) {
     var e = document.createElementNS(NS, tag);
