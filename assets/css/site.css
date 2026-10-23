@@ -540,10 +540,12 @@
   }
   @media (max-width: 599px) { .tier { grid-template-columns: 1fr; } .tier > *, .tier__name, .tier__price { grid-column: 1; } }
   .logo-wall { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: var(--white); border-top: 1px solid var(--border); border-left: 1px solid var(--border); list-style: none; padding: 0; margin: 0; }
-  .logo-wall li { background: var(--white); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; place-items: center; aspect-ratio: 3 / 2; padding: 24px; }
+  .logo-wall li { background: var(--white); border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); display: grid; place-items: center; aspect-ratio: 16 / 9; padding: clamp(12px, 1.6vw, 20px) clamp(14px, 2vw, 24px); container-type: size; }
   .logo-wall a { display: grid; place-items: center; width: 100%; height: 100%; }
-  .logo-wall img { max-height: 64px; max-width: 80%; width: auto; object-fit: contain; }
-  .logo-wall li:hover { background: var(--accent-soft); }
+  /* Equal visual area: width grows with the square root of the aspect ratio, so wordmarks and square marks weigh the same. */
+  .logo-wall img { display: block; width: min(92cqw, calc(80cqh * sqrt(var(--r, 2)))); height: auto; max-height: 100cqh; object-fit: contain; mix-blend-mode: multiply; transition: transform 240ms var(--ease-quart); }
+  .logo-wall a:hover img { transform: scale(1.05); }
+  @media (prefers-reduced-motion: reduce) { .logo-wall img { transition: none; } .logo-wall a:hover img { transform: none; } }
   @media (max-width: 767px) { .logo-wall { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
   .quote { display: grid; gap: 28px; }
   .quote blockquote { margin: 0; }
