@@ -1640,7 +1640,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
   if (!img || !window.fetch || !window.DOMParser) return;
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   var NS = "http://www.w3.org/2000/svg";
-  var W = 95.49, A = 250, R = 202.255, DUR = 1.8, EVERY = 10000, FIRST = 3000;
+  var W = 95.49, A = 250, R = 202.255, DUR = 1.8, SLOW = 1.25, EVERY = 10000, FIRST = 3000;
   var COLORS = ["#2D432B", "#2A5D5B", "#D06E53"];
   function el(tag, attrs, parent) {
     var e = document.createElementNS(NS, tag);
@@ -1716,7 +1716,7 @@ window.CCC_SIG={"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","g
       var t0 = null;
       window.requestAnimationFrame(function step(now) {
         if (t0 === null) t0 = now;
-        var t = (now - t0) / 1000;
+        var t = (now - t0) / (1000 * SLOW); // the header plays 25% slower than the 1.8 s master
         render(Math.min(t, DUR));
         if (t < DUR) window.requestAnimationFrame(step); else running = false;
       });
