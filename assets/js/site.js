@@ -888,7 +888,7 @@ try{
   }
 })();
 }catch(e){console.error('forms-demo.js',e)}
-window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1738.2 395.8, 1696.3 437.7, 1654.5 479.5 C 1638 479.5, 1621.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]},"player":{"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"rampMs":1200,"mobile":{"maxWidth":767,"clock":"scroll","crop":{"cx":0.5,"cy":0.5,"scale":1},"startPhase":5.55},"poster":true,"pauseControl":true,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.2,"cy":0.48,"scale":1.5},"routes":[0,2,4],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2","mobile":{"maxWidth":767,"crop":{"cx":0.2,"cy":0.46,"scale":1.5},"startPhase":5.55}},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame"},"portrait":{"shape":"P1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"hover":true,"hoverTarget":".person","avoid":false,"nodeSafe":false,"reduced":"static t=4.2"}},"staticPhase":4.2,"budget":{"maxLive":3,"maxLoop":3,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
+window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1738.2 395.8, 1696.3 437.7, 1654.5 479.5 C 1638 479.5, 1621.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]},"player":{"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"rampMs":1200,"mobile":{"maxWidth":767,"clock":"scroll","crop":{"cx":0.5,"cy":0.5,"scale":1},"startPhase":5.55},"poster":true,"pauseControl":true,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.2,"cy":0.48,"scale":1.5},"routes":[0,2,4],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2","mobile":{"maxWidth":767,"crop":{"cx":0.2,"cy":0.46,"scale":1.5},"startPhase":5.55}},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame"},"portrait":{"shape":"P1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"hover":true,"hoverTarget":".person","avoid":false,"nodeSafe":false,"reduced":"static t=4.2"},"page-flow":{"kind":"flow","routes":"all","dir":1,"clock":"scroll","startPhase":4.2,"span":0.85,"parallax":0.82,"mobile":{"maxWidth":767,"span":0.55,"parallax":0.82},"reduced":"static t=4.2"}},"staticPhase":4.2,"budget":{"maxLive":3,"maxLoop":3,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
 (function () {
   "use strict";
   var SIG = window.CCC_SIG;
@@ -1584,9 +1584,232 @@ window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"backgrou
     for (var i = 0; i < list.length; i++) out.push(init(list[i]));
     return out;
   }
+  // Page flow: the field repeats down the whole page on two fixed canvases, so the
+  // lines cross every section. Odd tiles are mirrored so each route meets itself at
+  // the seam, and each tile shifts its streaks so a streak leaving one tile enters
+  // the next. The back canvas sits under raised content; the front canvas shows the
+  // same lines only over elements marked data-flow-over.
+  function crossing(r, y) {
+    for (var i = 1; i < r.ys.length; i++) if ((r.ys[i - 1] - y) * (r.ys[i] - y) <= 0) return r.ss[i];
+    return -1;
+  }
+  function Flow(el, opts) {
+    var self = this;
+    this.el = el;
+    this.back = el.querySelector(".flow__back");
+    this.front = el.querySelector(".flow__front");
+    this.bc = this.back.getContext("2d");
+    this.fc = this.front ? this.front.getContext("2d") : null;
+    this.layer = document.createElement("canvas");
+    this.lc = this.layer.getContext("2d");
+    this.opts = opts;
+    this.P = params(opts.params);
+    this.mq = opts.mobile && window.matchMedia("(max-width: " + opts.mobile.maxWidth + "px)");
+    this.clock = opts.clock === "time" ? "time" : "scroll";
+    this.loops = true;
+    this.startPhase = typeof opts.startPhase === "number" ? opts.startPhase : REST;
+    this.time = motionAllowed() ? this.startPhase : REST;
+    this.samples = Math.ceil(96 * this.P.length);
+    this.table = profileTable(this.samples, this.P.body, this.P.back, this.P.front);
+    this.trail = 260 * this.P.length;
+    this.travel = this.trail + this.P.gap;
+    var all = opts.routes === "all" || !opts.routes, flip = opts.dir === -1 ? -1 : 1;
+    this.routes = ROUTES.filter(function (r) { return all || opts.routes.indexOf(r.index) >= 0; }).map(function (r) {
+      var dir = r.direction * flip, T = r.total, sb = crossing(r, FIELD.height), st = crossing(r, 0);
+      return {
+        r: r, dir: dir, shifts: [0],
+        pb: sb < 0 ? 0 : dir === 1 ? sb : T - sb,
+        pt: st < 0 ? 0 : dir === 1 ? st : T - st
+      };
+    });
+    var picked = this.routes.map(function (e) { return e.r.index; });
+    this.nodes = FIELD.nodes.filter(function (node, i) {
+      return all || NODE_ROUTES[i].some(function (ri) { return picked.indexOf(ri) >= 0; });
+    });
+    this.overEls = Array.prototype.slice.call(document.querySelectorAll("[data-flow-over]"));
+    this.playing = false;
+    this.prevBox = null;
+    this.queued = 0;
+    this.schedule = function () {
+      if (self.playing || self.queued) return;
+      self.queued = requestAnimationFrame(function () { self.queued = 0; self.render(); });
+    };
+    addEventListener("scroll", this.schedule, { passive: true });
+    addEventListener("resize", function () { self.resize(); });
+    el.__cccFlow = this;
+    this.resize();
+    this.evaluate();
+  }
+  Flow.prototype.setting = function (key, fallback) {
+    var m = this.mq && this.mq.matches && this.opts.mobile;
+    var v = m && typeof m[key] === "number" ? m[key] : this.opts[key];
+    return typeof v === "number" ? v : fallback;
+  };
+  Flow.prototype.resize = function () {
+    var cw = this.back.clientWidth, ch = this.back.clientHeight;
+    if (!cw || !ch) return;
+    var ratio = Math.min(window.devicePixelRatio || 1, DPR_CAP, Math.sqrt(PIXELS / (cw * ch)));
+    var w = Math.round(cw * ratio), h = Math.round(ch * ratio);
+    if (this.back.width !== w || this.back.height !== h) {
+      this.back.width = this.layer.width = w;
+      this.back.height = this.layer.height = h;
+      if (this.front) { this.front.width = w; this.front.height = h; }
+      this.prevBox = null;
+    }
+    this.k = ratio;
+    // "span" is how much of the field width shows across the viewport.
+    this.s = (cw / (FIELD.width * this.setting("span", 1))) * ratio;
+    this.dx = (w - FIELD.width * this.s) / 2;
+    this.rate = this.setting("parallax", 1);
+    this.render();
+  };
+  // Streak offset of tile t, chained seam by seam from tile 0.
+  Flow.prototype.shift = function (e, t) {
+    var T = e.r.total;
+    while (e.shifts.length <= t) {
+      var j = e.shifts.length - 1, prev = e.shifts[j];
+      e.shifts.push((j % 2 === 0 ? prev + T - 2 * e.pb : prev + 2 * e.pt - T) % this.travel);
+    }
+    return e.shifts[t];
+  };
+  Flow.prototype.render = function () {
+    if (!this.back.width) return;
+    var bc = this.bc, w = this.back.width, h = this.back.height, tileH = FIELD.height * this.s;
+    var top = window.scrollY * this.rate * this.k;
+    bc.setTransform(1, 0, 0, 1, 0, 0);
+    bc.globalAlpha = 1;
+    bc.clearRect(0, 0, w, h);
+    var last = Math.floor((top + h) / tileH);
+    for (var t = Math.max(0, Math.floor(top / tileH)); t <= last; t++) this.tile(t, t * tileH - top, tileH);
+    if (!this.fc) return;
+    var fc = this.fc;
+    fc.setTransform(1, 0, 0, 1, 0, 0);
+    fc.clearRect(0, 0, w, h);
+    var k = this.k, any = false;
+    fc.save();
+    fc.beginPath();
+    this.overEls.forEach(function (o) {
+      var b = o.getBoundingClientRect();
+      if (b.bottom <= 0 || b.top >= h / k || !b.width) return;
+      fc.rect(b.left * k, b.top * k, b.width * k, b.height * k);
+      any = true;
+    });
+    if (any) { fc.clip(); fc.drawImage(this.back, 0, 0); }
+    fc.restore();
+  };
+  Flow.prototype.tile = function (t, y0, tileH) {
+    var bc = this.bc, lc = this.lc, P = this.P, s = this.s, dx = this.dx;
+    var w = this.back.width, h = this.back.height, mir = t % 2 === 1;
+    var sy = mir ? -s : s, ty = mir ? y0 + tileH : y0;
+    var bandTop = Math.max(0, Math.floor(y0)), bandBottom = Math.min(h, Math.ceil(y0 + tileH));
+    if (bandBottom <= bandTop) return;
+    var table = this.table, W = table.W, A = table.A, pS = table.plateauStart, pE = table.plateauEnd;
+    var samples = this.samples, trail = this.trail, travel = this.travel, pad = P.weight / 2 + 2;
+    bc.save();
+    bc.beginPath(); bc.rect(0, bandTop, w, bandBottom - bandTop); bc.clip();
+    for (var ri = 0; ri < this.routes.length; ri++) {
+      var entry = this.routes[ri], r = entry.r, i = r.index, total = r.total;
+      var dir = mir ? -entry.dir : entry.dir, shift = this.shift(entry, t);
+      for (var exposure = 0; exposure < 3; exposure++) {
+        lc.setTransform(1, 0, 0, 1, 0, 0);
+        if (this.prevBox) lc.clearRect(this.prevBox[0], this.prevBox[1], this.prevBox[2], this.prevBox[3]);
+        else lc.clearRect(0, 0, w, h);
+        lc.setTransform(s, 0, 0, sy, dx, ty);
+        lc.strokeStyle = r.color;
+        lc.lineJoin = "round";
+        var distance = ((this.time / 12 - (exposure * 0.22) / 720) * CYCLES[i] + i * 0.173) * (total + 260) + shift;
+        var head = ((distance % travel) + travel) % travel;
+        var x0 = Infinity, y0w = Infinity, x1 = -Infinity, y1w = -Infinity;
+        var laps = Math.ceil((total + trail) / travel);
+        for (var lap = 0; lap <= laps; lap++) {
+          var start = head + lap * travel - trail;
+          var first = Math.max(0, Math.floor((-start / trail) * samples));
+          var end = Math.min(samples, Math.ceil(((total - start) / trail) * samples));
+          if (end <= first) continue;
+          var a = start + (first / samples) * trail;
+          at(r, dir === 1 ? a : total - a);
+          var a0x = PX, a0y = PY, px = PX, py = PY, inRun = false, ox = px, oy = py, tx = 0, ty0 = 0;
+          if (px < x0) x0 = px; if (px > x1) x1 = px; if (py < y0w) y0w = py; if (py > y1w) y1w = py;
+          for (var j = first; j < end; j++) {
+            var b = start + ((j + 1) / samples) * trail;
+            at(r, dir === 1 ? b : total - b);
+            var qx = PX, qy = PY;
+            if (qx < x0) x0 = qx; if (qx > x1) x1 = qx; if (qy < y0w) y0w = qy; if (qy > y1w) y1w = qy;
+            if (j === first) { tx = qx; ty0 = qy; }
+            if (j >= pS && j < pE) {
+              if (!inRun) {
+                lc.lineWidth = P.weight; lc.globalAlpha = 1; lc.lineCap = "butt";
+                lc.beginPath(); lc.moveTo(px, py); inRun = true;
+              }
+              lc.lineTo(qx, qy);
+            } else {
+              if (inRun) { lc.stroke(); inRun = false; }
+              lc.lineCap = "round";
+              var wj = W[j], aj = A[j];
+              if (aj >= 0.001 && wj >= 0.001) {
+                lc.lineWidth = P.weight * wj; lc.globalAlpha = aj;
+                lc.beginPath(); lc.moveTo(px, py); lc.lineTo(qx, qy); lc.stroke();
+              }
+            }
+            ox = px; oy = py; px = qx; py = qy;
+          }
+          if (inRun) lc.stroke();
+          lc.globalAlpha = 1; lc.fillStyle = r.color;
+          var ul;
+          if (end === samples && (ul = Math.hypot(px - ox, py - oy))) cap(lc, P.front, px, py, (px - ox) / ul, (py - oy) / ul, P.weight, P.cup);
+          if (first === 0 && (ul = Math.hypot(tx - a0x, ty0 - a0y))) cap(lc, P.back, a0x, a0y, (a0x - tx) / ul, (a0y - ty0) / ul, P.weight, P.cup);
+        }
+        if (x0 === Infinity) { this.prevBox = null; continue; }
+        var ya = ty + y0w * sy, yb = ty + y1w * sy;
+        var bx0 = Math.max(0, Math.floor((x0 - pad) * s + dx));
+        var by0 = Math.max(bandTop, Math.floor(Math.min(ya, yb) - pad * s));
+        var bx1 = Math.min(w, Math.ceil((x1 + pad) * s + dx));
+        var by1 = Math.min(bandBottom, Math.ceil(Math.max(ya, yb) + pad * s));
+        if (bx1 <= bx0 || by1 <= by0) { this.prevBox = null; continue; }
+        var box = [bx0, by0, bx1 - bx0, by1 - by0];
+        bc.setTransform(1, 0, 0, 1, 0, 0);
+        bc.globalAlpha = EXPOSURE[exposure] * P.lines;
+        bc.drawImage(this.layer, box[0], box[1], box[2], box[3], box[0], box[1], box[2], box[3]);
+        // Clear the whole streak next time, not just the part inside this band.
+        this.prevBox = [Math.max(0, Math.floor((x0 - pad) * s + dx)), Math.max(0, Math.floor(Math.min(ya, yb) - pad * s)),
+          0, 0];
+        this.prevBox[2] = Math.min(w, Math.ceil((x1 + pad) * s + dx)) - this.prevBox[0];
+        this.prevBox[3] = Math.min(h, Math.ceil(Math.max(ya, yb) + pad * s)) - this.prevBox[1];
+        if (this.prevBox[2] <= 0 || this.prevBox[3] <= 0) this.prevBox = null;
+      }
+    }
+    bc.setTransform(s, 0, 0, sy, dx, ty);
+    bc.globalAlpha = P.dots;
+    bc.fillStyle = FIELD.gold;
+    for (var n = 0; n < this.nodes.length; n++) {
+      var node = this.nodes[n];
+      bc.beginPath(); bc.arc(node.cx, node.cy, node.r, 0, Math.PI * 2); bc.fill();
+    }
+    bc.restore();
+  };
+  Flow.prototype.begin = function () { this.playing = true; };
+  Flow.prototype.step = function (delta) {
+    this.time += delta * this.P.speed * (this.clock === "scroll" ? 1 + scrollBoost : 1);
+    this.render();
+  };
+  Flow.prototype.evaluate = function () {
+    if (motionAllowed()) { request(this); return; }
+    release(this);
+    this.time = REST;
+    this.render();
+  };
+  Flow.prototype.motionChanged = function () { this.evaluate(); };
+  function initFlows() {
+    var list = document.querySelectorAll("[data-flow]");
+    for (var i = 0; i < list.length; i++) {
+      var el = list[i];
+      if (el.__cccFlow || !el.querySelector(".flow__back")) continue;
+      instances.push(new Flow(el, GROUPS[el.getAttribute("data-flow")] || {}));
+    }
+  }
   CCC.signature = { init: init, initAll: initAll, allowed: motionAllowed };
-  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { initAll(); });
-  else initAll();
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function () { initAll(); initFlows(); });
+  else { initAll(); initFlows(); }
 })();
 
 /* Chapters world map: zoom buttons, ctrl or pinch wheel, two-finger pinch and drag to pan.

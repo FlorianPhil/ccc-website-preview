@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<script>try{if(localStorage.getItem('ccc-motion')==='off')document.documentElement.setAttribute('data-motion','off')}catch(e){}</script>
+<title>The Cannabis Chamber of Commerce: Where cannabis business connects</title>
+<meta name="description" content="The Cannabis Chamber of Commerce connects cannabis operators, service firms and investors through local chapters, regular events and a global member network.">
+<link rel="preload" href="/ccc-website-preview/assets/fonts/outfit-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/ccc-website-preview/assets/fonts/public-sans-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" href="/ccc-website-preview/assets/logo/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/ccc-website-preview/assets/logo/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="The Cannabis Chamber of Commerce">
+<meta property="og:title" content="The Cannabis Chamber of Commerce: Where cannabis business connects">
+<meta property="og:description" content="The Cannabis Chamber of Commerce connects cannabis operators, service firms and investors through local chapters, regular events and a global member network.">
+<meta property="og:url" content="https://florianphil.github.io/ccc-website-preview/lab/lines-flow/">
+<link rel="canonical" href="https://florianphil.github.io/ccc-website-preview/lab/lines-flow/">
+<meta property="og:image" content="https://florianphil.github.io/ccc-website-preview/assets/img/heroes/home-hero.webp">
+<link rel="stylesheet" href="/ccc-website-preview/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"The Cannabis Chamber of Commerce","url":"https://www.thecannabischamber.com","email":"Info@TheCannabisChamber.com","logo":"/ccc-website-preview/assets/logo/ccc-mark.svg","sameAs":["https://www.linkedin.com/company/thecannabischamber","https://www.instagram.com/cannabischamberofcommerce","https://www.facebook.com/cannabizchamberofcommerce","https://www.youtube.com/channel/UCGRQKZwwLO3ZzEME259PEfg"]}</script>
+
+<script src="/ccc-website-preview/assets/js/site.js" defer></script>
+<script type="application/ld+json" data-breadcrumbs>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://florianphil.github.io/ccc-website-preview/"}]}</script>
+<style>
+/* Lab: the Chamber Lines run through the whole page. The back canvas sits under
+   every section's content; the front canvas shows the lines only over marked images. */
+.flow__back,.flow__front{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.flow__back{z-index:1}
+.flow__front{z-index:3}
+.page-flow main > section > *,.page-flow .sig-band,.page-flow .site-footer > *{position:relative;z-index:2}
+.page-flow .home-hero__photo{position:absolute;z-index:0}
+.page-flow .site-footer{position:relative}
+</style>
+</head>
+<body class="page-home page-flow">
+<div class="flow" data-flow="page-flow" aria-hidden="true"><canvas class="flow__back"></canvas><canvas class="flow__front"></canvas></div>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand-link" href="/ccc-website-preview/" aria-label="The Cannabis Chamber of Commerce, home">
+      <img src="/ccc-website-preview/assets/logo/ccc-lockup-horizontal.svg" alt="" width="172" height="52">
+    </a>
+    <nav class="nav-main" aria-label="Main">
+      <ul>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/events/">Events</a></li>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/chapters/">Chapters</a></li>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/membership/">Membership</a></li>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/members/">Members</a></li>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/resources/">Resources</a></li>
+        
+        <li><a class="nav-link" href="/ccc-website-preview/about/">About</a></li>
+        
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="nav-utility" href="/ccc-website-preview/contact/">Contact</a>
+      <a class="btn btn--primary btn--header" href="/ccc-website-preview/membership/">Join the Network</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+        <span class="menu-toggle__icon" aria-hidden="true"></span><span>Menu</span>
+      </button>
+    </div>
+  </div>
+  <span class="header-impulse" aria-hidden="true"><svg class="streak impulse-rule__streak" viewBox="0 0 120 4" width="120" height="4" aria-hidden="true" focusable="false"><rect width="40" height="4" opacity=".12"/><rect x="40" width="40" height="4" opacity=".3"/><rect x="80" width="40" height="4" opacity=".78"/></svg></span>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <div class="wrap">
+    <ul class="mobile-nav__list" role="list">
+      
+      <li><a href="/ccc-website-preview/events/">Events</a></li>
+      
+      <li><a href="/ccc-website-preview/chapters/">Chapters</a></li>
+      
+      <li><a href="/ccc-website-preview/membership/">Membership</a></li>
+      
+      <li><a href="/ccc-website-preview/members/">Members</a></li>
+      
+      <li><a href="/ccc-website-preview/resources/">Resources</a></li>
+      
+      <li><a href="/ccc-website-preview/about/">About</a></li>
+      
+      <li><a href="/ccc-website-preview/contact/">Contact</a></li>
+    </ul>
+    <div class="mobile-nav__foot">
+      <a class="btn btn--primary" href="/ccc-website-preview/membership/">Join the Network</a>
+      <a class="link" href="mailto:Info@TheCannabisChamber.com">Info@TheCannabisChamber.com</a>
+    </div>
+  </div>
+</div>
+<main id="main" tabindex="-1">
+
+
+<section class="home-hero" aria-labelledby="home-title">
+  <figure class="home-hero__photo">
+    <img src="/ccc-website-preview/assets/img/heroes/home-hero.webp" srcset="/ccc-website-preview/assets/img/heroes/home-hero-480w.webp 480w, /ccc-website-preview/assets/img/heroes/home-hero-800w.webp 800w, /ccc-website-preview/assets/img/heroes/home-hero-1200w.webp 1200w, /ccc-website-preview/assets/img/heroes/home-hero.webp 1600w" sizes="100vw" alt="Cannabis professionals talking at a Chamber networking mixer" width="1600" height="679" decoding="async" fetchpriority="high">
+  </figure>
+  <div class="wrap home-hero__inner">
+    <div class="panel">
+      <h1 id="home-title">Where cannabis business connects<span class="period">.</span></h1>
+      <p class="lede">Meet the operators, service firms and investors you want to do business with, through <!--n:chapters-->26<!--/n--> local chapters, about <!--n:eventsyear-->75<!--/n--> events a year and one global member network.</p>
+      <div class="cluster home-hero__ctas">
+        <a class="btn btn--primary" href="/ccc-website-preview/membership/">Join the Network</a>
+        <a class="btn btn--secondary" href="/ccc-website-preview/events/">View events</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="sig-band">
+  <div class="field" id="field-home-hero" data-signature="home-hero"><canvas class="field__canvas" aria-hidden="true"></canvas><svg class="field__poster" aria-hidden="true" focusable="false" viewBox="0.0 0.0 1672.0 941.0" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="1672.0" height="941.0" fill="#F1E8D8"/><path data-route="0" d="M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035" fill="none" stroke="#2D432B" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><path data-route="1" d="M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040" fill="none" stroke="#2D432B" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><path data-route="2" d="M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489" fill="none" stroke="#2A5D5B" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><path data-route="3" d="M 1780 354 C 1738.2 395.8, 1696.3 437.7, 1654.5 479.5 C 1638 479.5, 1621.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040" fill="none" stroke="#2A5D5B" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><path data-route="4" d="M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381" fill="none" stroke="#D06E53" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><path data-route="5" d="M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5" fill="none" stroke="#D06E53" stroke-width="3" opacity=".585" vector-effect="non-scaling-stroke"/><circle cx="1254.5" cy="152.5" r="31.976553910638962" fill="#F1E8D8"/><circle opacity=".65" cx="1254.5" cy="152.5" r="23.0" fill="#9C7C46"/><circle cx="469.0" cy="191.5" r="31.698100557729553" fill="#F1E8D8"/><circle opacity=".65" cx="469.0" cy="191.5" r="23.0" fill="#9C7C46"/><circle cx="84.0" cy="381.0" r="49.51767361255979" fill="#F1E8D8"/><circle opacity=".65" cx="84.0" cy="381.0" r="39.5" fill="#9C7C46"/><circle cx="1581.0" cy="479.5" r="49.51009997970111" fill="#F1E8D8"/><circle opacity=".65" cx="1581.0" cy="479.5" r="40.0" fill="#9C7C46"/><circle cx="1137.0" cy="670.5" r="31.80015723231569" fill="#F1E8D8"/><circle opacity=".65" cx="1137.0" cy="670.5" r="23.0" fill="#9C7C46"/><circle cx="222.0" cy="681.5" r="32.72995569810628" fill="#F1E8D8"/><circle opacity=".65" cx="222.0" cy="681.5" r="24.0" fill="#9C7C46"/></svg></div>
+<button class="motion-pause" type="button" data-pause-for="field-home-hero" aria-pressed="false"><svg class="icon-pause" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><rect x="2" y="1" width="3" height="10"/><rect x="7" y="1" width="3" height="10"/></svg><svg class="icon-play" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M2 1 L11 6 L2 11 Z"/></svg><span>Pause motion</span></button>
+</div>
+
+<section class="statband surface-ink" aria-label="The Chamber in numbers">
+  <div class="wrap">
+    <ul class="statband__list" role="list">
+      <li class="statband__item"><p class="statband__n"><!--n:chapters-->26<!--/n--></p><p class="statband__l">local chapters</p></li>
+      <li class="statband__item"><p class="statband__n"><!--n:eventsyear-->75<!--/n--></p><p class="statband__l">events a year</p></li>
+      <li class="statband__item"><p class="statband__n"><!--n:regions-->6<!--/n--></p><p class="statband__l">continents</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="home-next surface-white" aria-labelledby="home-next-title">
+  <div class="wrap">
+    <div class="home-next__bar">
+      <h2 class="label" id="home-next-title">Upcoming events</h2>
+      <a class="link" href="/ccc-website-preview/events/">All events</a>
+    </div>
+    <ol class="event-strip" role="list">
+      <li class="event-strip__item" data-end="2026-12-02">
+  <time class="date-block" datetime="2026-12-02"><span class="date-block__day">02</span><span class="date-block__month">Dec</span><span class="date-block__week">Wed</span></time>
+  <div>
+    <h3 class="event-strip__title"><a href="/ccc-website-preview/events/las-vegas-elevated-minds-social-hour-mjbiz-2026/">Elevated Minds Social Hour @ MJBIZ</a></h3>
+    <p class="event-strip__meta">4:00 to 8:00 PM PT · Planet 13 Las Vegas</p>
+  </div>
+</li>
+    </ol>
+  </div>
+</section>
+
+<section class="home-network" id="network" aria-labelledby="network-title">
+  <div class="field" id="field-home-network" data-signature="home-network"><canvas class="field__canvas" aria-hidden="true"></canvas><svg class="field__poster" aria-hidden="true" focusable="false" viewBox="0.0 138.0 1114.7 627.3" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="1672.0" height="941.0" fill="#F1E8D8"/><path data-route="0" d="M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035" fill="none" stroke="#2D432B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="2" d="M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489" fill="none" stroke="#2A5D5B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="4" d="M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381" fill="none" stroke="#D06E53" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><circle cx="469.0" cy="191.5" r="31.698100557729553" fill="#F1E8D8"/><circle opacity=".65" cx="469.0" cy="191.5" r="23.0" fill="#9C7C46"/><circle cx="84.0" cy="381.0" r="49.51767361255979" fill="#F1E8D8"/><circle opacity=".65" cx="84.0" cy="381.0" r="39.5" fill="#9C7C46"/><circle cx="222.0" cy="681.5" r="32.72995569810628" fill="#F1E8D8"/><circle opacity=".65" cx="222.0" cy="681.5" r="24.0" fill="#9C7C46"/></svg></div>
+  <div class="wrap grid home-network__inner">
+    <div class="panel c-7-12" data-reveal="r1" data-reveal-self>
+      <p class="sec-head__eyebrow"><span class="label sec-head__num">01</span><span class="label">The network</span></p>
+      <h2 id="network-title">Meet the buyers, partners and operators who move cannabis business<span class="period">.</span></h2>
+      <div class="stack-s home-network__body">
+        <p>The Cannabis Chamber of Commerce connects the people who run legal cannabis businesses: operators, consultants, investors and the service firms around them. Its mission is to connect the cannabis industry with purpose, professionalism and people.</p>
+        <p>The Chamber started in California. Today it runs <!--n:chapters-->26<!--/n--> chapters across the United States, Canada, Latin America, Europe, Asia, Australia and Africa, and hosts about <!--n:eventsyear-->75<!--/n--> events a year. Your local chapter is led by people who work in your market, so the introductions are real.</p>
+      </div>
+      <p><a class="link" href="/ccc-website-preview/about/">About the Chamber</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-coral home-leadership" id="leadership" aria-labelledby="leadership-title">
+  <div class="wrap grid">
+    <p class="sec-head__eyebrow c-1-12"><span class="label sec-head__num">02</span><span class="label">Leadership</span></p>
+    <h2 class="home-leadership__title c-3-10" id="leadership-title">Chapter leaders who open doors in your market<span class="period">.</span></h2>
+    <figure class="letter-excerpt c-3-10" data-reveal="r3">
+      <blockquote><p>Our local regional leadership teams help facilitate introductions and opportunities for members by bringing connections, products, and resources together.</p></blockquote>
+      <figcaption><strong>Chris Boudreau</strong><br><span class="small">Founder &amp; Chair of the Board of Directors</span></figcaption>
+    </figure>
+    <div class="c-3-10 cluster home-leadership__links">
+      <a class="link" href="/ccc-website-preview/about/#letter">Read the full letter</a>
+      <a class="link" href="/ccc-website-preview/about/board/">Meet the board</a>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-forest home-model" id="model" aria-labelledby="model-title">
+  <div class="wrap">
+    <header class="sec-head grid" data-reveal="r4">
+  <p class="sec-head__eyebrow"><span class="label sec-head__num">03</span><span class="label">How it works</span></p>
+  <h2 class="sec-head__title" id="model-title">Get deals, introductions and partners in your market, then in the world.</h2>
+</header>
+    <div class="grid sec-body">
+      <ol class="model-list c-1-7" data-reveal="r3" role="list">
+        <li><span class="model-list__num">01</span><div><h3>People who know your market</h3><p>Each region is led by a team that knows its regulations, business culture and growth opportunities. They make introductions where business happens.</p></div></li>
+        <li><span class="model-list__num">02</span><div><h3>Partners in every region</h3><p>Members reach the whole network beyond their own region, for international partnerships, cross-border investment and expansion.</p></div></li>
+        <li><span class="model-list__num">03</span><div><h3>A room of people who do what you do</h3><p>Mixers, educational forums, job fairs and industry training, run by leaders who live and work in each market.</p></div></li>
+      </ol>
+    </div>
+  </div>
+  <figure class="wrap--wide media home-model__media" data-flow-over data-reveal="r2" data-from="right">
+    <img src="/ccc-website-preview/assets/generated/people-boardroom-21x9.webp" srcset="/ccc-website-preview/assets/generated/people-boardroom-21x9-480w.webp 480w, /ccc-website-preview/assets/generated/people-boardroom-21x9-800w.webp 800w, /ccc-website-preview/assets/generated/people-boardroom-21x9-1200w.webp 1200w, /ccc-website-preview/assets/generated/people-boardroom-21x9.webp 1600w" sizes="(min-width: 1440px) 1440px, (min-width: 768px) 100vw, 175vw" alt="Chamber leaders from different markets around a long table in a bright boardroom, planning together." width="1600" height="679" loading="lazy" decoding="async" data-drift="14" data-origin="ai-generated">
+  </figure>
+</section>
+
+<section class="section surface-ivory home-events" id="events" aria-labelledby="events-title">
+  <div class="wrap">
+    <header class="sec-head grid" data-reveal="r4">
+  <p class="sec-head__eyebrow"><span class="label sec-head__num">04</span><span class="label">Events</span></p>
+  <h2 class="sec-head__title" id="events-title">Meet buyers and partners at about <!--n:eventsyear-->75<!--/n--> events a year.</h2>
+  <div class="sec-head__aside">
+      <p>Networking mixers, educational workshops, virtual forums, job fairs, regional conferences and chapter meetings. Many events are free or discounted for members.</p>
+    </div>
+</header>
+    <div class="sec-body">
+      <ol class="event-list" role="list" data-reveal="r1">
+<li class="event-row" data-end="2026-12-02">
+  <time class="date-block" datetime="2026-12-02"><span class="date-block__day">02</span><span class="date-block__month">Dec</span><span class="date-block__week">Wed</span></time>
+  <div class="event-row__main">
+    <h3 class="event-row__title"><a href="/ccc-website-preview/events/las-vegas-elevated-minds-social-hour-mjbiz-2026/">Elevated Minds Social Hour @ MJBIZ</a></h3>
+    <p class="event-row__meta">4:00 to 8:00 PM PT · Planet 13 Las Vegas</p>
+  </div>
+  <ul class="event-row__tags" role="list" aria-label="Tags">
+    <li class="tag tag--region">Las Vegas, NV</li><li class="tag tag--format">Mixer</li>
+  </ul>
+  <p class="event-row__state"><span class="state state--open">RSVP open</span><span class="event-row__go" aria-hidden="true">Details</span></p>
+  <span class="impulse-rule__clip" aria-hidden="true"><svg class="streak impulse-rule__streak" viewBox="0 0 120 4" width="120" height="4" aria-hidden="true" focusable="false"><rect width="40" height="4" opacity=".12"/><rect x="40" width="40" height="4" opacity=".3"/><rect x="80" width="40" height="4" opacity=".78"/></svg></span>
+</li>
+      </ol>
+      <div class="grid home-events__foot">
+        <p class="c-1-7">Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
+        <div class="c-9-12 home-events__cta"><a class="btn btn--secondary" href="/ccc-website-preview/events/">View all events</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-white home-chapters" id="chapters" aria-labelledby="chapters-title">
+  <div class="wrap">
+    <header class="sec-head grid" data-reveal="r4">
+  <p class="sec-head__eyebrow"><span class="label sec-head__num">05</span><span class="label">Chapters</span></p>
+  <h2 class="sec-head__title" id="chapters-title">Find the chapter where you do business.</h2>
+  <div class="sec-head__aside">
+      <p>New chapters launch as the Chamber grows. A chapter marked forming is building its leadership team.</p>
+    </div>
+</header>
+    <div class="grid sec-body">
+      <ul class="region-index c-1-12" data-reveal="r3" role="list">
+<!--data:regions-->
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#north-america">North America</a></h3>
+          <p class="region-index__count"><span class="state state--active">17 active</span><span class="state state--forming">3 forming</span></p>
+          <p class="region-index__places">Los Angeles, San Diego, Orange County, Bay Area, Sacramento, Riverside &amp; San Bernardino, Oregon, Colorado, Illinois, Minnesota, Ohio, Michigan, Iowa &amp; Nebraska, Tennessee, Florida, Texas, Oklahoma, Northeastern US, DC, Maryland &amp; Virginia, Canada</p>
+        </li>
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#latin-america">Latin America and Caribbean</a></h3>
+          <p class="region-index__count"><span class="state state--active">1 active</span><span class="state state--forming">1 forming</span></p>
+          <p class="region-index__places">Puerto Rico, Latin America</p>
+        </li>
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#europe">Europe</a></h3>
+          <p class="region-index__count"><span class="state state--active">1 active</span></p>
+          <p class="region-index__places">Greater Europe</p>
+        </li>
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#asia">Asia</a></h3>
+          <p class="region-index__count"><span class="state state--forming">1 forming</span></p>
+          <p class="region-index__places">Eastern Asia</p>
+        </li>
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#australia">Australia and Pacific</a></h3>
+          <p class="region-index__count"><span class="state state--active">1 active</span></p>
+          <p class="region-index__places">Australia Pacific</p>
+        </li>
+        <li class="region-index__group">
+          <h3 class="region-index__name"><a href="/ccc-website-preview/chapters/#africa">Africa</a></h3>
+          <p class="region-index__count"><span class="state state--active">1 active</span></p>
+          <p class="region-index__places">Pan Africa</p>
+        </li>
+<!--/data:regions-->
+      </ul>
+      <div class="c-1-12 home-chapters__cta"><a class="btn btn--secondary" href="/ccc-website-preview/chapters/">View all chapters</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-ivory home-partners" id="partners" aria-labelledby="partners-title">
+  <div class="wrap">
+    <header class="sec-head grid" data-reveal="r4">
+  <p class="sec-head__eyebrow"><span class="label sec-head__num">06</span><span class="label">Expo partners</span></p>
+  <h2 class="sec-head__title" id="partners-title">Discounted tickets at the industry&#39;s biggest expos.</h2>
+  <div class="sec-head__aside">
+      <p>Partnerships with these expos give members discounted tickets, networking priority and brand visibility.</p>
+    </div>
+</header>
+    <div class="sec-body">
+      <ul class="partner-row" data-reveal="r1" role="list">
+        <li><a class="partner-link" href="https://www.mjbizconference.com" target="_blank" rel="noopener">MJ BizCon<span class="visually-hidden"> (official site, opens in a new tab)</span></a></li>
+        <li><a class="partner-link" href="https://mjunpacked.com" target="_blank" rel="noopener">MJ Unpacked<span class="visually-hidden"> (official site, opens in a new tab)</span></a></li>
+        <li><a class="partner-link" href="https://www.igniteit.com" target="_blank" rel="noopener">IgniteIt!<span class="visually-hidden"> (official site, opens in a new tab)</span></a></li>
+        <li><a class="partner-link" href="https://internationalcbc.com/berlin/" target="_blank" rel="noopener">ICBC Berlin<span class="visually-hidden"> (official site, opens in a new tab)</span></a></li>
+        <li><a class="partner-link" href="https://expocannabisbrasil.com" target="_blank" rel="noopener">ExpoCannabis Brasil<span class="visually-hidden"> (official site, opens in a new tab)</span></a></li>
+      </ul>
+      <p class="home-partners__more">And other expo partners worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-ink offer-band" id="membership" aria-labelledby="membership-title">
+  <div class="wrap grid offer-band__grid">
+    <div class="c-1-7 offer-band__copy">
+      <p class="sec-head__eyebrow"><span class="label sec-head__num">07</span><span class="label">Membership</span></p>
+      <h2 id="membership-title">Start with a Chamber Networking Profile. Upgrade anytime<span class="period">.</span></h2>
+      <p class="lede">Five tiers, from a Chamber Networking Profile to Platinum. Paid tiers add directory access, event booths, logo placement and newsletter features.</p>
+      <div class="cluster offer-band__ctas">
+        <a class="btn btn--inverse" href="/ccc-website-preview/membership/free/">Join the Network</a>
+        <a class="btn btn--outline" href="/ccc-website-preview/membership/">Compare membership tiers</a>
+      </div>
+    </div>
+    <figure class="c-8-12 media offer-band__media" data-reveal="r2" data-from="bottom">
+      <img src="/ccc-website-preview/assets/generated/people-badge-3x2.webp" srcset="/ccc-website-preview/assets/generated/people-badge-3x2-480w.webp 480w, /ccc-website-preview/assets/generated/people-badge-3x2-800w.webp 800w, /ccc-website-preview/assets/generated/people-badge-3x2-1200w.webp 1200w, /ccc-website-preview/assets/generated/people-badge-3x2.webp 1600w" sizes="(min-width: 768px) 900px, 100vw" alt="A Chamber volunteer handing a new member a name badge on a green lanyard at an event welcome table." width="1600" height="1073" loading="lazy" decoding="async" data-origin="ai-generated">
+    </figure>
+    <dl class="c-1-12 offer-band__tiers" data-reveal="r1">
+      <div class="offer-band__tier">
+        <dt>Free</dt>
+        <dd>$0</dd>
+      </div>
+      <div class="offer-band__tier">
+        <dt>Individual</dt>
+        <dd>$20<span> /mo</span></dd>
+      </div>
+      <div class="offer-band__tier">
+        <dt>Silver</dt>
+        <dd>$100<span> /mo</span></dd>
+      </div>
+      <div class="offer-band__tier">
+        <dt>Gold</dt>
+        <dd>$250<span> /mo</span></dd>
+      </div>
+      <div class="offer-band__tier">
+        <dt>Platinum</dt>
+        <dd>$500<span> /mo</span></dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section class="section surface-white home-members" id="members" aria-labelledby="members-title">
+  <div class="wrap">
+    <header class="sec-head grid" data-reveal="r4">
+  <p class="sec-head__eyebrow"><span class="label sec-head__num">08</span><span class="label">Members</span></p>
+  <h2 class="sec-head__title" id="members-title">Join the companies already in the room.</h2>
+  <div class="sec-head__aside">
+      <p>These companies support the Chamber at its highest membership tier.</p>
+    </div>
+</header>
+    <div class="sec-body">
+      <ul class="logo-wall" data-reveal="r1" role="list">
+        <li style="--r: 3.378"><img src="/ccc-website-preview/assets/img/members/dutchie.webp" alt="Dutchie" width="500" height="148" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.571"><img src="/ccc-website-preview/assets/img/members/emerald-beach-financial.webp" alt="Emerald Beach Financial" width="490" height="312" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.978"><img src="/ccc-website-preview/assets/img/members/canopy.webp" alt="Canopy" width="265" height="134" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.000"><img src="/ccc-website-preview/assets/img/members/igniteit-cannabis.webp" alt="IgniteIt Cannabis" width="352" height="352" loading="lazy" decoding="async"></li>
+        <li style="--r: 2.684"><img src="/ccc-website-preview/assets/img/members/mj-biz-conference.webp" alt="MJ Biz Conference" width="212" height="79" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.000"><img src="/ccc-website-preview/assets/img/members/cannabiz-media.webp" alt="Cannabiz Media" width="400" height="400" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.924"><img src="/ccc-website-preview/assets/img/members/verdant-strategies.webp" alt="Verdant Strategies" width="531" height="276" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.000"><img src="/ccc-website-preview/assets/img/members/epropel.webp" alt="ePropel" width="182" height="182" loading="lazy" decoding="async"></li>
+        <li style="--r: 3.894"><img src="/ccc-website-preview/assets/img/members/rassman-payment-solutions.webp" alt="Rassman Payment Solutions" width="440" height="113" loading="lazy" decoding="async"></li>
+        <li style="--r: 0.875"><img src="/ccc-website-preview/assets/img/members/beard-bros-pharms-and-media.webp" alt="Beard Bros Pharms &amp; Media" width="481" height="550" loading="lazy" decoding="async"></li>
+        <li style="--r: 1.231"><img src="/ccc-website-preview/assets/img/members/mj-unpacked.webp" alt="MJ Unpacked" width="229" height="186" loading="lazy" decoding="async"></li>
+        <li style="--r: 0.851"><img src="/ccc-website-preview/assets/img/members/media-jel.webp" alt="MediaJel" width="148" height="174" loading="lazy" decoding="async"></li>
+      </ul>
+      <div class="home-members__cta"><a class="btn btn--secondary" href="/ccc-website-preview/members/">View all members</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="section surface-ivory home-voice" id="voice" aria-label="Member voice">
+  <div class="wrap grid">
+    <p class="sec-head__eyebrow c-1-12"><span class="label sec-head__num">09</span><span class="label">Member voice</span></p>
+    <figure class="media home-voice__photo c-1-4" data-reveal="r2">
+      <img src="/ccc-website-preview/assets/img/people/rachel-wright-testimonial.webp" srcset="/ccc-website-preview/assets/img/people/rachel-wright-testimonial-480w.webp 480w, /ccc-website-preview/assets/img/people/rachel-wright-testimonial.webp 800w" sizes="360px" alt="Rachel Wright" width="800" height="800" loading="lazy" decoding="async">
+    </figure>
+    <figure class="quote home-voice__quote c-6-12" data-reveal="r1" data-reveal-self>
+      <span class="quote__mark" aria-hidden="true"></span>
+      <blockquote><p>The Cannabis Chamber of Commerce has been instrumental in my journey, both as an active member and as a board director. The networking opportunities, industry insights, and shared commitment to ethical growth…</p></blockquote>
+      <figcaption><strong>Rachel Wright, CPA</strong><span>CEO, Verdant Strategies</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="rail" aria-hidden="true" data-clip-after="#network" data-clip-before=".contact-band">
+  <span class="rail__fill"></span>
+  <span class="rail__tick" data-for="network"></span>
+  <span class="rail__tick" data-for="leadership"></span>
+  <span class="rail__tick" data-for="model"></span>
+  <span class="rail__tick" data-for="events"></span>
+  <span class="rail__tick" data-for="chapters"></span>
+  <span class="rail__tick" data-for="partners"></span>
+  <span class="rail__tick" data-for="membership"></span>
+  <span class="rail__tick" data-for="members"></span>
+  <span class="rail__tick" data-for="voice"></span>
+</div>
+
+<section class="contact-band surface-white rule-top" aria-labelledby="contact-band-title">
+  <div class="wrap grid contact-band__grid">
+    <div class="c-1-7 stack">
+      <p class="label">Contact</p>
+      <h2 id="contact-band-title">Questions about membership, chapters or sponsorship?</h2>
+      <a class="contact-band__mail" href="mailto:Info@TheCannabisChamber.com">Info@TheCannabisChamber.com</a>
+    </div>
+    <div class="c-8-12 stack-s">
+      <p>The Chamber team answers by email. For a chapter question, name the region in your subject line.</p>
+      <div class="cluster"><a class="btn btn--secondary" href="/ccc-website-preview/contact/">Contact the Chamber</a></div>
+      <button class="motion-toggle" type="button" aria-pressed="true"><span class="motion-toggle__box" aria-hidden="true"></span>Site motion</button>
+    </div>
+  </div>
+</section>
+<div class="field field--strip" id="field-contact-band" data-signature="contact-band"><canvas class="field__canvas" aria-hidden="true"></canvas><svg class="field__poster" aria-hidden="true" focusable="false" viewBox="0.0 0.0 1672.0 941.0" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="1672.0" height="941.0" fill="#F1E8D8"/><path data-route="0" d="M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035" fill="none" stroke="#2D432B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="1" d="M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040" fill="none" stroke="#2D432B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="2" d="M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 48 417, 12 453, -24 489 C -52.7 489, -81.3 489, -110 489" fill="none" stroke="#2A5D5B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="3" d="M 1780 354 C 1738.2 395.8, 1696.3 437.7, 1654.5 479.5 C 1638 479.5, 1621.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040" fill="none" stroke="#2A5D5B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="4" d="M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381" fill="none" stroke="#D06E53" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="5" d="M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5" fill="none" stroke="#D06E53" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><circle cx="1254.5" cy="152.5" r="31.976553910638962" fill="#F1E8D8"/><circle opacity=".65" cx="1254.5" cy="152.5" r="23.0" fill="#9C7C46"/><circle cx="469.0" cy="191.5" r="31.698100557729553" fill="#F1E8D8"/><circle opacity=".65" cx="469.0" cy="191.5" r="23.0" fill="#9C7C46"/><circle cx="84.0" cy="381.0" r="49.51767361255979" fill="#F1E8D8"/><circle opacity=".65" cx="84.0" cy="381.0" r="39.5" fill="#9C7C46"/><circle cx="1581.0" cy="479.5" r="49.51009997970111" fill="#F1E8D8"/><circle opacity=".65" cx="1581.0" cy="479.5" r="40.0" fill="#9C7C46"/><circle cx="1137.0" cy="670.5" r="31.80015723231569" fill="#F1E8D8"/><circle opacity=".65" cx="1137.0" cy="670.5" r="23.0" fill="#9C7C46"/><circle cx="222.0" cy="681.5" r="32.72995569810628" fill="#F1E8D8"/><circle opacity=".65" cx="222.0" cy="681.5" r="24.0" fill="#9C7C46"/></svg></div>
+
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="grid site-footer__top">
+      <div class="site-footer__brand">
+        <img src="/ccc-website-preview/assets/logo/ccc-lockup-horizontal-inverse.svg" alt="The Cannabis Chamber of Commerce" width="200" height="61">
+        <p>Where cannabis business connects. Chapters, events and leadership programs for the cannabis industry worldwide.</p>
+      </div>
+      <div class="site-footer__col site-footer__c1">
+        <h2>Network</h2>
+        <ul>
+          <li><a href="/ccc-website-preview/events/">Events</a></li>
+          <li><a href="/ccc-website-preview/events/past/">Past events</a></li>
+          <li><a href="/ccc-website-preview/chapters/">Chapters</a></li>
+          <li><a href="/ccc-website-preview/members/">Members</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col site-footer__c2">
+        <h2>Chamber</h2>
+        <ul>
+          <li><a href="/ccc-website-preview/membership/">Membership</a></li>
+          <li><a href="/ccc-website-preview/about/">About</a></li>
+          <li><a href="/ccc-website-preview/about/board/">Board of directors</a></li>
+          <li><a href="/ccc-website-preview/resources/">Resources</a></li>
+          <li><a href="/ccc-website-preview/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="site-footer__col site-footer__c3">
+        <h2>Follow</h2>
+        <ul>
+          
+          <li><a href="https://www.linkedin.com/company/thecannabischamber" rel="noopener">LinkedIn</a></li>
+          
+          <li><a href="https://www.instagram.com/cannabischamberofcommerce" rel="noopener">Instagram</a></li>
+          
+          <li><a href="https://www.facebook.com/cannabizchamberofcommerce" rel="noopener">Facebook</a></li>
+          
+          <li><a href="https://www.youtube.com/channel/UCGRQKZwwLO3ZzEME259PEfg" rel="noopener">YouTube</a></li>
+          
+          <li><a href="mailto:Info@TheCannabisChamber.com">Info@TheCannabisChamber.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__base">
+      <p class="site-footer__attr">&copy; 2026 The Cannabis Chamber of Commerce</p>
+      <ul class="site-footer__legal" role="list">
+        <li><a href="/ccc-website-preview/legal/terms/">Terms</a></li>
+        <li><a href="/ccc-website-preview/legal/privacy/">Privacy</a></li>
+        <li><a href="/ccc-website-preview/legal/refund/">Refund policy</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
