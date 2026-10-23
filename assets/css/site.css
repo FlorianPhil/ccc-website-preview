@@ -1186,33 +1186,21 @@
   .home-leadership__links { --cluster: 12px 32px; }
   .rail { display: none; }
   @media (min-width: 1360px) {
+    /* Drawn by initRail from CCC_SIG: a straight Chamber line centred in the left margin */
     .rail {
       display: block; position: fixed; z-index: 1;
-      left: max(20px, calc((100vw - var(--container)) / 2 - 64px));
-      top: calc(var(--header-h-condensed) + 48px); bottom: 48px; width: 2px;
-      background: var(--border); opacity: 0;
-      transition: opacity var(--t-ui) var(--ease-quart);
+      left: calc((100vw - var(--container)) / 4); transform: translateX(-50%);
+      top: calc(var(--header-h-condensed) + 48px); bottom: 48px;
+      opacity: 0; transition: opacity var(--t-ui) var(--ease-quart);
       pointer-events: none;
     }
+    .rail canvas { display: block; width: 100%; height: 100%; }
+    .rail__tick { display: none; }
     .rail.is-shown { opacity: 1; }
     .home-model__media, .offer-band { position: relative; z-index: 2; }
-    .rail__fill { position: absolute; inset: 0; background: var(--forest); transform: scaleY(0); transform-origin: top; }
-    /* Signature node: brass dot on an ivory halo, same device as the route field */
-    .rail__tick {
-      position: absolute; left: -6px; width: 14px; height: 14px; border-radius: 50%;
-      background: var(--ivory); border: 2px solid var(--brass); box-shadow: 0 0 0 4px var(--ivory);
-      transform: translateY(-50%);
-      transition: background-color var(--t-micro) var(--ease-quart), transform var(--t-micro) var(--ease-quart);
-    }
-    .rail__tick.is-on { background: var(--brass); transform: translateY(-50%) scale(1.15); }
   }
-  @media (prefers-reduced-motion: reduce) {
-    .rail.is-shown { opacity: 1; }
-    .rail__fill { transform: none; }
-    .rail__tick { background: var(--brass); }
-  }
+  @media (prefers-reduced-motion: reduce) { .rail.is-shown { opacity: 1; } }
   html[data-motion="off"] .rail.is-shown { opacity: 1; }
-  html[data-motion="off"] .rail__fill { transform: none; }
 }
 @layer pages {
   .lg-head { border-bottom: var(--rule); }

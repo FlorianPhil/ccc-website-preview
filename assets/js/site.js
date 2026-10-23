@@ -251,37 +251,75 @@
       targets.forEach(function (t) { hop.observe(t); });
     });
   }
+  // The rail is a straight Chamber line: route colours and weight, signature dots and ends, all from CCC_SIG.
   function initRail() {
     var rail = doc.querySelector(".rail");
     if (!rail) return;
-    var fill = rail.querySelector(".rail__fill"), ticks = $$(".rail__tick", rail), start = 0, end = 1;
+    var ticks = $$(".rail__tick", rail), start = 0, end = 1, tops = [];
     var secs = ticks.map(function (t) { return doc.getElementById(t.getAttribute("data-for")); });
     var after = doc.querySelector(rail.getAttribute("data-clip-after") || "#none");
     var before = doc.querySelector(rail.getAttribute("data-clip-before") || "#none");
+    var cv = doc.createElement("canvas"), lc = cv.getContext("2d");
+    rail.insertBefore(cv, rail.firstChild);
     function y(el, edge) { return el.getBoundingClientRect()[edge] + pageYOffset - vh() / 2; }
     function measure() {
       if (!secs[0]) return;
       start = y(secs[0], "top");
       end = y(secs[secs.length - 1], "bottom");
-      ticks.forEach(function (t, i) { if (secs[i]) t.style.top = (clamp((y(secs[i], "top") - start) / (end - start)) * 100).toFixed(2) + "%"; });
+      tops = secs.map(function (s) { return s ? clamp((y(s, "top") - start) / (end - start)) : 0; });
       update();
+    }
+    function draw(p) {
+      var SIG = window.CCC_SIG, kit = window.CCC && window.CCC.sig;
+      if (!SIG || !kit || !lc) return;
+      var F = SIG.field, P = SIG.player, R = (SIG.groups && SIG.groups.rail) || {};
+      var s = innerWidth / F.width, w = P.weight * s;
+      var dot = Math.min.apply(null, F.nodes.map(function (n) { return n.r; })) * s;
+      var ring = Math.min.apply(null, F.nodes.map(function (n) { return n.outerR; })) * s;
+      var pad = w * 0.8, W = Math.ceil(ring * 2), H = rail.clientHeight;
+      var dpr = Math.min(devicePixelRatio || 1, (SIG.budget && SIG.budget.dprCap) || 1.5);
+      rail.style.width = W + "px";
+      if (cv.width !== Math.round(W * dpr) || cv.height !== Math.round(H * dpr)) { cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); }
+      lc.setTransform(dpr, 0, 0, dpr, 0, 0);
+      lc.clearRect(0, 0, W, H);
+      var x = W / 2, y0 = pad, y1 = H - pad, at = function (t) { return y0 + (y1 - y0) * t; };
+      var colors = F.routes.map(function (r) { return r.color; }).filter(function (c, i, a) { return a.indexOf(c) === i; });
+      var stops = [0].concat(tops.filter(function (t) { return t > 0 && t < 1; }), [1]);
+      for (var i = 0; i < stops.length - 1; i++) {
+        var a = at(stops[i]), b = at(stops[i + 1]), m = Math.max(a, Math.min(b, at(p)));
+        lc.fillStyle = colors[i % colors.length];
+        lc.globalAlpha = P.lines;
+        lc.fillRect(x - w / 2, a, w, m - a);
+        if (i === 0) kit.cap(lc, P.back, x, a, 0, -1, w, P.cup);
+        lc.globalAlpha = P.lines * (R.upcoming == null ? 1 : R.upcoming);
+        lc.fillRect(x - w / 2, m, w, b - m);
+        if (i === stops.length - 2) kit.cap(lc, P.front, x, b, 0, 1, w, P.cup);
+      }
+      lc.globalAlpha = 1;
+      // Stations: a clear gap cut out of the line, then a solid dot.
+      tops.forEach(function (t) {
+        var cy = at(t);
+        lc.save(); lc.globalCompositeOperation = "destination-out";
+        lc.beginPath(); lc.arc(x, cy, ring, 0, Math.PI * 2); lc.fill(); lc.restore();
+        lc.fillStyle = kit.mixHex(F.background, F.gold, P.dots);
+        lc.beginPath(); lc.arc(x, cy, dot, 0, Math.PI * 2); lc.fill();
+      });
     }
     function update() {
       var on = allowed(), p = on ? clamp((pageYOffset - start) / (end - start)) : 1;
-      fill.style.transform = "scaleY(" + p.toFixed(4) + ")";
+      draw(p);
       var r = rail.getBoundingClientRect(), h = r.height;
       var top = after ? Math.max(0, Math.min(h, after.getBoundingClientRect().bottom - r.top)) : 0;
       var bot = before ? Math.max(0, Math.min(h, r.bottom - before.getBoundingClientRect().top)) : 0;
-      rail.style.clipPath = "inset(" + top.toFixed(1) + "px -16px " + bot.toFixed(1) + "px -16px)";
+      rail.style.clipPath = "inset(" + top.toFixed(1) + "px 0 " + bot.toFixed(1) + "px 0)";
       rail.classList.toggle("is-shown", top + bot < h - 24);
-      ticks.forEach(function (t, i) { t.classList.toggle("is-on", !on || (secs[i] && secs[i].getBoundingClientRect().top < vh() / 2)); });
     }
     onScroll(update);
     addEventListener("resize", measure);
     addEventListener("load", measure);
     doc.addEventListener("ccc:motion", update);
     if (doc.fonts) doc.fonts.ready.then(measure);
-    measure();
+    setTimeout(measure);
   }
   function initDrift() {
     var items = $$("[data-drift]"), desk = matchMedia("(min-width: 1024px)"), live = [];
@@ -888,7 +926,7 @@ try{
   }
 })();
 }catch(e){console.error('forms-demo.js',e)}
-window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 57.1 407.9, 30.2 434.8, 3.4 461.6 C -14.2 479.2, -37.9 489, -62.7 489 C -78.5 489, -94.2 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1746 388, 1711.9 422.1, 1677.9 456.1 C 1662.9 471.1, 1642.6 479.5, 1621.4 479.5 C 1616 479.5, 1610.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]},"player":{"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"transparent":true,"avoid":false,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"scroll","scrollIdle":0.3,"startPhase":4.2,"reduced":"static t=4.2"},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame"},"portrait":{"shape":"P1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"hover":true,"hoverTarget":".person","avoid":false,"nodeSafe":false,"transparent":true,"reduced":"static t=4.2"},"lab-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"transparent":true,"avoid":false,"reduced":"static t=4.2"},"lab-network":{"shape":"V4","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"scroll","scrollIdle":0.3,"startPhase":4.2,"reduced":"static t=4.2"},"lab-contact":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame","scrollIdle":0.3}},"staticPhase":4.2,"budget":{"maxLive":3,"maxLoop":3,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
+window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"background":"#F1E8D8","gold":"#9C7C46","nodes":[{"cx":1254.5,"cy":152.5,"r":23.0,"outerR":31.976553910638962},{"cx":469.0,"cy":191.5,"r":23.0,"outerR":31.698100557729553},{"cx":84.0,"cy":381.0,"r":39.5,"outerR":49.51767361255979},{"cx":1581.0,"cy":479.5,"r":40.0,"outerR":49.51009997970111},{"cx":1137.0,"cy":670.5,"r":23.0,"outerR":31.80015723231569},{"cx":222.0,"cy":681.5,"r":24.0,"outerR":32.72995569810628}],"routes":[{"d":"M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035","color":"#2D432B","direction":1},{"d":"M 1150 -100 C 1171.6 -78.4, 1193.3 -56.7, 1214.9 -35.1 C 1240.3 -9.7, 1254.5 24.6, 1254.5 60.5 C 1254.5 86.6, 1254.5 112.6, 1254.5 138.7 C 1254.5 147.5, 1258 156, 1264.3 162.3 C 1369.8 268, 1475.4 373.7, 1581 479.5 C 1618.7 517.2, 1656.4 554.9, 1694.1 592.6 C 1697.9 596.4, 1700 601.5, 1700 606.8 C 1700 751.2, 1700 895.6, 1700 1040","color":"#2D432B","direction":-1},{"d":"M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 57.1 407.9, 30.2 434.8, 3.4 461.6 C -14.2 479.2, -37.9 489, -62.7 489 C -78.5 489, -94.2 489, -110 489","color":"#2A5D5B","direction":-1},{"d":"M 1780 354 C 1746 388, 1711.9 422.1, 1677.9 456.1 C 1662.9 471.1, 1642.6 479.5, 1621.4 479.5 C 1616 479.5, 1610.5 479.5, 1605 479.5 C 1591.7 479.5, 1581 490.2, 1581 503.5 C 1581 585.1, 1581 666.8, 1581 748.4 C 1581 796.2, 1562 842, 1528.3 875.7 C 1473.5 930.5, 1418.8 985.2, 1364 1040","color":"#2A5D5B","direction":1},{"d":"M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381","color":"#D06E53","direction":1},{"d":"M 980 1040 C 980 938.5, 980 837, 980 735.5 C 980 699.6, 1009.1 670.5, 1045 670.5 C 1075.7 670.5, 1106.3 670.5, 1137 670.5 C 1196.5 670.5, 1256 670.5, 1315.4 670.5 C 1363.2 670.5, 1409 651.5, 1442.7 617.8 C 1483.2 577.3, 1523.6 536.9, 1564 496.5 C 1574.9 485.6, 1589.6 479.5, 1605 479.5 C 1663.3 479.5, 1721.7 479.5, 1780 479.5","color":"#D06E53","direction":-1}]},"player":{"length":5.5,"weight":24.0,"speed":0.65,"guides":0.0,"body":0.8,"gap":2960.0,"lines":0.65,"dots":0.65,"back":"bullet","front":"nose","cup":0.5},"groups":{"home-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"transparent":true,"avoid":false,"reduced":"static t=4.2"},"home-network":{"shape":"V4","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"scroll","scrollIdle":0.3,"startPhase":4.2,"reduced":"static t=4.2"},"events":{"shape":"V9","kind":"field","crop":{"cx":0.78,"cy":0.5,"scale":1.25},"routes":"all","dir":-1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"chapter-detail":{"shape":"V2","kind":"field","crop":{"cx":0.5,"cy":0.78,"scale":1.35},"routes":"all","dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"about":{"shape":"V7","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1.1},"routes":"all","dir":1,"impulseColors":["forest"],"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"board":{"shape":"V3","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"quietCentre":{"from":0.33,"to":0.67},"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"not-found":{"shape":"V5","kind":"field","crop":{"cx":0.82,"cy":0.22,"scale":1.4},"routes":[1],"dir":1,"clock":"scroll","startPhase":4.2,"reduced":"static t=4.2"},"contact-band":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame"},"portrait":{"shape":"P1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"hover":true,"hoverTarget":".person","avoid":false,"nodeSafe":false,"transparent":true,"reduced":"static t=4.2"},"lab-hero":{"shape":"V1","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"time","startPhase":4.2,"transparent":true,"avoid":false,"reduced":"static t=4.2"},"lab-network":{"shape":"V4","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","dir":1,"clock":"scroll","scrollIdle":0.3,"startPhase":4.2,"reduced":"static t=4.2"},"lab-contact":{"shape":"V11","kind":"field","crop":{"cx":0.5,"cy":0.5,"scale":1},"routes":"all","clock":"scroll","heightPx":96,"reduced":"same static frame","scrollIdle":0.3},"rail":{"kind":"rail","upcoming":0.3}},"staticPhase":4.2,"budget":{"maxLive":3,"maxLoop":3,"dprCap":1.5,"pixels":2100000},"limits":{"length":[1,12],"weight":[4,64],"speed":[0.25,2.5],"guides":[0,0.4],"body":[0,0.95],"gap":[0,2400]}};
 (function () {
   "use strict";
   var SIG = window.CCC_SIG;
@@ -1468,6 +1506,7 @@ window.CCC_SIG=window.CCC_SIG||{"field":{"width":1672.0,"height":941.0,"backgrou
     }
     ctx.globalAlpha = 1;
   };
+  CCC.sig = { cap: cap, mixHex: mixHex };
   function mixHex(a, b, t) {
     var x = parseInt(a.slice(1), 16), y = parseInt(b.slice(1), 16), out = "#";
     for (var k = 16; k >= 0; k -= 8) {
