@@ -81,6 +81,25 @@
     .ld__photo, .ld__body { grid-column: 1 / -1; }
   }
 </style>
+<style>
+  /* Display slots. Creatives come from banners.json; the slot sets size, label and spacing. */
+  .pp-band { padding-block: 40px; }
+  .pp-band.surface-ivory { padding-top: 0; }
+  .pp-slot { display: grid; justify-items: center; row-gap: 10px; }
+  .pp-slot__label { justify-self: center; display: flex; align-items: center; gap: 10px; margin: 0; color: var(--ink-72); }
+  .pp-slot__label::before, .pp-slot__label::after { content: ""; width: 40px; border-top: var(--rule-fine); }
+  .pp-slot__link { display: block; outline-offset: 4px; }
+  .pp-slot img { display: block; width: 100%; height: auto; }
+  .pp-slot--billboard .pp-slot__link { width: min(100%, 970px); }
+  .pp-slot--leaderboard .pp-slot__link { width: min(100%, 728px); }
+  .pp-slot__row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  .pp-slot__row li { width: 300px; max-width: 100%; }
+  @media (max-width: 767px) {
+    .pp-band { padding-block: 32px; }
+    .pp-slot--billboard .pp-slot__link { width: min(100%, 300px); }
+    .pp-slot--leaderboard .pp-slot__link { width: min(100%, 320px); }
+  }
+</style>
 </head>
 <body class="page-home">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -252,6 +271,15 @@
   </div>
 </section>
 
+<aside class="pp-band surface-ivory" aria-label="Partner message">
+  <div class="wrap">
+    <div class="pp-slot pp-slot--billboard" data-pp="billboard">
+      <p class="label pp-slot__label">Partner</p>
+      <a class="pp-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/media/kestrel-bay-square.png?v=1" width="300" height="250"><img src="/ccc-website-preview/lab/sponsors/media/kestrel-bay-wide.png?v=1" width="970" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
+    </div>
+  </div>
+</aside>
+
 <section class="home-network" id="network" aria-labelledby="network-title">
   <div class="field" id="field-home-network" data-signature="home-network"><canvas class="field__canvas" aria-hidden="true"></canvas><svg class="field__poster" aria-hidden="true" focusable="false" viewBox="0.0 0.0 1672.0 941.0" preserveAspectRatio="xMidYMid slice"><rect x="0" y="0" width="1672.0" height="941.0" fill="#F1E8D8"/><path data-route="0" d="M 84 -100 C 84 52.4, 84 204.9, 84 357.3 C 84 372.5, 90 387, 100.8 397.8 C 132.4 429.4, 164.1 461.1, 195.7 492.7 C 212.5 509.5, 222 532.4, 222 556.2 C 222 593.1, 222 630.1, 222 667.1 C 222 676.3, 225.7 685.2, 232.2 691.7 C 334.5 794, 436.9 896.4, 539.2 998.7 C 544.9 1004.4, 548 1012, 548 1019.9 C 548 1024.9, 548 1030, 548 1035" fill="none" stroke="#2D432B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="2" d="M 345 -100 C 345 -51.5, 345 -3, 345 45.4 C 345 93.2, 326 139, 292.3 172.7 C 222.9 242.1, 153.4 311.6, 84 381 C 57.1 407.9, 30.2 434.8, 3.4 461.6 C -14.2 479.2, -37.9 489, -62.7 489 C -78.5 489, -94.2 489, -110 489" fill="none" stroke="#2A5D5B" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><path data-route="4" d="M 600 -100 C 600 -70.6, 600 -41.2, 600 -11.7 C 600 34.5, 581.6 78.9, 548.9 111.6 C 522.3 138.2, 495.6 164.9, 469 191.5 C 414.7 245.8, 360.3 300.2, 306 354.5 C 289 371.5, 266 381, 242 381 C 189.3 381, 136.7 381, 84 381 C 19.3 381, -45.3 381, -110 381" fill="none" stroke="#D06E53" stroke-width="1.2" opacity="0" vector-effect="non-scaling-stroke"/><circle cx="469.0" cy="191.5" r="31.698100557729553" fill="#F1E8D8"/><circle cx="469.0" cy="191.5" r="23.0" fill="#BAA279"/><circle cx="84.0" cy="381.0" r="49.51767361255979" fill="#F1E8D8"/><circle cx="84.0" cy="381.0" r="39.5" fill="#BAA279"/><circle cx="222.0" cy="681.5" r="32.72995569810628" fill="#F1E8D8"/><circle cx="222.0" cy="681.5" r="24.0" fill="#BAA279"/></svg></div>
   <div class="wrap grid home-network__inner">
@@ -286,6 +314,15 @@
     </div>
   </div>
 </section>
+
+<aside class="pp-band surface-white" aria-label="Partner message">
+  <div class="wrap">
+    <div class="pp-slot pp-slot--leaderboard" data-pp="leaderboard">
+      <p class="label pp-slot__label">Partner</p>
+      <a class="pp-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/media/northvale-strip-sm.png?v=1" width="320" height="100"><img src="/ccc-website-preview/lab/sponsors/media/northvale-strip.png?v=1" width="728" height="90" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
+    </div>
+  </div>
+</aside>
 
 <section class="section surface-forest home-model" id="model" aria-labelledby="model-title">
   <div class="wrap">
@@ -478,6 +515,15 @@
     </div>
   </div>
 </section>
+
+<aside class="pp-band surface-white rule-top" aria-label="Partner message">
+  <div class="wrap">
+    <div class="pp-slot pp-slot--rectangles" data-pp="rectangles">
+      <p class="label pp-slot__label">Partner</p>
+      <ul class="pp-slot__row" role="list"><li><a class="pp-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/media/kestrel-bay-square.png?v=1" width="300" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li><li><a class="pp-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/media/northvale-square.png?v=1" width="300" height="250" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li></ul>
+    </div>
+  </div>
+</aside>
 
 <section class="section surface-ivory home-voice" id="voice" aria-labelledby="voice-title">
   <div class="wrap">
