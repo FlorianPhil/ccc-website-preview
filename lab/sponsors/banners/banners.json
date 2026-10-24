@@ -1,0 +1,20 @@
+{
+  "sponsors": {
+    "kestrel-bay": {
+      "href": "https://example.com/kestrel-bay",
+      "alt": "Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test."
+    },
+    "northvale": {
+      "href": "https://example.com/northvale",
+      "alt": "Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account."
+    }
+  },
+  "slots": {
+    "billboard": { "sponsor": "kestrel-bay", "desktop": "970x250", "mobile": "300x250" },
+    "leaderboard": { "sponsor": "northvale", "desktop": "728x90", "mobile": "320x100" },
+    "rectangles": [
+      { "sponsor": "kestrel-bay", "size": "300x250" },
+      { "sponsor": "northvale", "size": "300x250" }
+    ]
+  }
+}
