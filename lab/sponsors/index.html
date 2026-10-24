@@ -31,10 +31,9 @@
   .sp-credit__label::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--forest); box-shadow: 0 0 0 3px var(--ivory), 0 0 0 4px var(--forest); flex: none; }
   .sp-credit .sp-logo { --sp-h: 30px; }
   .sp-credit__offer { margin: 0; font-size: var(--fs-small); color: var(--ink); }
-  .sp-credit--quiet { border-bottom: 0; margin: 28px 0 0; padding-bottom: 0; grid-template-columns: auto auto minmax(0, 1fr); }
-  .sp-credit--quiet .sp-logo { --sp-h: 24px; }
+  .sp-credit--market { grid-template-columns: auto auto minmax(0, 1fr); margin: 40px 0 32px; }
   @media (max-width: 767px) {
-    .sp-credit, .sp-credit--quiet { grid-template-columns: minmax(0, 1fr) auto; }
+    .sp-credit, .sp-credit--market { grid-template-columns: minmax(0, 1fr) auto; }
     .sp-credit__label { grid-column: 1 / -1; }
     .sp-credit__offer { grid-column: 1 / -1; grid-row: 3; }
   }
@@ -226,14 +225,12 @@
   <span class="impulse-rule__clip" aria-hidden="true"><svg class="streak impulse-rule__streak" viewBox="0 0 120 4" width="120" height="4" aria-hidden="true" focusable="false"><rect width="40" height="4" opacity=".12"/><rect x="40" width="40" height="4" opacity=".3"/><rect x="80" width="40" height="4" opacity=".78"/></svg></span>
 </li>
       </ol>
+      <div class="sp-credit sp-credit--market">
+        <p class="label sp-credit__label">Market call presented by</p>
+        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
+      </div>
       <div class="grid home-events__foot">
-        <div class="c-1-7">
-          <p>Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
-          <div class="sp-credit sp-credit--quiet">
-            <p class="label sp-credit__label">Market call presented by</p>
-            <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
-          </div>
-        </div>
+        <p class="c-1-7">Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
         <div class="c-9-12 home-events__cta"><a class="btn btn--secondary" href="/ccc-website-preview/events/">View all events</a></div>
       </div>
     </div>

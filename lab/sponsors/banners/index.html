@@ -31,10 +31,9 @@
   .sp-credit__label::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--forest); box-shadow: 0 0 0 3px var(--ivory), 0 0 0 4px var(--forest); flex: none; }
   .sp-credit .sp-logo { --sp-h: 30px; }
   .sp-credit__offer { margin: 0; font-size: var(--fs-small); color: var(--ink); }
-  .sp-credit--quiet { border-bottom: 0; margin: 28px 0 0; padding-bottom: 0; grid-template-columns: auto auto minmax(0, 1fr); }
-  .sp-credit--quiet .sp-logo { --sp-h: 24px; }
+  .sp-credit--market { grid-template-columns: auto auto minmax(0, 1fr); margin: 40px 0 32px; }
   @media (max-width: 767px) {
-    .sp-credit, .sp-credit--quiet { grid-template-columns: minmax(0, 1fr) auto; }
+    .sp-credit, .sp-credit--market { grid-template-columns: minmax(0, 1fr) auto; }
     .sp-credit__label { grid-column: 1 / -1; }
     .sp-credit__offer { grid-column: 1 / -1; grid-row: 3; }
   }
@@ -67,21 +66,21 @@
 </style>
 <style>
   /* Display slots. Creatives come from banners.json; the slot sets size, label and spacing. */
-  .ad-band { padding-block: 40px; }
-  .ad-band.surface-ivory { padding-top: 0; }
-  .ad-slot { display: grid; justify-items: center; row-gap: 10px; }
-  .ad-slot__label { justify-self: center; display: flex; align-items: center; gap: 10px; margin: 0; color: var(--ink-72); }
-  .ad-slot__label::before, .ad-slot__label::after { content: ""; width: 40px; border-top: var(--rule-fine); }
-  .ad-slot__link { display: block; outline-offset: 4px; }
-  .ad-slot img { display: block; width: 100%; height: auto; }
-  .ad-slot--billboard .ad-slot__link { width: min(100%, 970px); }
-  .ad-slot--leaderboard .ad-slot__link { width: min(100%, 728px); }
-  .ad-slot__row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-  .ad-slot__row li { width: 300px; max-width: 100%; }
+  .pp-band { padding-block: 40px; }
+  .pp-band.surface-ivory { padding-top: 0; }
+  .pp-slot { display: grid; justify-items: center; row-gap: 10px; }
+  .pp-slot__label { justify-self: center; display: flex; align-items: center; gap: 10px; margin: 0; color: var(--ink-72); }
+  .pp-slot__label::before, .pp-slot__label::after { content: ""; width: 40px; border-top: var(--rule-fine); }
+  .pp-slot__link { display: block; outline-offset: 4px; }
+  .pp-slot img { display: block; width: 100%; height: auto; }
+  .pp-slot--billboard .pp-slot__link { width: min(100%, 970px); }
+  .pp-slot--leaderboard .pp-slot__link { width: min(100%, 728px); }
+  .pp-slot__row { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+  .pp-slot__row li { width: 300px; max-width: 100%; }
   @media (max-width: 767px) {
-    .ad-band { padding-block: 32px; }
-    .ad-slot--billboard .ad-slot__link { width: min(100%, 300px); }
-    .ad-slot--leaderboard .ad-slot__link { width: min(100%, 320px); }
+    .pp-band { padding-block: 32px; }
+    .pp-slot--billboard .pp-slot__link { width: min(100%, 300px); }
+    .pp-slot--leaderboard .pp-slot__link { width: min(100%, 320px); }
   }
 </style>
 </head>
@@ -245,25 +244,23 @@
   <span class="impulse-rule__clip" aria-hidden="true"><svg class="streak impulse-rule__streak" viewBox="0 0 120 4" width="120" height="4" aria-hidden="true" focusable="false"><rect width="40" height="4" opacity=".12"/><rect x="40" width="40" height="4" opacity=".3"/><rect x="80" width="40" height="4" opacity=".78"/></svg></span>
 </li>
       </ol>
+      <div class="sp-credit sp-credit--market">
+        <p class="label sp-credit__label">Market call presented by</p>
+        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
+      </div>
       <div class="grid home-events__foot">
-        <div class="c-1-7">
-          <p>Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
-          <div class="sp-credit sp-credit--quiet">
-            <p class="label sp-credit__label">Market call presented by</p>
-            <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
-          </div>
-        </div>
+        <p class="c-1-7">Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
         <div class="c-9-12 home-events__cta"><a class="btn btn--secondary" href="/ccc-website-preview/events/">View all events</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<aside class="ad-band surface-ivory" aria-label="Partner message">
+<aside class="pp-band surface-ivory" aria-label="Partner message">
   <div class="wrap">
-    <div class="ad-slot ad-slot--billboard" data-ad-slot="billboard">
-      <p class="label ad-slot__label">Partner</p>
-      <a class="ad-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/banners/creatives/kestrel-bay-300x250.png?v=1" width="300" height="250"><img src="/ccc-website-preview/lab/sponsors/banners/creatives/kestrel-bay-970x250.png?v=1" width="970" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
+    <div class="pp-slot pp-slot--billboard" data-pp="billboard">
+      <p class="label pp-slot__label">Partner</p>
+      <a class="pp-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/media/kestrel-bay-square.png?v=1" width="300" height="250"><img src="/ccc-website-preview/lab/sponsors/media/kestrel-bay-wide.png?v=1" width="970" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
     </div>
   </div>
 </aside>
@@ -300,11 +297,11 @@
   </div>
 </section>
 
-<aside class="ad-band surface-white" aria-label="Partner message">
+<aside class="pp-band surface-white" aria-label="Partner message">
   <div class="wrap">
-    <div class="ad-slot ad-slot--leaderboard" data-ad-slot="leaderboard">
-      <p class="label ad-slot__label">Partner</p>
-      <a class="ad-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/banners/creatives/northvale-320x100.png?v=1" width="320" height="100"><img src="/ccc-website-preview/lab/sponsors/banners/creatives/northvale-728x90.png?v=1" width="728" height="90" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
+    <div class="pp-slot pp-slot--leaderboard" data-pp="leaderboard">
+      <p class="label pp-slot__label">Partner</p>
+      <a class="pp-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><source media="(max-width: 767px)" srcset="/ccc-website-preview/lab/sponsors/media/northvale-strip-sm.png?v=1" width="320" height="100"><img src="/ccc-website-preview/lab/sponsors/media/northvale-strip.png?v=1" width="728" height="90" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a>
     </div>
   </div>
 </aside>
@@ -501,11 +498,11 @@
   </div>
 </section>
 
-<aside class="ad-band surface-white rule-top" aria-label="Partner message">
+<aside class="pp-band surface-white rule-top" aria-label="Partner message">
   <div class="wrap">
-    <div class="ad-slot ad-slot--rectangles" data-ad-slot="rectangles">
-      <p class="label ad-slot__label">Partner</p>
-      <ul class="ad-slot__row" role="list"><li><a class="ad-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/banners/creatives/kestrel-bay-300x250.png?v=1" width="300" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li><li><a class="ad-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/banners/creatives/northvale-300x250.png?v=1" width="300" height="250" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li></ul>
+    <div class="pp-slot pp-slot--rectangles" data-pp="rectangles">
+      <p class="label pp-slot__label">Partner</p>
+      <ul class="pp-slot__row" role="list"><li><a class="pp-slot__link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/media/kestrel-bay-square.png?v=1" width="300" height="250" alt="Kestrel Bay Analytical Labs. Potency results in three business days. Chamber members save 15%. Book a test. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li><li><a class="pp-slot__link" href="https://example.com/northvale" target="_blank" rel="sponsored noopener"><picture><img src="/ccc-website-preview/lab/sponsors/media/northvale-square.png?v=1" width="300" height="250" alt="Northvale Community Bank. A bank account your business can keep. No monthly fees for Chamber members in the first year. Open an account. (opens in a new tab)" loading="lazy" decoding="async"></picture></a></li></ul>
     </div>
   </div>
 </aside>
