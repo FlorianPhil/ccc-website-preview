@@ -31,7 +31,9 @@
   .sp-credit__label::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--forest); box-shadow: 0 0 0 3px var(--ivory), 0 0 0 4px var(--forest); flex: none; }
   .sp-credit .sp-logo { --sp-h: 30px; }
   .sp-credit__offer { margin: 0; font-size: var(--fs-small); color: var(--ink); }
-  .sp-credit--market { grid-template-columns: auto auto minmax(0, 1fr); margin: 40px 0 32px; }
+  .sp-credits { margin-bottom: 48px; }
+  .sp-credits .sp-credit { margin: 0; }
+  .sp-credit--market { grid-template-columns: auto auto minmax(0, 1fr); border-top: 0; }
   @media (max-width: 767px) {
     .sp-credit, .sp-credit--market { grid-template-columns: minmax(0, 1fr) auto; }
     .sp-credit__label { grid-column: 1 / -1; }
@@ -157,6 +159,18 @@
 
 <section class="section surface-ivory home-events" id="events" aria-labelledby="events-title">
   <div class="wrap">
+    <div class="sp-credits" data-reveal="r1">
+      <div class="sp-credit">
+        <p class="label sp-credit__label">Events presented by</p>
+        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/kestrel-bay.svg?v=2" alt="Kestrel Bay Analytical Labs" loading="lazy" decoding="async">
+        <p class="sp-credit__offer">Members save 15% on potency and compliance testing.</p>
+        <a class="link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener">Member offer<span class="visually-hidden"> (opens in a new tab)</span></a>
+      </div>
+      <div class="sp-credit sp-credit--market">
+        <p class="label sp-credit__label">Market call presented by</p>
+        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
+      </div>
+    </div>
     <header class="sec-head grid" data-reveal="r4">
   <p class="sec-head__eyebrow"><span class="label sec-head__num">01</span><span class="label">Events</span></p>
   <h2 class="sec-head__title" id="events-title">Meet buyers and partners at global events.</h2>
@@ -165,12 +179,6 @@
     </div>
 </header>
     <div class="sec-body">
-      <div class="sp-credit" data-reveal="r1">
-        <p class="label sp-credit__label">Events presented by</p>
-        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/kestrel-bay.svg?v=2" alt="Kestrel Bay Analytical Labs" loading="lazy" decoding="async">
-        <p class="sp-credit__offer">Members save 15% on potency and compliance testing.</p>
-        <a class="link" href="https://example.com/kestrel-bay" target="_blank" rel="sponsored noopener">Member offer<span class="visually-hidden"> (opens in a new tab)</span></a>
-      </div>
       <ol class="event-list" role="list" data-reveal="r1">
         <li class="event-row event-row--thumb" data-end="2026-12-02">
   <span class="event-row__thumb"><img src="/ccc-website-preview/assets/img/events/las-vegas-elevated-minds-social-hour-mjbiz-2026.webp" srcset="/ccc-website-preview/assets/img/events/las-vegas-elevated-minds-social-hour-mjbiz-2026-480w.webp 480w, /ccc-website-preview/assets/img/events/las-vegas-elevated-minds-social-hour-mjbiz-2026.webp 843w" sizes="88px" alt="" width="843" height="844" class="event-row__thumb-img" loading="lazy" decoding="async"></span>
@@ -225,10 +233,6 @@
   <span class="impulse-rule__clip" aria-hidden="true"><svg class="streak impulse-rule__streak" viewBox="0 0 120 4" width="120" height="4" aria-hidden="true" focusable="false"><rect width="40" height="4" opacity=".12"/><rect x="40" width="40" height="4" opacity=".3"/><rect x="80" width="40" height="4" opacity=".78"/></svg></span>
 </li>
       </ol>
-      <div class="sp-credit sp-credit--market">
-        <p class="label sp-credit__label">Market call presented by</p>
-        <img class="sp-logo" src="/ccc-website-preview/lab/sponsors/logos/northvale.svg?v=2" alt="Northvale Community Bank" loading="lazy" decoding="async">
-      </div>
       <div class="grid home-events__foot">
         <p class="c-1-7">Each quarter, regional leaders and consultants share market updates on a virtual call, then members meet in breakout rooms by region and sector.</p>
         <div class="c-9-12 home-events__cta"><a class="btn btn--secondary" href="/ccc-website-preview/events/">View all events</a></div>
