@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
 """Chamber Lines rules the player must keep on every page.
 
-1. Dots are solid. Every gold dot sits on a ring painted in the field colour,
-   on transparent fields too, so no line and no photo shows under a dot.
-3. Corners are rounded. Every turn in a route is a metro-map arc; two path
-   segments never meet at an angle, at any scale.
-2. Speed never passes the setting. The scroll clock may wake a field up to
+This checker owns the scroll-speed cap and rounded route-corner rules.
+Dot appearance is checked by tools/check_signature_dots.py.
+
+1. Speed never passes the setting. The scroll clock may wake a field up to
    the speed setting while the page scrolls, never past it.
+2. Corners are rounded. Every turn in a route is a metro-map arc; two path
+   segments never meet at an angle, at any scale.
 
 Run: python3 tools/check_signature_speed.py  (exit 1 on a broken rule)
 """
@@ -46,23 +47,11 @@ def sharp_joints(d, limit=2.0):
     return bad
 
 
-def main():
-    js = JS.read_text()
+def check(js):
+    """Return scroll-speed and route-corner violations for JavaScript source."""
     errors = []
 
-    # 1. Every dot fill (node.r) follows a ring (node.outerR) in the same block.
-    for m in re.finditer(r"\.arc\(node\.cx, node\.cy, node\.r,", js):
-        block = js[max(0, m.start() - 900): m.start()]
-        last_dot = block.rfind("node.r,")
-        ring = block.rfind("node.outerR")
-        if ring < 0 or ring < last_dot:
-            line = js.count("\n", 0, m.start()) + 1
-            errors.append(f"site.js:{line}: dot drawn without a ring under it, so lines show through")
-    loop = re.search(r"for \(var n = 0; n < this\.nodes\.length; n\+\+\) \{(.*?)\n    \}\n", js, re.S)
-    if not loop or "destination-out" in loop.group(1):
-        errors.append("site.js: a dot ring is cut out of a transparent field, so the photo shows under the dot")
-
-    # 2. Scroll never pushes speed past the setting.
+    # 1. Scroll never pushes speed past the setting.
     cap = re.search(r"scrollBoost = Math\.min\(([\d.]+),", js)
     if not cap or float(cap.group(1)) > 1:
         errors.append("site.js: scrollBoost may exceed 1, so scroll fields run faster than the speed setting")
@@ -73,7 +62,7 @@ def main():
             line = js.count("\n", 0, m.start()) + 1
             errors.append(f"site.js:{line}: unexpected speed formula {m.group(0)!r}")
 
-    # 3. Every joint between two path segments continues the same direction.
+    # 2. Every joint between two path segments continues the same direction.
     sig = re.search(r"window\.CCC_SIG=window\.CCC_SIG\|\|(\{.*?\});\n", js)
     routes = json.loads(sig.group(1))["field"]["routes"] if sig else []
     if not routes:
@@ -82,6 +71,11 @@ def main():
         for x, y, turn in sharp_joints(r["d"]):
             errors.append(f"route {i}: {turn:.0f} degree corner at ({x:g}, {y:g}) has no rounding")
 
+    return errors
+
+
+def main():
+    errors = check(JS.read_text(encoding="utf-8"))
     for e in errors:
         print(e)
     print("signature rules hold" if not errors else f"{len(errors)} rule(s) broken")

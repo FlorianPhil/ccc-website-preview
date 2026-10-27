@@ -511,6 +511,18 @@ def process(path):
     return False
 
 
+SIGNATURE_CHECKS = ('check_markers.py', 'check_emails.py', 'check_signature_dots.py', 'check_signature_speed.py')
+
+
+def run_qa_checks(root=ROOT, call=None):
+    """Run every required build-time content and signature check."""
+    import subprocess
+    import sys
+
+    runner = call or subprocess.call
+    return max(runner([sys.executable, str(Path(root) / 'tools' / checker)]) for checker in SIGNATURE_CHECKS)
+
+
 def main():
     changed = 0
     for p in sorted(ROOT.rglob('*.html')):
@@ -524,7 +536,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-    # UI markers must use the signature's round nodes (ISS-095); email addresses stay lowercase
-    import subprocess, sys
-    sys.exit(max(subprocess.call([sys.executable, str(ROOT / 'tools' / c)])
-                 for c in ('check_markers.py', 'check_emails.py')))
+    # UI markers, email addresses, signature dots, speed, and route corners are build gates.
+    import sys
+    sys.exit(run_qa_checks())
